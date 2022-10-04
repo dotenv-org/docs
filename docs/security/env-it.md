@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Integration Tokens
+title: IT Tokens
 parent: Security
 nav_order: 4
 permalink: /security/env-it
