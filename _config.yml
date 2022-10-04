@@ -34,6 +34,7 @@ search_enabled: true
 
 # theme: minima
 theme: just-the-docs
+color_scheme: foo
 
 plugins:
   - jekyll-seo-tag

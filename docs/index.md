@@ -1,9 +1,9 @@
 ---
-layout: default
+layout: dev
 title: Documentation
 nav_order: 1
 has_children: false
-permalink: /
+permalink: /docs
 ---
 
 # Welcome to dotenv ✨

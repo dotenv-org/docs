@@ -76,7 +76,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
-  just-the-docs (= 0.4.0.rc2)
+  just-the-docs
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
