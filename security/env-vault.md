@@ -3,7 +3,7 @@ layout: default
 title: .env.vault
 parent: Security
 nav_order: 2
-permalink: /docs/security/env-vault
+permalink: /security/env-vault
 ---
 
 # .env.vault

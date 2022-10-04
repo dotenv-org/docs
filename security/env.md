@@ -3,7 +3,7 @@ layout: default
 title: .env
 parent: Security
 nav_order: 1
-permalink: /docs/security/env
+permalink: /security/env
 ---
 
 # .env

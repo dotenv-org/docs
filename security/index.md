@@ -3,7 +3,7 @@ layout: default
 title: Security
 nav_order: 3
 has_children: true
-permalink: /docs/security
+permalink: /security
 ---
 
 # Security

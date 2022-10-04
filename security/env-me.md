@@ -3,7 +3,7 @@ layout: default
 title: .env.me
 parent: Security
 nav_order: 3
-permalink: /docs/security/env-me
+permalink: /security/env-me
 ---
 
 # .env.me

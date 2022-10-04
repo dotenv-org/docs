@@ -3,7 +3,7 @@ layout: default
 title: Specifications
 parent: Security
 nav_order: 9
-permalink: /docs/security/specifications
+permalink: /security/specifications
 ---
 
 # Security Specifications

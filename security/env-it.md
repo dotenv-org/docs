@@ -3,7 +3,7 @@ layout: default
 title: Integration Tokens
 parent: Security
 nav_order: 4
-permalink: /docs/security/env-it
+permalink: /security/env-it
 ---
 
 # Integration Tokens
