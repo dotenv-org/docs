@@ -1,101 +1,227 @@
 export const description =
-  'This guide will get you all set up and ready to use the Protocol API. We’ll cover how to get started an API client and how to make your first API request.'
+  'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
 
-# Quickstart
+In this guide, we'll deploy an application with secrets to Heroku. We'll create the app, load and sync its secrets, and deploy it using the .env.vault file. A quick skim over this tutorial, and you'll understand all the foundational concepts of using dotenv-vault.
 
-This guide will get you all set up and ready to use the Protocol API. We'll cover how to get started using one of our API clients and how to make your first API request. We'll also look at where to go next to find all the information you need to take full advantage of our powerful REST API. {{ className: 'lead' }}
+We're using Heroku for this quickstart because it is the easiest to demo (in the least amount of your time), but any hosting platform will work.
 
-<Note>
-  Before you can make requests to the Protocol API, you will need to grab your
-  API key from your dashboard. You find it under [Settings &raquo; API](#).
-</Note>
+## 🌱 Create our app
 
-## Choose your client
+We'll create a Node application for this guide, but you can follow along with your own application in any language or framework.
 
-Before making your first API request, you need to pick which API client you will use. In addition to good ol' cURL HTTP requests, Protocol offers clients for JavaScript, Python, and PHP. In the following example, you can see how to install each client.
+Set up the app's containing folder.
 
-<CodeGroup>
-
-```bash {{ title: 'cURL' }}
-# cURL is most likely already installed on your machine
-curl --version
+```
+$ mkdir hello-world
+$ cd hello-world
 ```
 
-```bash {{ language: 'js' }}
-# Install the Protocol JavaScript SDK
-npm install @example/protocol-api --save
+Create the file that will house the code.
+
+```
+$ touch index.js
+$ nano index.js
 ```
 
-```bash {{ language: 'python' }}
-# Install the Protocol Python SDK
-pip install protocol_api
+Write the code to build our hello-world web server. [source](https://nodejs.org/en/docs/guides/getting-started-guide)
+
+```javascript
+// index.js
+const http = require('http')
+
+const hostname = '127.0.0.1'
+const port = 3000
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('Hello World')
+})
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`)
+})
 ```
 
-```bash {{ language: 'php' }}
-# Install the Protocol PHP SDK
-composer require protocol/sdk
+Run our web server.
+
+```
+$ node index.js
 ```
 
-</CodeGroup>
+Visit [localhost:3000](http://localhost:3000) and you will see "Hello World".
 
-<div className="not-prose">
-  <Button
-    href="/sdks"
-    variant="text"
-    arrow="right"
-    children="Check out our list of first-party SDKs"
-  />
-</div>
+include helpers/screenshot.html url="/assets/img/cloudinary/Screenshot_2023-04-01_at_7.55.10_AM_wyu6en.png"
 
-## Making your first API request
+Next, let's use [dotenv](https://github.com/motdotla/dotenv) to customize the port and greeting.
 
-After picking your preferred client, you are ready to make your first call to the Protocol API. Below, you can see how to send a GET request to the Conversations endpoint to get a list of all your conversations. In the cURL example, results are limited to ten conversations, the default page length for each client.
+## 🟨 Require dotenv
 
-<CodeGroup tag="GET" label="/v1/conversations">
+We'll add dotenv to our app next, but if your app already has dotenv you can skip ahead to [Sync .env file](#sync-env-file).
 
-```bash {{ title: 'cURL' }}
-curl -G https://api.protocol.chat/v1/conversations \
-  -H "Authorization: Bearer {token}" \
-  -d limit=10
+Install dotenv. [source](https://github.com/motdotla/dotenv#-install)
+
+```
+# install locally (recommended)
+$ npm install dotenv --save
 ```
 
-```js
-import ApiClient from '@example/protocol-api'
+Create a `.env` file in the root of our project:
 
-const client = new ApiClient(token)
-
-await client.conversations.list()
+```
+PORT="3000"
+GREETING="Bonjour World"
 ```
 
-```python
-from protocol_api import ApiClient
+Modify index.js to use `require('dotenv').config()` and `process.env` environment variables.
 
-client = ApiClient(token)
+```javascript
+// index.js
+require('dotenv').config()
 
-client.conversations.list()
+const http = require('http')
+
+const hostname = '127.0.0.1'
+const port = process.env.PORT
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end(process.env.GREETING)
+})
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`)
+})
 ```
 
-```php
-$client = new \Protocol\ApiClient($token);
+Restart our web server.
 
-$client->conversations->list();
+```
+$ node index.js
 ```
 
-</CodeGroup>
+/assets/img/cloudinary/Screenshot_2023-04-01_at_8.15.30_AM_tjdju0.png
 
-<div className="not-prose">
-  <Button
-    href="/conversations"
-    variant="text"
-    arrow="right"
-    children="Read the docs for the Conversations endpoint"
-  />
-</div>
+Now it says 'Bonjour World'. Cool! We're ready to backup and sync our `.env` file.
 
-## What's next?
+## 🏆 Sync .env file
 
-Great, you're now set up with an API client and have made your first request to the API. Here are a few links that might be handy as you venture further into the Protocol API:
+Once we have a .env file, we are ready to start syncing it with [dotenv-vault](https://github.com/dotenv-org/dotenv-vault#usage). For this quickstart we'll demonstrate doing this for ourselves, but you can also sync across your team and your other machines.
 
-- [Grab your API key from the Protocol dashboard](#)
-- [Check out the Conversations endpoint](/conversations)
-- [Learn about the different error messages in Protocol](/errors)
+Usage is similar to git. Run the command:
+
+```
+$ npx dotenv-vault new
+```
+
+Follow those instructions and then run:
+
+```
+$ npx dotenv-vault login
+```
+
+Then run push and pull:
+
+```
+$ npx dotenv-vault push
+$ npx dotenv-vault pull
+```
+
+That's it! We synced our .env file.
+
+include helpers/videoplayer.html mp4="/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.mp4" webm="/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.webm" poster="/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.gif"
+
+## 🌴 Manage environments
+
+After we pushed our .env file, we can manage our secrets across multiple environments. Let's open the production environment to view and edit its environment variables. There is a fully built-in UI with dotenv-vault.
+
+```
+$ npx dotenv-vault open production
+```
+
+In the UI, we are going to delete the `PORT` environment variable. We will rely on Heroku to fill that on deploy. We'll edit the `GREETING` environment variable to "Hello Production" so that we can recognize it on deploy.
+
+include helpers/videoplayer.html mp4="/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.mp4" webm="/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.webm" poster="/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.gif"
+
+## 🚀 Deploy .env.vault
+
+Build our project's encrypted .env.vault file. It securely encrypts our secrets in a cloud-agnostic payload.
+
+#### 🔒 Build encrypted .env.vault
+
+```
+$ npx dotenv-vault build
+remote:   Securely building .env.vault... done
+```
+
+We then commit that safely to code.
+
+```
+$ git add .env.vault
+$ git commit -am "Build encrypted .env.vault file for deploy"
+```
+
+#### 🔑 Set DOTENV_KEY
+
+Let's fetch the production decryption key - the `DOTENV_KEY`.
+
+```
+$ npx dotenv-vault keys production
+remote:   Listing .env.vault decryption keys... done
+dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
+```
+
+Then let's set the `DOTENV_KEY` enviroment variable on Heroku.
+
+```
+$ heroku create
+$ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
+```
+
+#### 🔐 Upgrade dotenv
+
+We need to use the latest version of `dotenv` so that we can decrypt the .env.vault payload on deploy. Install [dotenv >= 16.1.0](https://github.com/motdotla/dotenv).
+
+```
+$ npm dotenv --save
+```
+
+```
+// index.js
+require('dotenv').config()
+...
+```
+
+Also let's edit our `package.json` to have a start script so that Heroku can boot our application at runtime.
+
+```json
+{
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "16.1.0"
+  }
+}
+```
+
+#### 🟣 Deploy to Heroku
+
+We're ready to deploy to heroku. Let's do it.
+
+```
+$ git push heroku
+```
+
+When the deploy completes, we'll see this line in the logs.
+
+```
+[dotenv@16.1.0][INFO] Loading env from encrypted .env.vault
+```
+
+That's it! The `DOTENV_KEY` securely decrypts our .env.vault file at runtime and injects our secret environment variables ‚Äì¬†just in time.
+
+This is safer than syncing our secrets to third-parties where they could leak. Plus we get a single source of truth. Make a change in the UI, run the build command, and redeploy. It's that simple to manage your secrets with dotenv-vault.
+
+include helpers/videoplayer.html mp4="/assets/img/cloudinary/deploy-encrypted-vault_shdiav.mp4" webm="/assets/img/cloudinary/deploy-encrypted-vault_shdiav.webm" poster="/assets/img/cloudinary/deploy-encrypted-vault_shdiav.gif"
