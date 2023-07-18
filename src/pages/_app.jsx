@@ -24,9 +24,9 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         {router.pathname === '/' ? (
-          <title>Protocol API Reference</title>
+          <title>Dotenv</title>
         ) : (
-          <title>{`${pageProps.title} - Protocol API Reference`}</title>
+          <title>{`${pageProps.title} | Dotenv`}</title>
         )}
         <meta name="description" content={pageProps.description} />
       </Head>

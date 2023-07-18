@@ -185,25 +185,16 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Guides',
+    title: 'Overview',
     links: [
       { title: 'Introduction', href: '/docs' },
       { title: 'Quickstart', href: '/docs/quickstart' },
-      { title: 'SDKs', href: '/docs/sdks' },
-      { title: 'Authentication', href: '/docs/authentication' },
-      { title: 'Pagination', href: '/docs/pagination' },
-      { title: 'Errors', href: '/docs/errors' },
-      { title: 'Webhooks', href: '/docs/webhooks' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'Sync',
     links: [
-      { title: 'Contacts', href: '/docs/contacts' },
-      { title: 'Conversations', href: '/docs/conversations' },
-      { title: 'Messages', href: '/docs/messages' },
-      { title: 'Groups', href: '/docs/groups' },
-      { title: 'Attachments', href: '/docs/attachments' },
+      { title: 'Quickstart', href: '/docs/sync/quickstart' },
     ],
   },
 ]
@@ -212,9 +203,7 @@ export function Navigation(props) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">API</TopLevelNavItem>
-        <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Support</TopLevelNavItem>
+        <TopLevelNavItem href="/support">Support</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
@@ -223,7 +212,7 @@ export function Navigation(props) {
           />
         ))}
         <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
-          <Button href="#" variant="filled" className="w-full">
+          <Button href="https://vault.dotenv.org" variant="filled" className="w-full">
             Sign in
           </Button>
         </li>
