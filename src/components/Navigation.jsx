@@ -197,6 +197,17 @@ export const navigation = [
       { title: 'Quickstart', href: '/docs/sync/quickstart' },
     ],
   },
+  {
+    title: 'Language Guides',
+    links: [
+      { title: 'Go', href: '/docs/languages/go' },
+      { title: 'Kotlin', href: '/docs/languages/kotlin' },
+      { title: 'Node.js', href: '/docs/languages/nodejs' },
+      { title: 'PHP', href: '/docs/languages/php' },
+      { title: 'Python', href: '/docs/languages/python' },
+      { title: 'Ruby', href: '/docs/languages/ruby' },
+    ],
+  },
 ]
 
 export function Navigation(props) {
