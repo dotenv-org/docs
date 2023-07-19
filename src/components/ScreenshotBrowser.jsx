@@ -1,6 +1,6 @@
 export function ScreenshotBrowser(props) {
   return (
-    <div className="w-full mx-auto p-7 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md">
+    <div className="w-full p-7 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md">
       <div className="border border-zinc-300 dark:border-zinc-800 text-zinc-100 text-sm subpixel-antialiased rounded-lg leading-normal overflow-hidden shadow-lg">
         <div className="p-0 bg-zinc-200 dark:bg-black border-b border-zinc-300 dark:border-zinc-800">
           <div class="flex py-1 px-2">
