@@ -208,6 +208,22 @@ export const navigation = [
       { title: 'Ruby', href: '/docs/languages/ruby' },
     ],
   },
+  {
+    title: 'Node.js Guides',
+    links: [
+      { title: 'Overview', href: '/docs/languages/nodejs' },
+      { title: 'Digital Ocean', href: '/docs/languages/nodejs/digital-ocean' },
+      { title: 'Docker', href: '/docs/languages/nodejs/docker' },
+      { title: 'Fly.io', href: '/docs/languages/nodejs/fly' },
+      { title: 'GitHub Actions', href: '/docs/languages/nodejs/github-actions' },
+      { title: 'Heroku', href: '/docs/languages/nodejs/heroku' },
+      { title: 'Netlify', href: '/docs/languages/nodejs/netlify' },
+      { title: 'Railway', href: '/docs/languages/nodejs/railway' },
+      { title: 'Render', href: '/docs/languages/nodejs/render' },
+      { title: 'Vercel', href: '/docs/languages/nodejs/vercel' },
+    ],
+  },
+
 ]
 
 export function Navigation(props) {
