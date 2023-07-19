@@ -2,20 +2,20 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
 export const description = 
-  'Deploy a Node.js app with an encrypted .env.vault file to Digital Ocean.'
+  'Deploy a Node.js app with an encrypted .env.vault file on Docker.'
 
 ##### Language Guides
-# Deploy a Node.js App to Digital Ocean
+# Deploy a Node.js App with Docker
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/digital-ocean">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/docker">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
 Create an `index.js` file, if you haven't already done so.
 
-```js {{ title: 'index.js' }}
+```js {{ title: "index.js" }}
 // index.js
 const PORT = process.env.PORT || 3000
 const http = require('http')
@@ -30,34 +30,57 @@ server.listen(PORT, () => {
 })
 ```
 
-Commit that to code and deploy it to Digital Ocean.
+Add `package.json` file.
 
-<Note>
-  **Fork in the road!** Deploying to Digital Ocean takes more steps than we want to document here. Follow their <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04">guide to deploying a Node.js app to Digital Ocean</a> and then return to this page.
-</Note>
+```js {{ title: "package.json" }}
+{
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+```
 
-<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp.com on digital ocean" />
+Add a `Dockerfile`.
 
-Once deployed, your app will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+```shell {{ title: "Dockerfile" }}
+# Dockerfile
+FROM node:16
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD node index.js
+```
+
+Commit that to code and build it locally with Docker.
+
+```shell {{ title: "cli" }}
+docker build -t docker-nodejs . && docker run --rm -it -p 3000:3000 --init docker-nodejs
+```
+
+<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp running on docker" />
+
+Once built, your app will say `'Hello undefined'` at [localhost:3000](http://localhost:3000) as it doesn’t have a way to access the environment variable yet. Let’s do that next.
 
 ## Install dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'CLI' }}
+```shell {{ title: "cli" }}
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
 Create a `.env` file in the root of your project.
 
-```shell {{ title: '.env' }}
+```shell {{ title: ".env" }}
 # .env
 HELLO="World"
 ```
 
 As early as possible in your application, import and configure dotenv.
 
-```js {{ title: 'index.js' }}
+```js {{ title: "index.js" }}
 // index.js
 require('dotenv').config()
 console.log(process.env) // remove this after you've confirmed it is working
@@ -67,10 +90,10 @@ const http = require('http')
 ...
 ```
 
-Try running it locally.
+Try rebuilding it locally.
 
-```shell {{ title: 'cli' }}
-node index.js
+```shell {{ title: "cli" }}
+docker build -t docker-nodejs . && docker run --rm -it -p 3000:3000 --init docker-nodejs
 {
   ...
   HELLO: 'World'
@@ -80,7 +103,7 @@ Server running on port:3000/
 
 Perfect. `process.env` now has the keys and values you defined in your `.env` file.
 
-That covers local development. Let's solve for production next.
+That covers the local development build. Let's solve for production next.
 
 ## Build .env.vault
 
@@ -122,23 +145,28 @@ DOTENV_VAULT_PRODUCTION_VERSION=2
 
 Fetch your production `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell {{ title: "cli" }}
 npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
-Set `DOTENV_KEY` on Digital Ocean.
+Set `DOTENV_KEY` for Docker run.
 
-<ScreenshotBrowser url="/assets/img/docs/digitalocean-vars.png" www="digitalocean.com" />
+```shell {{ title: "cli" }}
+docker build -t docker-nodejs . && docker run -e DOTENV_KEY="dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production" --rm -it -p 3000:3000 --init docker-nodejs
+```
+<div class="alert alert-info" role="alert">
+The important part here is the `-e` flag. <a href="https://docs.docker.com/engine/reference/run/#env-environment-variables">See docker environment variables</a> for more information.
+</div>
 
-## Deploy
+## Run Docker
 
-Commit those changes safely to code and deploy.
+Commit those changes safely to code and run on Docker.
 
-That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
+That's it! On build and run, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/cloudinary/dotenv_vault_digital_ocean_logs_encrypted_loading_env_vault_qcx4yp.png" www="digitalocean.com logs" />
+<ScreenshotBrowser url="/assets/img/docs/docker-logs-vault.png" www="docker build -t && docker run -e" />
 
-<WellDone/>
+<WellDone />

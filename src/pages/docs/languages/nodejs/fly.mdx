@@ -2,20 +2,21 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
 export const description = 
-  'Deploy a Node.js app with an encrypted .env.vault file to Digital Ocean.'
+  'Deploy a Node.js app with an encrypted .env.vault file to Fly.io.'
 
 ##### Language Guides
-# Deploy a Node.js App to Digital Ocean
+# Deploy a Node.js App to Fly.io
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/digital-ocean">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/fly">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
 Create an `index.js` file, if you haven't already done so.
 
-```js {{ title: 'index.js' }}
+##### index.js
+```js
 // index.js
 const PORT = process.env.PORT || 3000
 const http = require('http')
@@ -30,34 +31,54 @@ server.listen(PORT, () => {
 })
 ```
 
-Commit that to code and deploy it to Digital Ocean.
+Create a `package.json` file.
+
+##### package.json
+```json
+{
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+```
+
+Commit that to code and deploy it to Fly.
+
+##### CLI
+```shell
+brew install flyctl
+flyctl launch
+flyctl deploy --remote-only --no-cache
+```
 
 <Note>
-  **Fork in the road!** Deploying to Digital Ocean takes more steps than we want to document here. Follow their <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04">guide to deploying a Node.js app to Digital Ocean</a> and then return to this page.
+  **Fly.io bug:** While writing this guide we ran into the error "failed to fetch an image or build from source: error building: ... node:20.4.0-slim: docker.io/library/node:20.4.0-slim: not found". If you also experience this set **NODE_VERSION=18.16.1** in your Dockerfile and redeploy.
 </Note>
 
-<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp.com on digital ocean" />
-
 Once deployed, your app will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+
 
 ## Install dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'CLI' }}
+##### CLI
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
 Create a `.env` file in the root of your project.
 
-```shell {{ title: '.env' }}
+##### .env
+```shell
 # .env
 HELLO="World"
 ```
 
 As early as possible in your application, import and configure dotenv.
 
-```js {{ title: 'index.js' }}
+##### index.js
+```js
 // index.js
 require('dotenv').config()
 console.log(process.env) // remove this after you've confirmed it is working
@@ -69,7 +90,8 @@ const http = require('http')
 
 Try running it locally.
 
-```shell {{ title: 'cli' }}
+##### CLI
+```shell
 node index.js
 {
   ...
@@ -118,18 +140,24 @@ DOTENV_VAULT_PRODUCTION="x26PuIKQ/xZ5eKrYomKngM+dO/9v1vxhwslE/zjHdg3l+H6q6PheB5G
 DOTENV_VAULT_PRODUCTION_VERSION=2
 ```
 
+
+
 ## Set DOTENV_KEY
 
 Fetch your production `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+##### CLI
+```shell
 npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
-Set `DOTENV_KEY` on Digital Ocean.
+Set `DOTENV_KEY` on Fly.io.
 
-<ScreenshotBrowser url="/assets/img/docs/digitalocean-vars.png" www="digitalocean.com" />
+##### CLI
+```shell
+flyctl secrets set NODE_ENV=production DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
+```
 
 ## Deploy
 
@@ -139,6 +167,6 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/cloudinary/dotenv_vault_digital_ocean_logs_encrypted_loading_env_vault_qcx4yp.png" www="digitalocean.com logs" />
+<ScreenshotBrowser url="/assets/img/docs/fly-logs-vault.png" www="flyctl logs" />
 
 <WellDone/>

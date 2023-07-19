@@ -2,13 +2,13 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
 export const description = 
-  'Deploy a Node.js app with an encrypted .env.vault file to Digital Ocean.'
+  'Deploy a Node.js app with an encrypted .env.vault file to Render.'
 
 ##### Language Guides
-# Deploy a Node.js App to Digital Ocean
+# Deploy a Node.js App to Render
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/digital-ocean">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/render">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
@@ -30,13 +30,23 @@ server.listen(PORT, () => {
 })
 ```
 
-Commit that to code and deploy it to Digital Ocean.
+Create a `package.json` file.
+
+```json {{ title: 'package.json' }}
+{
+  "scripts": {
+    "start": "node index.js"
+  }
+}
+```
+
+Commit that to code and deploy to Render.
 
 <Note>
-  **Fork in the road!** Deploying to Digital Ocean takes more steps than we want to document here. Follow their <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04">guide to deploying a Node.js app to Digital Ocean</a> and then return to this page.
+  **Fork in the road!** Deploying to Render takes more steps than we want to document here. Follow their <a href="https://render.com/docs/deploy-node-express-app">guide to deploying a Node.js Express app to Render</a> and then return to this page.
 </Note>
 
-<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp.com on digital ocean" />
+<ScreenshotBrowser url='/assets/img/docs/hello-undefined.png' www='yourapp.onrender.com' />
 
 Once deployed, your app will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
@@ -44,7 +54,7 @@ Once deployed, your app will say `'Hello undefined'` as it doesn't have a way to
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'CLI' }}
+```shell {{ title: 'cli' }}
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -127,9 +137,9 @@ npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
-Set `DOTENV_KEY` on Digital Ocean.
+Set `DOTENV_KEY` on Render.
 
-<ScreenshotBrowser url="/assets/img/docs/digitalocean-vars.png" www="digitalocean.com" />
+<ScreenshotBrowser url="/assets/img/docs/render-config-vars.png" />
 
 ## Deploy
 
@@ -139,6 +149,6 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/cloudinary/dotenv_vault_digital_ocean_logs_encrypted_loading_env_vault_qcx4yp.png" www="digitalocean.com logs" />
+<ScreenshotBrowser url="/assets/img/docs/render-logs-vault.png" www="render logs" />
 
-<WellDone/>
+<WellDone />
