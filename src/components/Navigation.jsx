@@ -223,6 +223,19 @@ export const navigation = [
       { title: 'Vercel', href: '/docs/languages/nodejs/vercel' },
     ],
   },
+  {
+    title: 'Add-ons',
+    links: [
+      { title: 'External Share', href: '/docs/addons/external' },
+      { title: 'GitHub Build', href: '/docs/addons/github' },
+      { title: 'Slack Notifications', href: '/docs/addons/slack' },
+      { title: 'Sync to AWS Parameter Store', href: '/docs/addons/aws-parameter-store' },
+      { title: 'Sync to AWS Secrets', href: '/docs/addons/aws-secrets' },
+      { title: 'Sync to Heroku', href: '/docs/addons/heroku' },
+      { title: 'Sync to Vercel', href: '/docs/addons/vercel' },
+    ],
+  },
+
 
 ]
 

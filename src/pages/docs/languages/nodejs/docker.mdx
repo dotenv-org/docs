@@ -155,9 +155,10 @@ Set `DOTENV_KEY` for Docker run.
 ```shell {{ title: "cli" }}
 docker build -t docker-nodejs . && docker run -e DOTENV_KEY="dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production" --rm -it -p 3000:3000 --init docker-nodejs
 ```
-<div class="alert alert-info" role="alert">
-The important part here is the `-e` flag. <a href="https://docs.docker.com/engine/reference/run/#env-environment-variables">See docker environment variables</a> for more information.
-</div>
+
+<Note>
+  The important part here is the `-e` flag. <a href="https://docs.docker.com/engine/reference/run/#env-environment-variables">See docker environment variables</a> for more information.
+</Note>
 
 ## Run Docker
 

@@ -57,9 +57,9 @@ heroku config:set DOTENV_KEY=<key string from .env.keys>
 
 Commit your .env.vault file safely to code and deploy. Your .env.vault fill be decrypted on boot, its environment variables injected, and your app work as expected.
 
-<div class="alert alert-warning" markdown="1">
-ⓘ When the `DOTENV_KEY` environment variable is set, environment settings will *always* be loaded from the `.env.vault` file in the project root. For development use, you can leave the `DOTENV_KEY` environment variable unset and fall back on the `dotenv` behaviour of loading from `.env`.
-</div>
+<Note>
+  ⓘ When the `DOTENV_KEY` environment variable is set, environment settings will *always* be loaded from the `.env.vault` file in the project root. For development use, you can leave the `DOTENV_KEY` environment variable unset and fall back on the `dotenv` behaviour of loading from `.env`.
+</Note>
 
 ## 🌴 Manage Multiple Environments
 
