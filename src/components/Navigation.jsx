@@ -224,6 +224,24 @@ export const navigation = [
     ],
   },
   {
+    title: 'dotenv-vault cli',
+    links: [
+      { title: 'new', href: '/docs/dotenv-vault/new' },
+      { title: 'login', href: '/docs/dotenv-vault/login' },
+      { title: 'logout', href: '/docs/dotenv-vault/logout' },
+      { title: 'open', href: '/docs/dotenv-vault/open' },
+      { title: 'push', href: '/docs/dotenv-vault/push' },
+      { title: 'pull', href: '/docs/dotenv-vault/pull' },
+      { title: 'build', href: '/docs/dotenv-vault/build' },
+      { title: 'keys', href: '/docs/dotenv-vault/keys' },
+      { title: 'rotatekey', href: '/docs/dotenv-vault/rotatekey' },
+      { title: 'versions', href: '/docs/dotenv-vault/versions' },
+      { title: 'whoami', href: '/docs/dotenv-vault/whoami' },
+      { title: 'status', href: '/docs/dotenv-vault/status' },
+      { title: 'help', href: '/docs/dotenv-vault/help' },
+    ],
+  },
+  {
     title: 'Add-ons',
     links: [
       { title: 'External Share', href: '/docs/addons/external' },
