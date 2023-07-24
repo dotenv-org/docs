@@ -10,27 +10,27 @@ In this guide, we'll deploy an application with secrets to Heroku. We'll create 
 
 We're using Heroku for this quickstart because it is the easiest to demo (in the least amount of your time), but any hosting platform will work.
 
-## 🌱 Create our app
+## Create our app
 
 We'll create a Node application for this guide, but you can follow along with your own application in any language or framework.
 
 Set up the app's containing folder.
 
-```
+```shell
 $ mkdir hello-world
 $ cd hello-world
 ```
 
 Create the file that will house the code.
 
-```
+```shell
 $ touch index.js
 $ nano index.js
 ```
 
 Write the code to build our hello-world web server. [source](https://nodejs.org/en/docs/guides/getting-started-guide)
 
-```javascript
+```javascript {{ title: 'index.js' }}
 // index.js
 const http = require('http')
 
@@ -50,7 +50,7 @@ server.listen(port, hostname, () => {
 
 Run our web server.
 
-```
+```shell
 $ node index.js
 ```
 
@@ -60,27 +60,27 @@ Visit [localhost:3000](http://localhost:3000) and you will see "Hello World".
 
 Next, let's use [dotenv](https://github.com/motdotla/dotenv) to customize the port and greeting.
 
-## 🟨 Require dotenv
+## Require dotenv
 
 We'll add dotenv to our app next, but if your app already has dotenv you can skip ahead to [Sync .env file](#sync-env-file).
 
 Install dotenv. [source](https://github.com/motdotla/dotenv#-install)
 
-```
+```shell
 # install locally (recommended)
 $ npm install dotenv --save
 ```
 
 Create a `.env` file in the root of our project:
 
-```
+```shell {{ title: '.env' }}
 PORT="3000"
 GREETING="Bonjour World"
 ```
 
 Modify index.js to use `require('dotenv').config()` and `process.env` environment variables.
 
-```javascript
+```javascript {{ title: 'index.js' }}
 // index.js
 require('dotenv').config()
 
@@ -110,25 +110,25 @@ $ node index.js
 
 Now it says 'Bonjour World'. Cool! We're ready to backup and sync our `.env` file.
 
-## 🏆 Sync .env file
+## Sync .env file
 
 Once we have a .env file, we are ready to start syncing it with [dotenv-vault](https://github.com/dotenv-org/dotenv-vault#usage). For this quickstart we'll demonstrate doing this for ourselves, but you can also sync across your team and your other machines.
 
 Usage is similar to git. Run the command:
 
-```
+```shell
 $ npx dotenv-vault new
 ```
 
 Follow those instructions and then run:
 
-```
+```shell
 $ npx dotenv-vault login
 ```
 
 Then run push and pull:
 
-```
+```shell
 $ npx dotenv-vault push
 $ npx dotenv-vault pull
 ```
@@ -139,11 +139,11 @@ That's it! We synced our .env file.
   mp4='/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.mp4'
   webm='/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.webm'/>
 
-## 🌴 Manage environments
+## Manage environments
 
 After we pushed our .env file, we can manage our secrets across multiple environments. Let's open the production environment to view and edit its environment variables. There is a fully built-in UI with dotenv-vault.
 
-```
+```shell
 $ npx dotenv-vault open production
 ```
 
@@ -153,20 +153,20 @@ In the UI, we are going to delete the `PORT` environment variable. We will rely 
   mp4='/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.mp4'
   webm='/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.webm'/>
 
-## 🚀 Deploy .env.vault
+## Deploy .env.vault
 
 Build our project's encrypted .env.vault file. It securely encrypts our secrets in a cloud-agnostic payload.
 
 #### 🔒 Build encrypted .env.vault
 
-```
+```shell
 $ npx dotenv-vault build
 remote:   Securely building .env.vault... done
 ```
 
 We then commit that safely to code.
 
-```
+```shell
 $ git add .env.vault
 $ git commit -am "Build encrypted .env.vault file for deploy"
 ```
@@ -175,7 +175,7 @@ $ git commit -am "Build encrypted .env.vault file for deploy"
 
 Let's fetch the production decryption key - the `DOTENV_KEY`.
 
-```
+```shell
 $ npx dotenv-vault keys production
 remote:   Listing .env.vault decryption keys... done
 dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
@@ -183,12 +183,12 @@ dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 
 Then let's set the `DOTENV_KEY` enviroment variable on Heroku.
 
-```
+```shell
 $ heroku create
 $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
 ```
 
-#### 🔐 Upgrade dotenv
+#### Upgrade dotenv
 
 We need to use the latest version of `dotenv` so that we can decrypt the .env.vault payload on deploy. Install [dotenv >= 16.1.0](https://github.com/motdotla/dotenv).
 
@@ -196,7 +196,7 @@ We need to use the latest version of `dotenv` so that we can decrypt the .env.va
 $ npm dotenv --save
 ```
 
-```
+```js {{title: 'index.js'}}
 // index.js
 require('dotenv').config()
 ...
@@ -204,7 +204,7 @@ require('dotenv').config()
 
 Also let's edit our `package.json` to have a start script so that Heroku can boot our application at runtime.
 
-```json
+```json {{ title: 'package.json' }}
 {
   "scripts": {
     "start": "node index.js"
@@ -215,17 +215,17 @@ Also let's edit our `package.json` to have a start script so that Heroku can boo
 }
 ```
 
-#### 🟣 Deploy to Heroku
+#### Deploy to Heroku
 
 We're ready to deploy to heroku. Let's do it.
 
-```
+```shell
 $ git push heroku
 ```
 
 When the deploy completes, we'll see this line in the logs.
 
-```
+```shell
 [dotenv@16.1.0][INFO] Loading env from encrypted .env.vault
 ```
 

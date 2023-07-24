@@ -189,6 +189,9 @@ export const navigation = [
     links: [
       { title: 'Introduction', href: '/docs' },
       { title: 'Quickstart', href: '/docs/quickstart' },
+      { title: 'CLI', href: '/docs/dotenv-vault' },
+      { title: 'Languages', href: '/docs/languages' },
+      { title: 'VSCode', href: 'https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode' },
     ],
   },
   {
@@ -224,8 +227,9 @@ export const navigation = [
     ],
   },
   {
-    title: 'dotenv-vault cli',
+    title: 'CLI',
     links: [
+      { title: 'Overview', href: '/docs/dotenv-vault' },
       { title: 'new', href: '/docs/dotenv-vault/new' },
       { title: 'login', href: '/docs/dotenv-vault/login' },
       { title: 'logout', href: '/docs/dotenv-vault/logout' },
