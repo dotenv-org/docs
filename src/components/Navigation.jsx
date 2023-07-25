@@ -188,27 +188,21 @@ export const navigation = [
     title: 'Overview',
     links: [
       { title: 'Introduction', href: '/docs' },
+      { title: 'Start', href: '/docs/start' },
       { title: 'Quickstart', href: '/docs/quickstart' },
       { title: 'CLI', href: '/docs/dotenv-vault' },
-      { title: 'Languages', href: '/docs/languages' },
-      { title: 'VSCode', href: 'https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode' },
+      { title: 'Addons', href: '/docs/addons' },
     ],
   },
   {
-    title: 'Sync',
+    title: 'Languages',
     links: [
-      { title: 'Quickstart', href: '/docs/sync/quickstart' },
-    ],
-  },
-  {
-    title: 'Language Guides',
-    links: [
-      { title: 'Go', href: '/docs/languages/go' },
-      { title: 'Kotlin', href: '/docs/languages/kotlin' },
       { title: 'Node.js', href: '/docs/languages/nodejs' },
-      { title: 'PHP', href: '/docs/languages/php' },
       { title: 'Python', href: '/docs/languages/python' },
       { title: 'Ruby', href: '/docs/languages/ruby' },
+      { title: 'PHP', href: '/docs/languages/php' },
+      { title: 'Go', href: '/docs/languages/go' },
+      { title: 'Kotlin', href: '/docs/languages/kotlin' },
     ],
   },
   {
@@ -248,6 +242,8 @@ export const navigation = [
   {
     title: 'Add-ons',
     links: [
+      { title: 'Overview', href: '/docs/addons' },
+      { title: 'VSCode', href: 'https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode' },
       { title: 'External Share', href: '/docs/addons/external' },
       { title: 'GitHub Build', href: '/docs/addons/github' },
       { title: 'Slack Notifications', href: '/docs/addons/slack' },
