@@ -189,8 +189,8 @@ export const navigation = [
     links: [
       { title: 'Introduction', href: '/docs' },
       { title: 'Start', href: '/docs/start' },
-      { title: 'Quickstart', href: '/docs/quickstart' },
       { title: 'CLI', href: '/docs/dotenv-vault' },
+      { title: 'Security', href: '/docs/security' },
       { title: 'Addons', href: '/docs/addons' },
     ],
   },
@@ -237,6 +237,18 @@ export const navigation = [
       { title: 'whoami', href: '/docs/dotenv-vault/whoami' },
       { title: 'status', href: '/docs/dotenv-vault/status' },
       { title: 'help', href: '/docs/dotenv-vault/help' },
+    ],
+  },
+  {
+    title: 'Security',
+    links: [
+      { title: 'Overview', href: '/docs/security' },
+      { title: '.env', href: '/docs/security/env' },
+      { title: '.env.vault', href: '/docs/security/env-vault' },
+      { title: '.env.me', href: '/docs/security/env-me' },
+      { title: 'DOTENV_KEY', href: '/docs/security/dotenv-key' },
+      { title: 'IT Tokens', href: '/docs/security/env-it' },
+      { title: 'Vault', href: '/docs/security/vault' },
     ],
   },
   {
