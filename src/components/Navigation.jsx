@@ -265,8 +265,16 @@ export const navigation = [
       { title: 'Sync to Vercel', href: '/docs/addons/vercel' },
     ],
   },
-
-
+  {
+    title: 'Tutorials',
+    links: [
+      { title: 'Sync .env files', href: '/docs/tutorials/sync' },
+      { title: 'Manage environments', href: '/docs/tutorials/environments' },
+      { title: 'Integrate everywhere', href: '/docs/tutorials/integrations' },
+      { title: 'Adding teammates', href: '/docs/tutorials/teammates' },
+      { title: 'Managing access', href: '/docs/tutorials/access' },
+    ]
+  },
 ]
 
 export function Navigation(props) {
