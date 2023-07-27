@@ -9,6 +9,7 @@ import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
+import { TravisCiIcon } from '@/components/icons/TravisCiIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 import { NextIcon } from '@/components/icons/NextIcon'
@@ -185,9 +186,19 @@ You can jump straight into a quickstart example using Node.js and Heroku or scro
           GitHub Actions
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with GitHub Actions</p>
-        <p className="mt-4"><Button href="/docs/languages/nodejs/" variant="text" arrow="right">Start</Button></p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Start</Button></p>
       </div>
       <GitHubIcon class="h-9 w-9 text-[#181717] dark:invert"/>
+    </div>
+    <div key="travis-ci" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Travis CI
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Travis CI</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/travis-ci" variant="text" arrow="right">Start</Button></p>
+      </div>
+      <TravisCiIcon class="h-9 w-9 text-[#3EAAAF]"/>
     </div>
   </div>
 </div>
