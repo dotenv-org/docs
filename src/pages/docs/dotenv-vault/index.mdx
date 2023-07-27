@@ -8,22 +8,23 @@ import { KeyIcon } from '@/components/icons/KeyIcon'
 import { PencilSquareIcon } from '@/components/icons/PencilSquareIcon'
 
 export const description =
-  'Sync, encrypt, and deploy your secrets with the dotenv-vault cli.'
+  'Sync, manage, and deploy your secrets with the dotenv-vault cli.'
 
 export const sections = [
   { title: 'Commands', id: 'commands' },
   { title: 'More commands', id: 'more-commands' },
 ]
 
+##### dotenv-vault
 # CLI
 
-Generate your env vault for your project. Then securely push and pull secrets across teams, machines, and environments. Finally deploy with modern encryption using a .env.vault file. {{ className: 'lead' }}
+Generate your env vault for your project. Then securely sync and deploy secrets across teams, machines, and environments. {{ className: 'lead' }}
 
 <div className="my-16 xl:max-w-none">
-  <Heading level={2} id="commands">
+  <Heading level={2} id="commands" className="hidden">
     Commands
   </Heading>
-  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+  <div className="not-prose mt-0 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
     <div key="New" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">

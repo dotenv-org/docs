@@ -185,10 +185,10 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Overview',
+    title: 'Documentation',
     links: [
       { title: 'Introduction', href: '/docs' },
-      { title: 'Start', href: '/docs/start' },
+      { title: 'Quickstart', href: '/docs/quickstart' },
       { title: 'CLI', href: '/docs/dotenv-vault' },
       { title: 'Security', href: '/docs/security' },
       { title: 'Addons', href: '/docs/addons' },

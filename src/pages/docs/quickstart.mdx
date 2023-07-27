@@ -3,7 +3,7 @@ import { Video } from '@/components/Video'
 export const description =
   'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
 
-##### [Start](/docs/start)
+##### dotenv-vault
 # Quickstart ⚡️
 
 In this guide, we'll deploy an application with secrets to Heroku. We'll create the app, load and sync its secrets, and deploy it using the .env.vault file. A quick skim over this tutorial, and you'll understand all the foundational concepts of using dotenv-vault.
@@ -157,7 +157,7 @@ In the UI, we are going to delete the `PORT` environment variable. We will rely 
 
 Build our project's encrypted .env.vault file. It securely encrypts our secrets in a cloud-agnostic payload.
 
-#### 🔒 Build encrypted .env.vault
+### 🔒 Build encrypted .env.vault
 
 ```shell
 $ npx dotenv-vault build
@@ -171,7 +171,7 @@ $ git add .env.vault
 $ git commit -am "Build encrypted .env.vault file for deploy"
 ```
 
-#### 🔑 Set DOTENV_KEY
+### 🔑 Set DOTENV_KEY
 
 Let's fetch the production decryption key - the `DOTENV_KEY`.
 
@@ -188,7 +188,7 @@ $ heroku create
 $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
 ```
 
-#### Upgrade dotenv
+### Upgrade dotenv
 
 We need to use the latest version of `dotenv` so that we can decrypt the .env.vault payload on deploy. Install [dotenv >= 16.1.0](https://github.com/motdotla/dotenv).
 
@@ -215,7 +215,7 @@ Also let's edit our `package.json` to have a start script so that Heroku can boo
 }
 ```
 
-#### Deploy to Heroku
+### Deploy to Heroku
 
 We're ready to deploy to heroku. Let's do it.
 
