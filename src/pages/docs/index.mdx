@@ -6,6 +6,7 @@ import { NodeIcon } from '@/components/icons/NodeIcon'
 import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
 import { PhpIcon } from '@/components/icons/PhpIcon'
+import { GoIcon } from '@/components/icons/GoIcon'
 
 import { Frameworks } from '@/components/Frameworks'
 import { Platforms } from '@/components/Platforms'
@@ -74,7 +75,7 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
           Node.js
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Node.js</p>
-        <p className="mt-4"><Button href="/docs/start/nodejs" variant="text" arrow="right">Start</Button></p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs" variant="text" arrow="right">Start</Button></p>
       </div>
       <NodeIcon class="h-9 w-9 text-[#339933]"/>
     </div>
@@ -84,7 +85,7 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
           Python
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Python</p>
-        <p className="mt-4"><Button href="/docs/start/python" variant="text" arrow="right">Start</Button></p>
+        <p className="mt-4"><Button href="/docs/languages/python" variant="text" arrow="right">Start</Button></p>
       </div>
       <PythonIcon class="h-9 w-9 text-[#3776AB]"/>
     </div>
@@ -94,7 +95,7 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
           Ruby
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Ruby</p>
-        <p className="mt-4"><Button href="/docs/start/ruby" variant="text" arrow="right">Start</Button></p>
+        <p className="mt-4"><Button href="/docs/languages/ruby" variant="text" arrow="right">Start</Button></p>
       </div>
       <RubyIcon class="h-9 w-9 text-[#CC342D]"/>
     </div>
@@ -104,10 +105,21 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
           PHP
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with PHP</p>
-        <p className="mt-4"><Button href="/docs/start/php" variant="text" arrow="right">Start</Button></p>
+        <p className="mt-4"><Button href="/docs/languages/php" variant="text" arrow="right">Start</Button></p>
       </div>
       <PhpIcon class="h-10 w-10 text-[#6181B6]"/>
     </div>
+    <div key="go" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Go
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Go</p>
+        <p className="mt-4"><Button href="/docs/languages/go" variant="text" arrow="right">Start</Button></p>
+      </div>
+      <GoIcon class="h-10 w-10 text-[#00ADD8]"/>
+    </div>
+
   </div>
 </div>
 
