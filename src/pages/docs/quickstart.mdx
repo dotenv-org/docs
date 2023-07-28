@@ -29,6 +29,12 @@ bundle init
 bundle add sinatra puma dotenv-vault
 ```
 
+```bash {{ title: "Go" }}
+go mod init hello-world
+go get github.com/labstack/echo/v4
+go get github.com/dotenv-org/godotenvvault
+```
+
 </CodeGroup>
 
 Write the application code.
@@ -78,6 +84,37 @@ get "/" do
 end
 ```
 
+```go {{ title: "Go" }}
+// index.go
+package main
+
+import (
+    "net/http"
+    "log"
+    "os"
+
+    "github.com/labstack/echo/v4"
+    "github.com/dotenv-org/godotenvvault"
+)
+
+func main() {
+    err := godotenvvault.Load()
+    if err != nil {
+      log.Fatal("Error loading .env file")
+    }
+
+    hello := os.Getenv("HELLO")
+    output := "Hello " + hello
+
+    e := echo.New()
+    e.GET("/", func(c echo.Context) error {
+        return c.String(http.StatusOK, output)
+    })
+    e.Logger.Fatal(e.Start(":1323"))
+}
+```
+
+
 </CodeGroup>
 
 Create your `.env` file.
@@ -105,6 +142,12 @@ flask --app index run
 ruby index.rb
 # visit http://localhost:4567
 ```
+
+```bash {{ title: 'Go' }}
+go run index.go
+# visit http://localhost:1323
+```
+
 
 </CodeGroup>
 
@@ -190,6 +233,12 @@ DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=productio
 # visit http://localhost:4567
 ```
 
+```bash {{ title: "Go" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' go run index.go
+# visit http://localhost:1323
+```
+
+
 </CodeGroup>
 
 <ScreenshotBrowser url='/assets/img/docs/hello-production.png'/>
@@ -214,6 +263,12 @@ INFO:dotenv_vault.main:Loading env from encrypted .env.vault
 $ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environment=production' ruby index.rb
 INFO -- : [dotenv-vault] Loading env from encrypted .env.vault
 == Sinatra (v3.0.6) has taken the stage on 4567 for development with backup from Puma
+```
+
+```bash {{ title: "Go" }}
+$ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environment=production' go run index.go
+[dotenv-vault] Loading env from encrypted .env.vault
+⇨ http server started on [::]:1323
 ```
 
 </CodeGroup>
