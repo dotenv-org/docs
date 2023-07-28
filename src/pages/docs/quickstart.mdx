@@ -1,4 +1,5 @@
 import { Video } from '@/components/Video'
+import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
 export const description =
   'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
@@ -6,233 +7,236 @@ export const description =
 ##### dotenv-vault
 # Quickstart ⚡️
 
-In this guide, we'll deploy an application with secrets to Heroku. We'll create the app, load and sync its secrets, and deploy it using the .env.vault file. A quick skim over this tutorial, and you'll understand all the foundational concepts of using dotenv-vault.
+Sync, manage, and deploy your secrets the dotenv-vault way using this quickstart guide. {{ className: 'lead' }}
 
-We're using Heroku for this quickstart because it is the easiest to demo (in the least amount of your time), but any hosting platform will work.
+## Initial setup
 
-## Create our app
+Install the necessary libraries for your application in the language of your choice.
 
-We'll create a Node application for this guide, but you can follow along with your own application in any language or framework.
+<CodeGroup>
 
-Set up the app's containing folder.
-
-```shell
-$ mkdir hello-world
-$ cd hello-world
+```bash {{ title: "Node.js" }}
+npm init
+npm install express express dotenv --save
 ```
 
-Create the file that will house the code.
-
-```shell
-$ touch index.js
-$ nano index.js
+```bash {{ title: "Python" }}
+pip install flask python-dotenv-vault
 ```
 
-Write the code to build our hello-world web server. [source](https://nodejs.org/en/docs/guides/getting-started-guide)
+```bash {{ title: "Ruby" }}
+bundle init
+bundle add sinatra puma dotenv-vault
+```
 
-```javascript {{ title: 'index.js' }}
+</CodeGroup>
+
+Write the application code.
+
+<CodeGroup>
+
+```js {{ title: "Node.js" }}
 // index.js
-const http = require('http')
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3000
 
-const hostname = '127.0.0.1'
-const port = 3000
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end('Hello World')
+app.get('/', (req, res) => {
+  res.send(`Hello ${process.env.HELLO}`)
 })
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
 ```
 
-Run our web server.
+```python {{ title: "Python" }}
+// index.py
+import os
 
-```shell
-$ node index.js
+from dotenv_vault import load_dotenv
+load_dotenv()
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+  hello = os.getenv("HELLO")
+  return f"Hello {hello}"
 ```
+
+```ruby {{ title: "Ruby" }}
+# index.rb
+require "dotenv-vault/load"
+require "sinatra"
+
+get "/" do
+  "Hello #{ENV["HELLO"]}"
+end
+```
+
+</CodeGroup>
+
+Create your `.env` file.
+
+```bash {{ title: '.env' }}
+# .env
+HELLO="World"
+```
+
+Run your application.
+
+<CodeGroup>
+
+```bash {{ title: 'Node.js' }}
+node index.js
+# visit http://localhost:3000
+```
+
+```bash {{ title: 'Python' }}
+flask --app index run
+# visit http://127.0.0.1:5000
+```
+
+```bash {{ title: 'Ruby' }}
+ruby index.rb
+# visit http://localhost:4567
+```
+
+</CodeGroup>
 
 Visit [localhost:3000](http://localhost:3000) and you will see "Hello World".
 
-![](/assets/img/cloudinary/Screenshot_2023-04-01_at_7.55.10_AM_wyu6en.png)
+<ScreenshotBrowser url='/assets/img/docs/nextjs-hello-world.png'/>
 
-Next, let's use [dotenv](https://github.com/motdotla/dotenv) to customize the port and greeting.
+Next, sync your `.env` file.
 
-## Require dotenv
+## Sync
 
-We'll add dotenv to our app next, but if your app already has dotenv you can skip ahead to [Sync .env file](#sync-env-file).
+Push and pull changes to your `.env` file. Begin by creating your project's env vault and authenticating against it.
 
-Install dotenv. [source](https://github.com/motdotla/dotenv#-install)
+```bash
+npx dotenv-vault@latest new
+npx dotenv-vault@latest login
+```
+
+Push and pull your .env file securely.
+
+```bash
+npx dotenv-vault@latest push
+npx dotenv-vault@latest pull
+```
+
+That's it! You synced our `.env` file. Next, configure your production secrets.
+
+## Manage
+
+Open the production environment to edit the production `HELLO` value.
 
 ```shell
-# install locally (recommended)
-$ npm install dotenv --save
+npx dotenv-vault@latest open production
 ```
 
-Create a `.env` file in the root of our project:
+Edit the `HELLO` value so that your production secrets will render as `Hello production`.
 
-```shell {{ title: '.env' }}
-PORT="3000"
-GREETING="Bonjour World"
+<ScreenshotBrowser url="/assets/img/docs/edit-production-value.gif" www="www.dotenv.org" />
+
+Looking good. Next, deploy your production secrets using your encrypted `.env.vault` file.
+
+## Deploy
+
+Begin by building your project's encrypted `.env.vault` file. It securely encrypts your secrets in a cloud-agnostic payload.
+
+```bash
+npx dotenv-vault@latest build
 ```
 
-Modify index.js to use `require('dotenv').config()` and `process.env` environment variables.
+Commit that safely to code.
 
-```javascript {{ title: 'index.js' }}
-// index.js
-require('dotenv').config()
+<Note>
+  Yes it safe AND recommended you commit the `.env.vault` file to code. It contains AES-256 GCM encrypted ciphers of your environment secrets - that are decrypted just-in-time using an environment `DOTENV_KEY`.
+</Note>
 
-const http = require('http')
-
-const hostname = '127.0.0.1'
-const port = process.env.PORT
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200
-  res.setHeader('Content-Type', 'text/plain')
-  res.end(process.env.GREETING)
-})
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
-})
+```bash
+git add .env.vault
+git commit -am "Build encrypted .env.vault file for deploy"
 ```
 
-Restart our web server.
+Fetch your production decryption key - the `DOTENV_KEY` - to decrypt your `.env.vault` file.
 
-```
-$ node index.js
-```
-
-![](/assets/img/cloudinary/Screenshot_2023-04-01_at_8.15.30_AM_tjdju0.png)
-
-Now it says 'Bonjour World'. Cool! We're ready to backup and sync our `.env` file.
-
-## Sync .env file
-
-Once we have a .env file, we are ready to start syncing it with [dotenv-vault](https://github.com/dotenv-org/dotenv-vault#usage). For this quickstart we'll demonstrate doing this for ourselves, but you can also sync across your team and your other machines.
-
-Usage is similar to git. Run the command:
-
-```shell
-$ npx dotenv-vault new
+```bash
+npx dotenv-vault@latest keys production
 ```
 
-Follow those instructions and then run:
+This will output your production `DOTENV_KEY`. Use that `DOTENV_KEY` to run your application in production mode.
 
-```shell
-$ npx dotenv-vault login
+<CodeGroup>
+
+```bash {{ title: "Node.js" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' node index.js
+# visit http://localhost:3000
 ```
 
-Then run push and pull:
-
-```shell
-$ npx dotenv-vault push
-$ npx dotenv-vault pull
+```bash {{ title: "Python" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' flask --app index run
+# visit http://127.0.0.1:5000
 ```
 
-That's it! We synced our .env file.
-
-<Video poster='/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.gif'
-  mp4='/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.mp4'
-  webm='/assets/img/cloudinary/dotenv-vault-sync-video_yutprj.webm'/>
-
-## Manage environments
-
-After we pushed our .env file, we can manage our secrets across multiple environments. Let's open the production environment to view and edit its environment variables. There is a fully built-in UI with dotenv-vault.
-
-```shell
-$ npx dotenv-vault open production
+```bash {{ title: "Ruby" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' ruby index.rb
+# visit http://localhost:4567
 ```
 
-In the UI, we are going to delete the `PORT` environment variable. We will rely on Heroku to fill that on deploy. We'll edit the `GREETING` environment variable to "Hello Production" so that we can recognize it on deploy.
+</CodeGroup>
 
-<Video poster='/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.gif'
-  mp4='/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.mp4'
-  webm='/assets/img/cloudinary/npx-dotenv-vault-open_h70feb.webm'/>
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png'/>
 
-## Deploy .env.vault
+You will know it is working if you see the log message `Loading env from encrypted .env.vault`.
 
-Build our project's encrypted .env.vault file. It securely encrypts our secrets in a cloud-agnostic payload.
+<CodeGroup>
 
-### 🔒 Build encrypted .env.vault
-
-```shell
-$ npx dotenv-vault build
-remote:   Securely building .env.vault... done
+```bash {{ title: "Node.js" }}
+$ hello-world: DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' node index.js
+[dotenv@16.3.1][INFO] Loading env from encrypted .env.vault
+Example app listening on port 3000
 ```
 
-We then commit that safely to code.
-
-```shell
-$ git add .env.vault
-$ git commit -am "Build encrypted .env.vault file for deploy"
+```bash {{ title: "Python" }}
+$ flask-hello-world: DOTENV_KEY='dotenv://:key_3889c2a7ed0ff28ccaf2984fdf020bf0e4a702ecfd2e0c00a129f838b0cb4e71@dotenv.org/vault/.env.vault?environment=production' flask --app index run
+INFO:dotenv_vault.main:Loading env from encrypted .env.vault
+ * Serving Flask app 'index'
 ```
 
-### 🔑 Set DOTENV_KEY
-
-Let's fetch the production decryption key - the `DOTENV_KEY`.
-
-```shell
-$ npx dotenv-vault keys production
-remote:   Listing .env.vault decryption keys... done
-dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
+```bash {{ title: "Ruby" }}
+$ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environment=production' ruby index.rb
+INFO -- : [dotenv-vault] Loading env from encrypted .env.vault
+== Sinatra (v3.0.6) has taken the stage on 4567 for development with backup from Puma
 ```
 
-Then let's set the `DOTENV_KEY` enviroment variable on Heroku.
+</CodeGroup>
+
+That's it! The `DOTENV_KEY` decrypts the production contents of `.env.vault` and injects its secrets just-in-time to your running process.
+
+## Production
+
+All that's left to do is set your `DOTENV_KEY` on your production server.
+
+For example on heroku it is as easy as:
 
 ```shell
 $ heroku create
 $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
 ```
 
-### Upgrade dotenv
-
-We need to use the latest version of `dotenv` so that we can decrypt the .env.vault payload on deploy. Install [dotenv >= 16.1.0](https://github.com/motdotla/dotenv).
-
-```
-$ npm dotenv --save
-```
-
-```js {{title: 'index.js'}}
-// index.js
-require('dotenv').config()
-...
-```
-
-Also let's edit our `package.json` to have a start script so that Heroku can boot our application at runtime.
-
-```json {{ title: 'package.json' }}
-{
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "dotenv": "16.1.0"
-  }
-}
-```
-
-### Deploy to Heroku
-
-We're ready to deploy to heroku. Let's do it.
-
-```shell
-$ git push heroku
-```
-
-When the deploy completes, we'll see this line in the logs.
-
-```shell
-[dotenv@16.1.0][INFO] Loading env from encrypted .env.vault
-```
-
-That's it! The `DOTENV_KEY` securely decrypts our .env.vault file at runtime and injects our secret environment variables – just in time.
-
-This is safer than syncing our secrets to third-parties where they could leak. Plus we get a single source of truth. Make a change in the UI, run the build command, and redeploy. It's that simple to manage your secrets with dotenv-vault.
+Here's a video of us doing that:
 
 <Video poster='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.gif'
   mp4='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.mp4'
   webm='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.webm'/>
+
+Congrats! You now understand how `.env.vault` works. This is much safer than syncing your secrets to third-parties where they could leak. [CircleiCi had a secrets breach not long ago](https://techcrunch.com/2023/01/05/circleci-breach/). `.env.vault` protects you from breaches like that. An attacker would have to get their hands on both your `DOTENV_KEY` AND your codebase. That is much more difficult.
+
+In addition, you now have a single source of truth that is easy to manage. Make a change in the UI, run the build command, and redeploy. Spend less time juggling secrets and more time coding.

@@ -15,7 +15,7 @@ export function ScreenshotBrowser(props) {
           </div>
         </div>
         <div className="p-0">
-          <img src={props.url} className="p-0 m-0"/>
+          <img src={props.url} className="p-0 m-0 w-full"/>
         </div>
       </div>
     </div>
