@@ -156,14 +156,14 @@ npx dotenv-vault@latest build
 
 Commit that safely to code.
 
-<Note>
-  Yes it safe AND recommended you commit the `.env.vault` file to code. It contains AES-256 GCM encrypted ciphers of your environment secrets - that are decrypted just-in-time using an environment `DOTENV_KEY`.
-</Note>
-
 ```bash
 git add .env.vault
 git commit -am "Build encrypted .env.vault file for deploy"
 ```
+
+<Note>
+  Yes it safe AND recommended you commit the `.env.vault` file to code. It contains AES-256 GCM encrypted ciphers of your environment secrets - that are decrypted just-in-time using an environment `DOTENV_KEY`.
+</Note>
 
 Fetch your production decryption key - the `DOTENV_KEY` - to decrypt your `.env.vault` file.
 
@@ -220,9 +220,9 @@ INFO -- : [dotenv-vault] Loading env from encrypted .env.vault
 
 That's it! The `DOTENV_KEY` decrypts the production contents of `.env.vault` and injects its secrets just-in-time to your running process.
 
-## Production
+### Production Server
 
-All that's left to do is set your `DOTENV_KEY` on your production server.
+All that's left to do is set your `DOTENV_KEY` on your production server and deploy your code.
 
 For example on heroku it is as easy as:
 
@@ -231,11 +231,11 @@ $ heroku create
 $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
 ```
 
-Here's a video of us doing that:
-
 <Video poster='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.gif'
   mp4='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.mp4'
   webm='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.webm'/>
+
+## Conclusion
 
 Congrats! You now understand how `.env.vault` works. This is much safer than syncing your secrets to third-parties where they could leak. [CircleiCi had a secrets breach not long ago](https://techcrunch.com/2023/01/05/circleci-breach/). `.env.vault` protects you from breaches like that. An attacker would have to get their hands on both your `DOTENV_KEY` AND your codebase. That is much more difficult.
 
