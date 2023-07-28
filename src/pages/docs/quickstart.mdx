@@ -29,14 +29,6 @@ bundle init
 bundle add sinatra puma dotenv-vault
 ```
 
-<!--
-```bash {{ title: "PHP" }}
-composer create-project laravel/laravel laravel-hello-world
-cd laravel-hello-world
-composer require dotenv-org/phpdotenv-vault
-```
--->
-
 </CodeGroup>
 
 Write the application code.
@@ -86,15 +78,6 @@ get "/" do
 end
 ```
 
-<!--
-```php {{ title: "PHP" }}
-// resources/views/welcome.blade.php
-$hello = getenv('HELLO');
-
-echo "Hello $hello";
-```
--->
-
 </CodeGroup>
 
 Create your `.env` file.
@@ -122,13 +105,6 @@ flask --app index run
 ruby index.rb
 # visit http://localhost:4567
 ```
-
-<!--
-```bash {{ title: 'PHP' }}
-php artisan serve
-# visit http://127.0.0.1:8000
-```
--->
 
 </CodeGroup>
 
@@ -213,13 +189,6 @@ DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=productio
 DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' ruby index.rb
 # visit http://localhost:4567
 ```
-
-<!--
-```bash {{ title: "PHP" }}
-DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' php artisan serve
-# visit http://127.0.0.1:8000
-```
--->
 
 </CodeGroup>
 
