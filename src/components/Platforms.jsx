@@ -59,7 +59,7 @@ export function Platforms() {
               Heroku
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Heroku</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/heroku" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/platforms/heroku" variant="text" arrow="right">Heroku Guides</Button></p>
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
         </div>
