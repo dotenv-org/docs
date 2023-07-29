@@ -1,8 +1,10 @@
 import { Heading } from '@/components/Heading'
 import { Button } from '@/components/Button'
+import { GuideHeading } from '@/components/GuideHeading'
 
 import { GoIcon } from '@/components/icons/GoIcon'
 
+export const title = 'Go'
 export const description = 
   'Use .env.vault with Go 🐹'
 
@@ -11,9 +13,14 @@ export const sections = [
 ]
 
 ##### Languages
-# Go
-
-Use .env.vault with Go. {{ className: 'lead' }}
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <GoIcon className="h-10 w-10 text-[#00ADD8]"/>
+    </>
+  } />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

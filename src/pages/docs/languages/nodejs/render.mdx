@@ -2,6 +2,7 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
 import { RenderIcon } from '@/components/icons/RenderIcon'
+import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const title = 'Deploy a Node.js App to Render'
 export const description = 
@@ -12,7 +13,10 @@ export const description =
   h1={title}
   lead={description}
   icon={
-    <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
+    <>
+      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+      <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
+    </>
   } />
 
 <Note>

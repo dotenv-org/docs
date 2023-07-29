@@ -1,11 +1,23 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
+import { GuideHeading } from '@/components/GuideHeading'
+import { GitHubIcon } from '@/components/icons/GitHubIcon'
+import { NextIcon } from '@/components/icons/NextIcon'
 
+export const title = 'CI/CD in Next.js with GitHub Actions'
 export const description = 
   'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
 
 ##### Frameworks
-# CI/CD in Next.js with GitHub Actions
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+    </>
+  } />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nextjs/github-actions">code example on GitHub</a> for this guide.

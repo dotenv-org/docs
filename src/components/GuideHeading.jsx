@@ -5,7 +5,7 @@ export function GuideHeading(props) {
         <div className="flex-grow">
           <h1>{props.h1}</h1>
         </div>
-        <div className="ms-2">
+        <div className="flex flex-shrink justify-end gap-2">
           {props.icon}
         </div>
       </div>

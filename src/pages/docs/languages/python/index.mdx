@@ -1,8 +1,10 @@
 import { Heading } from '@/components/Heading'
 import { Button } from '@/components/Button'
+import { GuideHeading } from '@/components/GuideHeading'
 
 import { PythonIcon } from '@/components/icons/PythonIcon'
 
+export const title = 'Python'
 export const description = 
   'Use .env.vault with Python 🐍.'
 
@@ -11,9 +13,14 @@ export const sections = [
 ]
 
 ##### Languages
-# Python
-
-Use .env.vault with Python. {{ className: 'lead' }}
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <PythonIcon className="h-9 w-9 text-[#3776AB]"/>
+    </>
+  } />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

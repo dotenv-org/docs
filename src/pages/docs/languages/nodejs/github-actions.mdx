@@ -2,6 +2,7 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
+import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const title = 'CI/CD in Node.js with GitHub Actions'
 export const description = 
@@ -12,7 +13,10 @@ export const description =
   h1={title}
   lead={description}
   icon={
-    <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+    <>
+      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+    </>
   } />
 
 <Note>

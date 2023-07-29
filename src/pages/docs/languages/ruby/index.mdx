@@ -1,19 +1,26 @@
 import { Heading } from '@/components/Heading'
 import { Button } from '@/components/Button'
+import { GuideHeading } from '@/components/GuideHeading'
 
 import { RubyIcon } from '@/components/icons/RubyIcon'
 
 export const description = 
   'Use .env.vault with Ruby 💎.'
 
+export const title = 'Ruby'
 export const sections = [
   { title: 'Quickstart', id: 'quickstart' },
 ]
 
 ##### Languages
-# Ruby
-
-Use .env.vault with Ruby. {{ className: 'lead' }}
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <RubyIcon className="h-9 w-9 text-[#CC342D]"/>
+    </>
+  } />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

@@ -2,6 +2,7 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
 import { VercelIcon } from '@/components/icons/VercelIcon'
+import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const title = 'Deploy a Node.js App to Vercel'
 export const description = 
@@ -12,7 +13,10 @@ export const description =
   h1={title}
   lead={description}
   icon={
-    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <>
+      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </>
   } />
 
 <Note>

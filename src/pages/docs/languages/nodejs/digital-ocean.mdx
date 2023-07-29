@@ -2,6 +2,7 @@ import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
 import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
+import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const title = 'Deploy a Node.js App to Digital Ocean'
 export const description = 
@@ -12,7 +13,10 @@ export const description =
   h1={title}
   lead={description}
   icon={
-    <DigitalOceanIcon className="h-9 w-9 text-[#0080FF]"/>
+    <>
+      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+      <DigitalOceanIcon className="h-9 w-9 text-[#0080FF]"/>
+    </>
   } />
 
 <Note>

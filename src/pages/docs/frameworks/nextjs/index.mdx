@@ -1,34 +1,58 @@
+import { Heading } from '@/components/Heading'
+import { GuideHeading } from '@/components/GuideHeading'
+
 import { NextIcon } from '@/components/icons/NextIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 
+export const title = 'Next.js'
 export const description = 
   'Use .env.vault with Next.js'
 
+export const sections = [
+  { title: 'Platforms', id: 'platforms' },
+  { title: 'CI/CDs', id: 'cis' },
+]
+
 ##### Frameworks
-# Next.js
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </>
+  } />
 
-Use .env.vault with Next.js. {{ className: 'lead' }}
-
-<div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-  <div key="github-actions" className="flex flex-row-reverse gap-6">
-    <div className="flex-auto">
-      <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-        GitHub Actions
-      </h3>
-      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js and GitHub Actions</p>
-      <p className="mt-4"><Button href="/docs/frameworks/nextjs/github-actions" variant="text" arrow="right">Read guide</Button></p>
+<div className="my-16 xl:max-w-none">
+  <Heading level={2} id="platforms">
+    Platforms
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="netlify" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Netlify
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js and Netlify</p>
+        <p className="mt-4"><Button href="/docs/frameworks/nextjs/netlify" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <NetlifyIcon className="h-9 w-9 text-[#00C7B7]"/>
     </div>
-    <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
   </div>
-  <div key="netlify" className="flex flex-row-reverse gap-6">
-    <div className="flex-auto">
-      <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-        Netlify
-      </h3>
-      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js and Netlify</p>
-      <p className="mt-4"><Button href="/docs/frameworks/nextjs/netlify" variant="text" arrow="right">Read guide</Button></p>
+  <Heading level={2} id="cis">
+    CI/CDs
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="github-actions" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          GitHub Actions
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js and GitHub Actions</p>
+        <p className="mt-4"><Button href="/docs/frameworks/nextjs/github-actions" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
     </div>
-    <NetlifyIcon className="h-9 w-9 text-[#00C7B7]"/>
   </div>
 </div>

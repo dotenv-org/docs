@@ -28,7 +28,7 @@ export function Frameworks() {
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js</p>
             <p className="mt-4 flex gap-x-2">
-              <Button href="/docs/frameworks/nextjs" variant="text" arrow="right">Guides</Button>
+              <Button href="/docs/frameworks/nextjs" variant="text" arrow="right">Next.js Guides</Button>
             </p>
           </div>
           <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
@@ -39,7 +39,7 @@ export function Frameworks() {
               Gatsby.js
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Gatsby.js</p>
-            <p className="mt-4"><Button href="/docs/frameworks/gatsby" variant="text" arrow="right">Guides</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/gatsby" variant="text" arrow="right">Gatsby Guides</Button></p>
           </div>
           <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
         </div>
@@ -49,7 +49,7 @@ export function Frameworks() {
               Express.js
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Express.js</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/express" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/express" variant="text" arrow="right">Express Guides</Button></p>
           </div>
           <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>

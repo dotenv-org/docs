@@ -1,11 +1,23 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
+import { GuideHeading } from '@/components/GuideHeading'
+import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
+import { NextIcon } from '@/components/icons/NextIcon'
 
+export const title = 'Deploy a Next.js App to Netlify'
 export const description = 
   'Deploy a Next.js app with an encrypted .env.vault file to Netlify.'
 
 ##### Frameworks
-# Deploy a Next.js App to Netlify
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+      <NetlifyIcon className="h-9 w-9 text-[#00C7B7]"/>
+    </>
+  } />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/netlify">code example on GitHub</a> for this guide.
