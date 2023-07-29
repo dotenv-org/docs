@@ -1,6 +1,7 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
+import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 import { NextIcon } from '@/components/icons/NextIcon'
 
@@ -8,7 +9,7 @@ export const title = 'Deploy a Next.js App to Netlify'
 export const description = 
   'Deploy a Next.js app with an encrypted .env.vault file to Netlify.'
 
-##### Frameworks
+<FrameworksBreadcrumb framework='Next.js' url='/docs/frameworks/nextjs' />
 <GuideHeading
   h1={title}
   lead={description}

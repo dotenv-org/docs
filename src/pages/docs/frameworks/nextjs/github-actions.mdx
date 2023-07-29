@@ -1,5 +1,6 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
+import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { GuideHeading } from '@/components/GuideHeading'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NextIcon } from '@/components/icons/NextIcon'
@@ -8,7 +9,7 @@ export const title = 'CI/CD in Next.js with GitHub Actions'
 export const description = 
   'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
 
-##### Frameworks
+<FrameworksBreadcrumb framework='Next.js' url='/docs/frameworks/nextjs' />
 <GuideHeading
   h1={title}
   lead={description}

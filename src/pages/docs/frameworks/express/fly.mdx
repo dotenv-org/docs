@@ -1,6 +1,7 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
+import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
@@ -8,7 +9,7 @@ export const title = 'Deploy an Express.js App to Fly.io'
 export const description = 
   'Deploy an Express.js app with an encrypted .env.vault file to Fly.io.'
 
-##### Frameworks
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' />
 <GuideHeading
   h1={title}
   lead={description}
