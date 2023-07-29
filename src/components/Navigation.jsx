@@ -200,9 +200,7 @@ export const navigation = [
       { title: 'Node.js', href: '/docs/languages/nodejs' },
       { title: 'Python', href: '/docs/languages/python' },
       { title: 'Ruby', href: '/docs/languages/ruby' },
-      { title: 'PHP', href: '/docs/languages/php' },
       { title: 'Go', href: '/docs/languages/go' },
-      { title: 'Kotlin', href: '/docs/languages/kotlin' },
     ],
   },
   {

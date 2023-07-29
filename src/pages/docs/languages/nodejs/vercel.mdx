@@ -1,11 +1,19 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
+import { GuideHeading } from '@/components/GuideHeading'
+import { VercelIcon } from '@/components/icons/VercelIcon'
 
+export const title = 'Deploy a Node.js App to Vercel'
 export const description = 
   'Deploy a Node.js app with an encrypted .env.vault file to Vercel.'
 
-##### Language Guides
-# Deploy a Node.js App to Vercel
+##### Languages
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  } />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/vercel">code example on GitHub</a> for this guide.

@@ -28,8 +28,7 @@ export function Frameworks() {
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Next.js</p>
             <p className="mt-4 flex gap-x-2">
-              <Button href="/docs/languages/nodejs/netlify" variant="text">Netlify</Button>
-              <Button href="/docs/frameworks/nextjs/github-actions" variant="text">GitHub Actions</Button>
+              <Button href="/docs/frameworks/nextjs" variant="text" arrow="right">Guides</Button>
             </p>
           </div>
           <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
@@ -40,7 +39,7 @@ export function Frameworks() {
               Gatsby.js
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Gatsby.js</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/gatsby" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/gatsby" variant="text" arrow="right">Guides</Button></p>
           </div>
           <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
         </div>

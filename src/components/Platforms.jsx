@@ -14,6 +14,7 @@ import { EdgioIcon } from '@/components/icons/EdgioIcon'
 import { Cloud66Icon } from '@/components/icons/Cloud66Icon'
 import { NorthflankIcon } from '@/components/icons/NorthflankIcon'
 import { AwsIcon } from '@/components/icons/AwsIcon'
+import { GatsbyIcon } from '@/components/icons/GatsbyIcon'
 
 export function Platforms() {
   return (
@@ -28,7 +29,7 @@ export function Platforms() {
               Digital Ocean
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Digital Ocean</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/digital-ocean" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/digital-ocean" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <DigitalOceanIcon className="h-9 w-9 text-[#0080FF]"/>
         </div>
@@ -38,7 +39,7 @@ export function Platforms() {
               Docker
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App with Docker</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/docker" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/docker" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
         </div>
@@ -48,19 +49,9 @@ export function Platforms() {
               Fly
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Fly.io</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/fly" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/fly" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
-        </div>
-        <div key="supabase" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Supabase
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Supabase</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/supabase" variant="text" arrow="right">Read more</Button></p>
-          </div>
-          <SupabaseIcon className="h-9 w-9 text-[#3FCF8E]"/>
         </div>
         <div key="heroku" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
@@ -68,7 +59,7 @@ export function Platforms() {
               Heroku
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Heroku</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/heroku" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/heroku" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
         </div>
@@ -78,7 +69,7 @@ export function Platforms() {
               Netlify
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Netlify</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/netlify" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/nextjs/netlify" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <NetlifyIcon className="h-9 w-9 text-[#00C7B7]"/>
         </div>
@@ -88,7 +79,7 @@ export function Platforms() {
               Railway
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Railway</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/railway" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/railway" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <RailwayIcon className="h-9 w-9 text-[#0B0D0E] dark:invert"/>
         </div>
@@ -98,7 +89,7 @@ export function Platforms() {
               Render
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Render</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/render" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/render" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
         </div>
@@ -108,9 +99,19 @@ export function Platforms() {
               Vercel
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Vercel</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/vercel" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/vercel" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+        </div>
+        <div key="gatsby-edge" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Gatsby Edge Network
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Gatsby.js App to Gatsby Edge Network</p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/vercel" variant="text" arrow="right">Read guide</Button></p>
+          </div>
+          <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
         </div>
         <div key="aws-lambda" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
@@ -151,6 +152,16 @@ export function Platforms() {
             <p className="mt-4"><Button href="/docs/languages/nodejs/edgio" variant="text" arrow="right">Read more</Button></p>
           </div>
           <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+        </div>
+        <div key="supabase" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Supabase
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Supabase</p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/supabase" variant="text" arrow="right">Read more</Button></p>
+          </div>
+          <SupabaseIcon className="h-9 w-9 text-[#3FCF8E]"/>
         </div>
       </div>
     </div>

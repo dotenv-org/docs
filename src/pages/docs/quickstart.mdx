@@ -1,6 +1,11 @@
 import { Video } from '@/components/Video'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
+import { NodeIcon } from '@/components/icons/NodeIcon'
+import { PythonIcon } from '@/components/icons/PythonIcon'
+import { RubyIcon } from '@/components/icons/RubyIcon'
+import { GoIcon } from '@/components/icons/GoIcon'
+
 export const description =
   'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
 
@@ -8,6 +13,13 @@ export const description =
 # Quickstart ⚡️
 
 Sync, manage, and deploy your secrets the dotenv-vault way using this quickstart guide. {{ className: 'lead' }}
+
+<div className="not-prose grid grid-flow-col auto-cols-max gap-x-6 gap-y-10">
+  <NodeIcon className="h-9 w-9 text-[#339933]"/>
+  <PythonIcon className="h-9 w-9 text-[#3776AB]"/>
+  <RubyIcon className="h-9 w-9 text-[#CC342D]"/>
+  <GoIcon className="h-10 w-10 text-[#00ADD8]"/>
+</div>
 
 ## Initial setup
 
@@ -275,14 +287,17 @@ $ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environmen
 
 That's it! The `DOTENV_KEY` decrypts the production contents of `.env.vault` and injects its secrets just-in-time to your running process.
 
-### Production Server
+## Conclusion
+
+Congrats! You now understand how `.env.vault` works. This is much safer than syncing your secrets to third-parties where they could leak. [CircleiCi had a secrets breach not long ago](https://techcrunch.com/2023/01/05/circleci-breach/). `.env.vault` protects you from breaches like that. An attacker would have to get their hands on both your `DOTENV_KEY` AND your codebase. That is much more difficult.
+
+In addition, you now have a single source of truth that is easy to manage. Make a change in the UI, run the build command, and redeploy. Spend less time juggling secrets and more time coding.
 
 All that's left to do is set your `DOTENV_KEY` on your production server and deploy your code.
 
 For example on heroku it is as easy as:
 
 ```shell
-$ heroku create
 $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production'
 ```
 
@@ -290,11 +305,7 @@ $ heroku config:set DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?e
   mp4='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.mp4'
   webm='/assets/img/cloudinary/deploy-encrypted-vault_shdiav.webm'/>
 
-## Conclusion
 
-Congrats! You now understand how `.env.vault` works. This is much safer than syncing your secrets to third-parties where they could leak. [CircleiCi had a secrets breach not long ago](https://techcrunch.com/2023/01/05/circleci-breach/). `.env.vault` protects you from breaches like that. An attacker would have to get their hands on both your `DOTENV_KEY` AND your codebase. That is much more difficult.
-
-In addition, you now have a single source of truth that is easy to manage. Make a change in the UI, run the build command, and redeploy. Spend less time juggling secrets and more time coding.
 
 ## FAQ
 

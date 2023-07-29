@@ -26,7 +26,7 @@ export function Cis() {
               GitHub Actions
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with GitHub Actions</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
         </div>

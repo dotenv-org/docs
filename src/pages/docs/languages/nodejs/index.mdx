@@ -2,9 +2,23 @@ import { Heading } from '@/components/Heading'
 import { Button } from '@/components/Button'
 
 import { NodeIcon } from '@/components/icons/NodeIcon'
+import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
+import { DockerIcon } from '@/components/icons/DockerIcon'
+import { FlyIcon } from '@/components/icons/FlyIcon'
+import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { RailwayIcon } from '@/components/icons/RailwayIcon'
+import { RenderIcon } from '@/components/icons/RenderIcon'
+import { VercelIcon } from '@/components/icons/VercelIcon'
+import { GitHubIcon } from '@/components/icons/GitHubIcon'
 
 export const description = 
   'Use .env.vault with Node.js 🚀.'
+
+export const sections = [
+  { title: 'Quickstart', id: 'quickstart' },
+  { title: 'Platforms', id: 'platforms' },
+  { title: 'CI/CDs', id: 'cis' },
+]
 
 ##### Languages
 # Node.js
@@ -12,8 +26,8 @@ export const description =
 Use .env.vault with Node.js. {{ className: 'lead' }}
 
 <div className="my-16 xl:max-w-none">
-  <Heading level={2} id="guides">
-    Guides
+  <Heading level={2} id="quickstart">
+    Quickstart
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
     <div key="quickstart" className="flex flex-row-reverse gap-6">
@@ -24,7 +38,97 @@ Use .env.vault with Node.js. {{ className: 'lead' }}
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Quickstart guide for Node.js and .env.vault</p>
         <p className="mt-4"><Button href="/docs/quickstart" variant="text" arrow="right">Quickstart</Button></p>
       </div>
-      <NodeIcon class="h-9 w-9 text-[#339933]"/>
+      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    </div>
+  </div>
+  <Heading level={2} id="platforms">
+    Platforms
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="digital-ocean" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Digital Ocean
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Digital Ocean</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/digital-ocean" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <DigitalOceanIcon className="h-9 w-9 text-[#0080FF]"/>
+    </div>
+    <div key="docker" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Docker
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App with Docker</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/docker" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+    </div>
+    <div key="fly" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Fly
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Fly.io</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/fly" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
+    </div>
+    <div key="heroku" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Heroku
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Heroku</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/heroku" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+    </div>
+    <div key="railway" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Railway
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Railway</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/railway" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <RailwayIcon className="h-9 w-9 text-[#0B0D0E] dark:invert"/>
+    </div>
+    <div key="render" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Render
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Render</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/render" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
+    </div>
+    <div key="vercel" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Vercel
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Vercel</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/vercel" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+  </div>
+  <Heading level={2} id="cis">
+    CI/CDs
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="github-actions" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          GitHub Actions
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with GitHub Actions</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
     </div>
   </div>
 </div>
