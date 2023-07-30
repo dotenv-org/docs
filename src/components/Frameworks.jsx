@@ -63,7 +63,16 @@ export function Frameworks() {
           </div>
           <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
-        
+        <div key="serverless" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Serverless
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Serverless App to AWS Lambda</p>
+            <p className="mt-4"><Button href="/docs/frameworks/serverless/aws-lambda" variant="text" arrow="right">Read guide</Button></p>
+          </div>
+          <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
+        </div>
         <div key="rails" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -113,16 +122,6 @@ export function Frameworks() {
             <p className="mt-4"><Button href="/docs/languages/nodejs/astro" variant="text" arrow="right">Start</Button></p>
           </div>
           <AstroIcon className="h-9 w-9 text-[#FF5D01]"/>
-        </div>
-        <div key="serverless" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Serverless
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Serverless</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/serverless" variant="text" arrow="right">Start</Button></p>
-          </div>
-          <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
         </div>
         <div key="angular" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">

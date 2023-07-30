@@ -8,7 +8,6 @@ import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
-import { ServerlessIcon } from '@/components/icons/ServerlessIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const title = 'Express.js'
@@ -16,7 +15,6 @@ export const description =
   'Use .env.vault with Express.js'
 
 export const sections = [
-  { title: 'Frameworks', id: 'frameworks' },
   { title: 'Platforms', id: 'platforms' },
   { title: 'CI/CDs', id: 'cis' },
 ]
@@ -32,21 +30,6 @@ export const sections = [
   } />
 
 <div className="my-16 xl:max-w-none">
-  <Heading level={2} id="frameworks">
-    Frameworks
-  </Heading>
-  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="serverless" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Serverless
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy an Express.js App inside Serverless to AWS</p>
-        <p className="mt-4"><Button href="/docs/frameworks/serverless/express" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
-    </div>
-  </div>
   <Heading level={2} id="platforms">
     Platforms
   </Heading>
