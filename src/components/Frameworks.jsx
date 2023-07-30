@@ -53,6 +53,17 @@ export function Frameworks() {
           </div>
           <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
+        <div key="remix" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Remix
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Remix</p>
+            <p className="mt-4"><Button href="/docs/frameworks/remix" variant="text" arrow="right">Remix Guides</Button></p>
+          </div>
+          <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+        </div>
+        
         <div key="rails" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -122,16 +133,6 @@ export function Frameworks() {
             <p className="mt-4"><Button href="/docs/languages/nodejs/angular" variant="text" arrow="right">Start</Button></p>
           </div>
           <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
-        </div>
-        <div key="remix" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Remix
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Remix</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/remix" variant="text" arrow="right">Start</Button></p>
-          </div>
-          <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
         <div key="vite" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">

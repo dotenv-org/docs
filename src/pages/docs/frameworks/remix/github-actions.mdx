@@ -1,51 +1,90 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
+import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { GuideHeading } from '@/components/GuideHeading'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
-import { NodeIcon } from '@/components/icons/NodeIcon'
-import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
+import { RemixIcon } from '@/components/icons/RemixIcon'
 
-export const title = 'CI/CD in Node.js with GitHub Actions'
+export const title = 'CI/CD in Remix.js with GitHub Actions'
 export const description = 
-  'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
+  'Run Remix.js CI/CD in GitHub Actions with an encrypted .env.vault file'
 
-<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" />
+<FrameworksBreadcrumb framework='Remix.js' url='/docs/frameworks/remix' />
 <GuideHeading
   h1={title}
   lead={description}
   icon={
     <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
+      <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
       <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
     </>
   } />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/github-actions">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/remix/github-actions">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
-Create a `build.js` file. It's a very simple build script that outputs 'Hello World'.
+Create a Remix.js application.
 
-```js {{ title: 'build.js' }}
-// build.js
-console.log(`Hello ${process.env.HELLO}`)
+```bash
+npx create-remix@latest
 ```
 
-Create a `package.json` file.
+This will create a handful of files.
 
-```json {{ title: 'package.json' }}
-{
-  "scripts": {
-    "build": "node build.js"
-  }
+```shell
+ls -1
+README.md
+app/
+build/
+node_modules/
+package-lock.json
+package.json
+public/
+remix.config.js
+remix.env.d.ts
+tsconfig.json
+```
+
+Edit `app/routes/_index.tsx` to include `process.env.HELLO` using a Remix [loader](https://remix.run/docs/en/main/route/loader).
+
+```js {{ title: 'app/routes/_index.tsx' }}
+import type { V2_MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+
+export const meta: V2_MetaFunction = () => {
+  return [
+    { title: "New Remix App" },
+    { name: "description", content: "Welcome to Remix!" },
+  ];
+};
+
+export async function loader() {
+  return json({
+    ENV: {
+      HELLO: process.env.HELLO, // HELLO="World" in .env file
+    },
+  });
+}
+
+export default function Index() {
+  const data = useLoaderData()
+
+  return (
+    <div>
+      Hello {data.ENV.HELLO}.
+    </div>
+  );
 }
 ```
 
-Create a `.github/workflows/ci.yml` file.
+Create `.github/worksflows/ci.yml` file.
 
 ```yaml {{ title: '.github/workflows/ci.yml' }}
+# .github/workflow/ci.yml
 name: npm run build
 on: [push]
 jobs:
@@ -64,15 +103,13 @@ jobs:
 
 Commit that to code and push to GitHub.
 
-Once pushed, the GitHub actions build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+Once pushed, the GitHub Actions build contents will say `Hello .` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-<ScreenshotBrowser url='/assets/img/docs/github-actions-hello-undefined.png' www='github.com/you/app/actions' />
-
-## Install dotenv
+## Preload dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'cli' }}
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -83,28 +120,28 @@ Create a `.env` file in the root of your project.
 HELLO="World"
 ```
 
-As early as possible in your application, import and configure dotenv.
+Preload Remix.js scripts using dotenv. This will inject environment variables ahead of Remix.js.
 
-```js {{ title: 'build.js' }}
-// build.js
-require('dotenv').config()
-console.log(process.env) // remove this after you've confirmed it is working
-
-console.log(`Hello ${process.env.HELLO}`)
+```json {{ title: 'package.json' }}
+"scripts": {
+  "build": "node -r dotenv/config ./node_modules/.bin/remix build",
+  "dev": "node -r dotenv/config ./node_modules/.bin/remix dev",
+  "start": "node -r dotenv/config ./node_modules/.bin/remix-serve build",
+},
 ```
 
 Try running it locally.
 
-```shell {{ title: 'cli' }}
-node build.js
-{
-  ...
-  HELLO: 'World'
-}
-Hello World
+```shell
+npm run dev
+# Visit http://localhost:3000
 ```
 
-Perfect. `process.env` now has the keys and values you defined in your `.env` file.
+It will say 'Hello World'.
+
+<ScreenshotBrowser url="/assets/img/docs/nextjs-hello-world.png"/>
+
+Great! `process.env` now has the keys and values you defined in your `.env` file.
 
 That covers local simulation of the CI. Let's solve for the real CI environment next.
 
@@ -117,13 +154,13 @@ npx dotenv-vault@latest push
 npx dotenv-vault@latest open ci
 ```
 
-Use the UI to configure those secrets per environment.
+Use the UI to configure the CI environment secrets.
 
-<ScreenshotBrowser url='/assets/img/docs/edit-ci-value.gif' www='dotenv.org' />
+<ScreenshotBrowser url='/assets/img/docs/edit-ci-value2.gif' www='dotenv.org' />
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -148,7 +185,7 @@ DOTENV_VAULT_CI_VERSION=2
 
 Fetch your CI `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```
@@ -165,6 +202,6 @@ That's it! On re-run, your `.env.vault` file will be decrypted and its CI secret
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url='/assets/img/docs/github-actions-logs-vault.png' www='github actions build' />
+<ScreenshotBrowser url='/assets/img/docs/github-actions-remix-logs-vault.png' www='github actions build' />
 
 <WellDone/>

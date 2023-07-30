@@ -48,7 +48,7 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Fly
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Fly.io</p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Fly.io</p>
             <p className="mt-4"><Button href="/docs/platforms/fly" variant="text" arrow="right">Fly.io Guides</Button></p>
           </div>
           <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
@@ -58,7 +58,7 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Heroku
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Heroku</p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Heroku</p>
             <p className="mt-4"><Button href="/docs/platforms/heroku" variant="text" arrow="right">Heroku Guides</Button></p>
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
@@ -98,8 +98,8 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Vercel
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Vercel</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/vercel" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">User .env.vault with Vercel</p>
+            <p className="mt-4"><Button href="/docs/platforms/vercel" variant="text" arrow="right">Vercel Guides</Button></p>
           </div>
           <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>

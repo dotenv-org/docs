@@ -7,7 +7,7 @@ import { NextIcon } from '@/components/icons/NextIcon'
 
 export const title = 'CI/CD in Next.js with GitHub Actions'
 export const description = 
-  'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
+  'Run Next.js CI/CD in GitHub Actions with an encrypted .env.vault file'
 
 <FrameworksBreadcrumb framework='Next.js' url='/docs/frameworks/nextjs' />
 <GuideHeading
@@ -28,13 +28,13 @@ export const description =
 
 Create a Next.js application.
 
-```bash {{ title: 'cli' }}
+```bash
 npx create-next-app@latest --example hello-world .
 ```
 
 This will create a handful of files.
 
-```shell {{ title: 'cli' }}
+```shell
 ls -1
 README.md
 next-env.d.ts
@@ -86,7 +86,7 @@ Once pushed, the GitHub actions build contents will say `'Hello .'` as it doesn'
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'cli' }}
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -109,7 +109,7 @@ Preload Next.js scripts using dotenv. This will inject environment variables ahe
 
 Try running it locally.
 
-```shell {{ title: 'cli' }}
+```shell
 npm run dev
 # Visit http://localhost:3000
 ```
@@ -126,7 +126,7 @@ That covers local simulation of the CI. Let's solve for the real CI environment 
 
 Push your latest `.env` file changes and edit your CI secrets. [Learn more about syncing](/docs/tutorials/sync)
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open ci
 ```
@@ -137,7 +137,7 @@ Use the UI to configure the CI environment secrets.
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -162,7 +162,7 @@ DOTENV_VAULT_CI_VERSION=2
 
 Fetch your CI `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```

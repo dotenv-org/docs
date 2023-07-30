@@ -26,9 +26,19 @@ export function Cis() {
               GitHub Actions
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with GitHub Actions</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/cis/github-actions" variant="text" arrow="right">GitHub Actions Guides</Button></p>
           </div>
           <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+        </div>
+        <div key="google-cloud-build" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Google Cloud Build
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Google Cloud Build</p>
+            <p className="mt-4"><Button href="/docs/cis/google-cloud-build" variant="text" arrow="right">Cloud Build Guides</Button></p>
+          </div>
+          <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
         </div>
         <div key="travis-ci" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
@@ -119,16 +129,6 @@ export function Cis() {
             <p className="mt-4"><Button href="/docs/languages/nodejs/dagger" variant="text" arrow="right">Start</Button></p>
           </div>
           <DaggerIcon className="h-9 w-9 text-[#1d1d1b] dark:invert"/>
-        </div>
-        <div key="google-cloud-build" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Google Cloud Build
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Google Cloud Build</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/google-cloud-build" variant="text" arrow="right">Read more</Button></p>
-          </div>
-          <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
         </div>
       </div>
     </div>

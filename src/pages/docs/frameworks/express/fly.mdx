@@ -180,6 +180,8 @@ flyctl deploy --remote-only --no-cache
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just-in-time.
 
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.fly.dev' />
+
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
 <ScreenshotBrowser url="/assets/img/docs/fly-logs-vault.png" www="flyctl logs" />

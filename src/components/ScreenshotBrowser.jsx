@@ -15,7 +15,9 @@ export function ScreenshotBrowser(props) {
           </div>
         </div>
         <div className="p-0">
-          <img src={props.url} className="p-0 m-0 w-full"/>
+          <a href={props.url} target="_blank" className="hover:brightness-105">
+            <img src={props.url} className="p-0 m-0 w-full"/>
+          </a>
         </div>
       </div>
     </div>
