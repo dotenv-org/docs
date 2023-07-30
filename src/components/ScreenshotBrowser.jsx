@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export function ScreenshotBrowser(props) {
   return (
     <div className="w-full p-7 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md">
@@ -16,7 +18,14 @@ export function ScreenshotBrowser(props) {
         </div>
         <div className="p-0">
           <a href={props.url} target="_blank" rel="noreferrer" className="hover:brightness-105">
-            <img src={props.url} className="p-0 m-0 w-full"/>
+            <Image
+              src={props.url}
+              width="0"
+              height="0"
+              alt=""
+              className="p-0 m-0 w-full"
+              unoptimized
+            />
           </a>
         </div>
       </div>
