@@ -64,6 +64,8 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export async function loader() {
+  require('dotenv').config()
+
   return json({
     ENV: {
       HELLO: process.env.HELLO, // HELLO="World" in .env file
@@ -99,7 +101,7 @@ npx vercel@latest deploy --prod
 
 <ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.vercel.app" />
 
-## Preload dotenv
+## Install dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
@@ -112,16 +114,6 @@ Create a `.env` file in the root of your project.
 ```shell {{ title: '.env' }}
 # .env
 HELLO="World"
-```
-
-Preload Remix.js scripts using dotenv. This will inject environment variables ahead of Remix.js.
-
-```json {{ title: 'package.json' }}
-"scripts": {
-  "build": "node -r dotenv/config ./node_modules/.bin/remix build",
-  "dev": "node -r dotenv/config ./node_modules/.bin/remix dev",
-  "start": "node -r dotenv/config ./node_modules/.bin/remix-serve build",
-},
 ```
 
 Try running it locally.
@@ -137,7 +129,7 @@ It will say 'Hello World'.
 
 Great! `process.env` now has the keys and values you defined in your `.env` file.
 
-That covers local simulation of the CI. Let's solve for the real CI environment next.
+That covers local simulation of production. Let's solve for the real production environment next.
 
 ## Build .env.vault
 
