@@ -79,7 +79,7 @@ export function Frameworks() {
               Ruby on Rails
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Ruby on Rails</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/rails" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/rails" variant="text" arrow="right">Rails Guides</Button></p>
           </div>
           <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
         </div>

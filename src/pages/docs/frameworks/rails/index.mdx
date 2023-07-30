@@ -1,0 +1,102 @@
+import { Heading } from '@/components/Heading'
+import { GuideHeading } from '@/components/GuideHeading'
+import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
+
+import { RailsIcon } from '@/components/icons/RailsIcon'
+import { DockerIcon } from '@/components/icons/DockerIcon'
+import { FlyIcon } from '@/components/icons/FlyIcon'
+import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { VercelIcon } from '@/components/icons/VercelIcon'
+import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
+
+export const title = 'Rails'
+export const description = 
+  'Use .env.vault with Ruby on Rails'
+
+export const sections = [
+  { title: 'Platforms', id: 'platforms' },
+  { title: 'CI/CDs', id: 'cis' },
+]
+
+<FrameworksBreadcrumb />
+<GuideHeading
+  h1={title}
+  lead={description}
+  icon={
+    <>
+      <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
+    </>
+  } />
+
+<div className="my-16 xl:max-w-none">
+  <Heading level={2} id="platforms">
+    Platforms
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="docker" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Docker
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Docker with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/docker/rails" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+    </div>
+    <div key="docker-compose" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Docker Compose
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy Compose with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/docker-compose/rails" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+    </div>
+    <div key="fly" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Fly
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Fly with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/fly/rails" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
+    </div>
+    <div key="heroku" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Heroku
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Heroku with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/heroku/rails" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+    </div>
+    <div key="vercel" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Vercel
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Vercel with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/vercel/rails" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+  </div>
+  <Heading level={2} id="cis">
+    CI/CD
+  </Heading>
+  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="circle-ci" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          CircleCI
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CircleCI with Rails</p>
+        <p className="mt-4"><Button href="/docs/integrations/circleci/rails" variant="text" arrow="right">Read Guide</Button></p>
+      </div>
+      <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
+    </div>
+  </div>
+</div>
