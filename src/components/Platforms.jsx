@@ -38,8 +38,8 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Docker
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App with Docker</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/docker" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Docker &amp; Docker Compose</p>
+            <p className="mt-4"><Button href="/docs/platforms/docker" variant="text" arrow="right">Docker Guides</Button></p>
           </div>
           <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
         </div>
