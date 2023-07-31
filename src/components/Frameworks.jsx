@@ -73,16 +73,6 @@ export function Frameworks() {
           </div>
           <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
         </div>
-        <div key="rails" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Ruby on Rails
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Ruby on Rails</p>
-            <p className="mt-4"><Button href="/docs/frameworks/rails" variant="text" arrow="right">Rails Guides</Button></p>
-          </div>
-          <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
-        </div>
         <div key="nuxt" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -92,6 +82,16 @@ export function Frameworks() {
             <p className="mt-4"><Button href="/docs/frameworks/nuxtjs" variant="text" arrow="right">Nuxt.js Guides</Button></p>
           </div>
           <NuxtIcon className="h-9 w-9 text-[#00DC82]"/>
+        </div>
+        <div key="rails" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Ruby on Rails
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Ruby on Rails</p>
+            <p className="mt-4"><Button href="/docs/frameworks/rails" variant="text" arrow="right">Rails Guides</Button></p>
+          </div>
+          <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
         </div>
         <div key="flask" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
@@ -129,7 +129,7 @@ export function Frameworks() {
               Angular
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Angular</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/angular" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/vercel/angular" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
         </div>
@@ -139,7 +139,7 @@ export function Frameworks() {
               Vite
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Vite</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/vite" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/vercel/vite" variant="text" arrow="right">Start</Button></p>
           </div>
           <ViteIcon className="h-9 w-9 text-[#646CFF]"/>
         </div>
