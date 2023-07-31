@@ -98,7 +98,7 @@ export function Frameworks() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Flask
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Flask</p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Flask App to Heroku</p>
             <p className="mt-4"><Button href="/docs/frameworks/flask/heroku" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <FlaskIcon className="h-9 w-9 text-[#000000] dark:invert"/>
