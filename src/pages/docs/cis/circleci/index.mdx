@@ -1,27 +1,26 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
 
-import { DockerIcon } from '@/components/icons/DockerIcon'
+import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
-import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { RailsIcon } from '@/components/icons/RailsIcon'
 
-export const title = 'Docker'
+export const title = 'CircleCI'
 export const description = 
-  'Use .env.vault with Docker & Docker Compose'
+  'Use .env.vault with CircleCi.'
 
 export const sections = [
   { title: 'Languages', id: 'languages' },
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### Platforms
+##### CI/CDs
 <GuideHeading
   h1={title}
   lead={description}
   icon={
     <>
-      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+      <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
     </>
   } />
 
@@ -35,8 +34,8 @@ export const sections = [
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
           Node.js
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App With Docker</p>
-        <p className="mt-1"><Button href="/docs/languages/nodejs/docker" variant="text" arrow="right">Read guide</Button></p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with CircleCi</p>
+        <p className="mt-1"><Button href="/docs/integrations/circleci/nodejs" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <NodeIcon className="h-9 w-9 text-[#339933]"/>
     </div>
@@ -45,26 +44,15 @@ export const sections = [
     Frameworks
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="express" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Express.js
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy an Express.js App with Docker Compose</p>
-        <p className="mt-4"><Button href="/docs/frameworks/express/docker-compose" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </div>
     <div key="rails" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
           Rails
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Docker with Rails</p>
-        <p className="mt-4"><Button href="/docs/integrations/docker/rails" variant="text" arrow="right">Read guide</Button></p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Rails with CircleCi</p>
+        <p className="mt-4"><Button href="/docs/integrations/circleci/rails" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
     </div>
-
   </div>
 </div>

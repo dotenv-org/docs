@@ -63,13 +63,23 @@ export function Platforms() {
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
         </div>
+        <div key="vercel" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Vercel
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Vercel</p>
+            <p className="mt-4"><Button href="/docs/platforms/vercel" variant="text" arrow="right">Vercel Guides</Button></p>
+          </div>
+          <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+        </div>
         <div key="netlify" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Netlify
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Netlify</p>
-            <p className="mt-4"><Button href="/docs/frameworks/nextjs/netlify" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Netlify</p>
+            <p className="mt-4"><Button href="/docs/platforms/netlify" variant="text" arrow="right">Netlify Guides</Button></p>
           </div>
           <NetlifyIcon className="h-9 w-9 text-[#00C7B7]"/>
         </div>
@@ -93,16 +103,6 @@ export function Platforms() {
           </div>
           <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
         </div>
-        <div key="vercel" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Vercel
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">User .env.vault with Vercel</p>
-            <p className="mt-4"><Button href="/docs/platforms/vercel" variant="text" arrow="right">Vercel Guides</Button></p>
-          </div>
-          <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-        </div>
         <div key="gatsby-edge" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -119,7 +119,7 @@ export function Platforms() {
               AWS Lambda
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to AWS Lambda</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/aws-lambda" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="docs/integrations/aws-lambda/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
         </div>
@@ -129,7 +129,7 @@ export function Platforms() {
               Cloud66
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Cloud66</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/cloud66" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/integrations/cloud66/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <Cloud66Icon className="h-9 w-9 text-[#3C72B9]"/>
         </div>
@@ -139,7 +139,7 @@ export function Platforms() {
               Northflank
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Northflank</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/northflank" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/integrations/northflank/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <NorthflankIcon className="h-9 w-9 text-[#01E3C5]"/>
         </div>
@@ -148,8 +148,8 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Edge.io
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Edgio</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/edgio" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Nuxt.js App to Edgio</p>
+            <p className="mt-4"><Button href="/docs/integrations/edgio/nuxtjs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
@@ -159,7 +159,7 @@ export function Platforms() {
               Supabase
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Supabase</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/supabase" variant="text" arrow="right">Read more</Button></p>
+            <p className="mt-4"><Button href="/docs/integrations/supabase/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <SupabaseIcon className="h-9 w-9 text-[#3FCF8E]"/>
         </div>

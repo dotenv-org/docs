@@ -89,7 +89,7 @@ export function Frameworks() {
               Nuxt.js
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Nuxt.js</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/nuxtjs" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/nuxtjs" variant="text" arrow="right">Nuxt.js Guides</Button></p>
           </div>
           <NuxtIcon className="h-9 w-9 text-[#00DC82]"/>
         </div>
@@ -119,7 +119,7 @@ export function Frameworks() {
               Astro
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Astro.js</p>
-            <p className="mt-4"><Button href="/docs/languages/nodejs/astro" variant="text" arrow="right">Start</Button></p>
+            <p className="mt-4"><Button href="/docs/integrations/netlify/astro" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AstroIcon className="h-9 w-9 text-[#FF5D01]"/>
         </div>
