@@ -61,8 +61,8 @@ export const Header = forwardRef(function Header({ className }, ref) {
       <Search />
       <div className="flex items-center gap-5 lg:hidden">
         <MobileNavigation />
-        <Link href="/" aria-label="Home">
-          <Logo className="h-6" />
+        <Link href="/docs" aria-label="Home">
+          <Logo className="w-10 h-10" />
         </Link>
       </div>
       <div className="flex items-center gap-5">
@@ -77,7 +77,7 @@ export const Header = forwardRef(function Header({ className }, ref) {
           <ModeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="https://vault.dotenv.org">Sign in</Button>
+          <Button variant="outline" href="https://vault.dotenv.org">Log in</Button>
         </div>
       </div>
     </motion.div>

@@ -3,7 +3,6 @@ import { Router, useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 
 import { Layout } from '@/components/Layout'
-import { LayoutWww } from '@/components/LayoutWww'
 import * as mdxComponents from '@/components/mdx'
 import { useMobileNavigationStore } from '@/components/MobileNavigation'
 

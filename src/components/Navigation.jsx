@@ -17,10 +17,10 @@ function useInitialValue(value, condition = true) {
 
 function TopLevelNavItem({ href, children }) {
   return (
-    <li className="md:hidden">
+    <li className="">
       <Link
         href={href}
-        className="block py-1 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+        className="block py-4 text-sm text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
       >
         {children}
       </Link>
@@ -124,7 +124,11 @@ function NavigationGroup({ group, className }) {
         layout="position"
         className="text-xs font-semibold text-zinc-900 dark:text-white"
       >
-        {group.title}
+        {group.href ? (
+          <a href={group.href}>{group.title}</a>
+        ) : (
+          <span>{group.title}</span>
+        )}
       </motion.h2>
       <div className="relative mt-3 pl-2">
         <AnimatePresence initial={!isInsideMobileNavigation}>
@@ -186,6 +190,7 @@ function NavigationGroup({ group, className }) {
 export const navigation = [
   {
     title: 'Documentation',
+    href: '/docs',
     links: [
       { title: 'Introduction', href: '/docs' },
       { title: 'Quickstart', href: '/docs/quickstart' },
@@ -219,9 +224,8 @@ export const navigation = [
     ],
   },
   {
-    title: 'CLI',
+    title: 'CLI', href: '/docs/dotenv-vault',
     links: [
-      { title: 'Overview', href: '/docs/dotenv-vault' },
       { title: 'new', href: '/docs/dotenv-vault/new' },
       { title: 'login', href: '/docs/dotenv-vault/login' },
       { title: 'logout', href: '/docs/dotenv-vault/logout' },
@@ -238,9 +242,8 @@ export const navigation = [
     ],
   },
   {
-    title: 'Security',
+    title: 'Security', href: '/docs/security',
     links: [
-      { title: 'Overview', href: '/docs/security' },
       { title: '.env', href: '/docs/security/env' },
       { title: '.env.vault', href: '/docs/security/env-vault' },
       { title: '.env.me', href: '/docs/security/env-me' },
@@ -279,10 +282,11 @@ export function Navigation(props) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/support">Support</TopLevelNavItem>
+        <TopLevelNavItem href="/"><span className="text-lg me-1">⌂</span> Home</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
+            href={group.href}
             group={group}
             className={groupIndex === 0 && 'md:mt-0'}
           />
