@@ -29,6 +29,7 @@ const nextConfig = {
       '/docs/integrations/github-actions/nextjs.html': { page: '/docs/integrations/github-actions/nextjs' },
       '/docs/integrations/supabase/nodejs.html': { page: '/docs/integrations/supabase/nodejs' },
       '/docs/integrations/gitlab/ci-quickstart.html': { page: '/docs/integrations/gitlab/ci-quickstart' },
+      '/docs/integrations/vercel/vite.html': { page: '/docs/integrations/vercel/vite' },
     };
   },
 }
