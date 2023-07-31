@@ -24,6 +24,11 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  exportPathMap: function () {
+    return {
+      '/docs/integrations/github-actions/nextjs.html': { page: '/docs/integrations/github-actions/nextjs' },
+    };
+  },
 }
 
 export default withSearch(withMDX(nextConfig))
