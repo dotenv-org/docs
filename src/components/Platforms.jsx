@@ -119,7 +119,7 @@ export function Platforms() {
               AWS Lambda
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to AWS Lambda</p>
-            <p className="mt-4"><Button href="docs/integrations/aws-lambda/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="docs-old/integrations/aws-lambda/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
         </div>
@@ -129,7 +129,7 @@ export function Platforms() {
               Cloud66
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Cloud66</p>
-            <p className="mt-4"><Button href="/docs/integrations/cloud66/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/cloud66/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <Cloud66Icon className="h-9 w-9 text-[#3C72B9]"/>
         </div>
@@ -139,7 +139,7 @@ export function Platforms() {
               Northflank
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Northflank</p>
-            <p className="mt-4"><Button href="/docs/integrations/northflank/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/northflank/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <NorthflankIcon className="h-9 w-9 text-[#01E3C5]"/>
         </div>
@@ -149,7 +149,7 @@ export function Platforms() {
               Edge.io
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Nuxt.js App to Edgio</p>
-            <p className="mt-4"><Button href="/docs/integrations/edgio/nuxtjs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/edgio/nuxtjs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
@@ -159,7 +159,7 @@ export function Platforms() {
               Supabase
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Supabase</p>
-            <p className="mt-4"><Button href="/docs/integrations/supabase/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/supabase/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <SupabaseIcon className="h-9 w-9 text-[#3FCF8E]"/>
         </div>

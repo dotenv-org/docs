@@ -56,7 +56,7 @@ export function Cis() {
               Travis CI
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Travis CI</p>
-            <p className="mt-4"><Button href="/docs/integrations/travis-ci/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/travis-ci/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <TravisCiIcon className="h-9 w-9 text-[#3EAAAF]"/>
         </div>
@@ -66,7 +66,7 @@ export function Cis() {
               Buddy
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Buddy</p>
-            <p className="mt-4"><Button href="/docs/integrations/buddy/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/buddy/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <BuddyIcon className="h-9 w-9 text-[#1A86FD]"/>
         </div>
@@ -76,7 +76,7 @@ export function Cis() {
               Bitbucket
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Bitbucket</p>
-            <p className="mt-4"><Button href="/docs/integrations/bitbucket/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/bitbucket/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <BitbucketIcon className="h-9 w-9 text-[#1A86FD]"/>
         </div>
@@ -86,7 +86,7 @@ export function Cis() {
               Gitlab CI/CD
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Gitlab</p>
-            <p className="mt-4"><Button href="/docs/integrations/gitlab/ci-quickstart" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/gitlab/ci-quickstart" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
         </div>
@@ -96,7 +96,7 @@ export function Cis() {
               Jenkins
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Jenkins</p>
-            <p className="mt-4"><Button href="/docs/integrations/jenkins/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/jenkins/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <JenkinsIcon className="h-9 w-9 text-[#D24939]"/>
         </div>
@@ -106,7 +106,7 @@ export function Cis() {
               Pulumi
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Pulumi</p>
-            <p className="mt-4"><Button href="/docs/integrations/pulumi/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/pulumi/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <PulumiIcon className="h-9 w-9 text-[#8A3391]"/>
         </div>
@@ -116,7 +116,7 @@ export function Cis() {
               AWS Beanstalk
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with AWS Beanstalk</p>
-            <p className="mt-4"><Button href="/docs/integrations/aws-beanstalk/express" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/aws-beanstalk/express" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AwsIcon className="h-9 w-9 text-[#3C693B]"/>
         </div>
@@ -126,7 +126,7 @@ export function Cis() {
               Dagger
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Dagger</p>
-            <p className="mt-4"><Button href="/docs/integrations/dagger/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs-old/integrations/dagger/nodejs" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <DaggerIcon className="h-9 w-9 text-[#1d1d1b] dark:invert"/>
         </div>
