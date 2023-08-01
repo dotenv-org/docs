@@ -5,20 +5,17 @@ import { RenderIcon } from '@/components/icons/RenderIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
-export const title = 'Deploy a Node.js App to Render'
 export const description = 
   'Deploy a Node.js app with an encrypted .env.vault file to Render.'
 
-<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
-      <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
-    </>
-  } />
+<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
+  <>
+    <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
+  </>
+}/>
+# Deploy a Node.js App to Render
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/render">code example on GitHub</a> for this guide.

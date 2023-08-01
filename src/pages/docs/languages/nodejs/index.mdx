@@ -13,7 +13,6 @@ import { RenderIcon } from '@/components/icons/RenderIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 
-export const title = 'Node.js'
 export const description = 
   'Use .env.vault with Node.js 🚀.'
 
@@ -23,15 +22,13 @@ export const sections = [
   { title: 'CI/CDs', id: 'cis' },
 ]
 
-<LanguagesBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
-    </>
-  } />
+<LanguagesBreadcrumb icon={
+  <>
+    <NodeIcon className="h-9 w-9 text-[#339933]"/>
+  </>
+} />
+# Node.js
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

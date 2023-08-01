@@ -1,5 +1,6 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
@@ -7,7 +8,6 @@ import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
 import { SinatraIcon } from '@/components/icons/SinatraIcon'
 
-export const title = 'Heroku'
 export const description = 
   'Use .env.vault with Heroku'
 
@@ -16,15 +16,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### Platforms
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
-    </>
-  } />
+<PlatformsBreadcrumb icon={
+  <>
+    <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+  </>
+} />
+# Heroku
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

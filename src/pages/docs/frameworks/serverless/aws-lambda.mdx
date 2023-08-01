@@ -6,20 +6,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { ServerlessIcon } from '@/components/icons/ServerlessIcon'
 import { AwsIcon } from '@/components/icons/AwsIcon'
 
-export const title = 'Deploy a Serverless App to AWS Lambda'
 export const description = 
   'Deploy a Serverless app with an encrypted .env.vault file to AWS Lambda.'
 
-<FrameworksBreadcrumb framework='Serverless' url='/docs/frameworks/serverless' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
-      <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Serverless' url='/docs/frameworks/serverless' icon={
+  <>
+    <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
+    <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
+  </>
+}/>
+# Deploy a Serverless App to AWS Lambda
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/serverless/aws-lambda">code example on GitHub</a> for this guide.

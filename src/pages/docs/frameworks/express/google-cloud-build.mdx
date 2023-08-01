@@ -5,20 +5,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'CI/CD in Express.js with Google Cloud Build'
 export const description =
   'Run Express.js CI/CD in Google Cloud Build with an encrypted .env.vault file'
 
-<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' icon={
+  <>
+    <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
+  </>
+} />
+# CI/CD in Express.js with Google Cloud Build
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/express/google-cloud-build">code example on GitHub</a> for this guide.

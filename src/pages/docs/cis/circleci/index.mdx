@@ -1,11 +1,11 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { CisBreadcrumb } from '@/components/CisBreadcrumb'
 
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RailsIcon } from '@/components/icons/RailsIcon'
 
-export const title = 'CircleCI'
 export const description = 
   'Use .env.vault with CircleCi.'
 
@@ -14,15 +14,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### CI/CDs
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
-    </>
-  } />
+<CisBreadcrumb icon={
+  <>
+    <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
+  </>
+} />
+# CircleCI
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

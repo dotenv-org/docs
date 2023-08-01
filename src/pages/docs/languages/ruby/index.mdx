@@ -9,21 +9,18 @@ import { SinatraIcon } from '@/components/icons/SinatraIcon'
 export const description = 
   'Use .env.vault with Ruby 💎.'
 
-export const title = 'Ruby'
 export const sections = [
   { title: 'Quickstart', id: 'quickstart' },
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### Languages
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <RubyIcon className="h-9 w-9 text-[#CC342D]"/>
-    </>
-  } />
+<LanguagesBreadcrumb icon={
+  <>
+    <RubyIcon className="h-9 w-9 text-[#CC342D]"/>
+  </>
+}/>
+# Ruby
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

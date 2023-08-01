@@ -5,20 +5,17 @@ import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
-export const title = 'CI/CD in Node.js with GitHub Actions'
 export const description = 
   'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
 
-<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
-      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
-    </>
-  } />
+<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
+  <>
+    <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+  </>
+}/>
+# CI/CD in Node.js with GitHub Actions
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/github-actions">code example on GitHub</a> for this guide.

@@ -6,20 +6,17 @@ import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
-export const title = 'Deploy a Remix.js App to Vercel'
 export const description = 
   'Deploy a Remix.js app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Remix.js' url='/docs/frameworks/remix' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Remix.js' url='/docs/frameworks/remix' icon={
+  <>
+    <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+} />
+# Deploy a Remix.js App to Vercel
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/remix/vercel">code example on GitHub</a> for this guide.

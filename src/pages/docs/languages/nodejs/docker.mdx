@@ -5,20 +5,17 @@ import { DockerIcon } from '@/components/icons/DockerIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
-export const title = 'Deploy a Node.js App with Docker'
 export const description = 
   'Deploy a Node.js app with an encrypted .env.vault file on Docker.'
 
-<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
-      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
-    </>
-  } />
+<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
+  <>
+    <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+  </>
+}/>
+# Deploy a Node.js App with Docker
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/docker">code example on GitHub</a> for this guide.

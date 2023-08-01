@@ -7,20 +7,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
 
-export const title = 'Deploy a Flask App to Heroku'
 export const description =
   'Deploy a Flask app with an encrypted .env.vault file to Heroku.'
 
-<FrameworksBreadcrumb framework='Flask' url='/docs#frameworks' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <FlaskIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Flask' url='/docs#frameworks' icon={
+  <>
+    <FlaskIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+  </>
+} />
+# Deploy a Flask App to Heroku
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/flask/heroku">code example on GitHub</a> for this guide.

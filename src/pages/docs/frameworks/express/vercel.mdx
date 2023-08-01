@@ -5,20 +5,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'Deploy an Express.js App to Vercel'
 export const description = 
   'Deploy an Express.js app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' icon={
+  <>
+    <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+} />
+# Deploy an Express.js App to Vercel
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/express/vercel">code example on GitHub</a> for this guide.

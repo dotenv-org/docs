@@ -6,7 +6,6 @@ import { VercelIcon } from '@/components/icons/VercelIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 
-export const title = 'Remix.js'
 export const description = 
   'Use .env.vault with Remix.js'
 
@@ -14,15 +13,13 @@ export const sections = [
   { title: 'CI/CDs', id: 'cis' },
 ]
 
-<FrameworksBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<FrameworksBreadcrumb icon={
+  <>
+    <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+} />
+# Remix.js
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="platforms">

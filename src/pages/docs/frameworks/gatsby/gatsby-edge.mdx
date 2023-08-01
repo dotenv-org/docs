@@ -5,14 +5,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 
 import { GatsbyIcon } from '@/components/icons/GatsbyIcon'
 
-export const title = 'Deploy a Gatsby.js App to Gatsby Edge Network'
 export const description = 
   'Deploy a Gatsby.js app with an encrypted .env.vault file to Gatsby Edge.'
 
-<FrameworksBreadcrumb framework='Gatsby.js' url='/docs/frameworks/gatsby' />
-<GuideHeading
-  h1={title}
-  icon={<GatsbyIcon className="h-9 w-9 text-[#663399]"/>} />
+<FrameworksBreadcrumb framework='Gatsby' url='/docs/frameworks/gatsby' icon={
+  <>
+    <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
+    <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
+  </>
+} />
+# Deploy a Gatsby.js App to Gatsby Edge Network
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/gatsby/gatsby-edge">code example on GitHub</a> for this guide.

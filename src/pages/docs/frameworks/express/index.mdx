@@ -10,7 +10,6 @@ import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
-export const title = 'Express.js'
 export const description = 
   'Use .env.vault with Express.js'
 
@@ -19,15 +18,13 @@ export const sections = [
   { title: 'CI/CDs', id: 'cis' },
 ]
 
-<FrameworksBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' icon={
+  <>
+    <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+} />
+# Express.js
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="platforms">

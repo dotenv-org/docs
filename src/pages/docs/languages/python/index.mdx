@@ -7,23 +7,22 @@ import { PythonIcon } from '@/components/icons/PythonIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 
-export const title = 'Python'
 export const description = 
   'Use .env.vault with Python 🐍.'
 
 export const sections = [
   { title: 'Quickstart', id: 'quickstart' },
+  { title: 'Frameworks', id: 'frameworks' },
+  { title: 'Platforms', id: 'platforms' },
 ]
 
-##### Languages
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <PythonIcon className="h-9 w-9 text-[#3776AB]"/>
-    </>
-  } />
+<LanguagesBreadcrumb icon={
+  <>
+    <PythonIcon className="h-9 w-9 text-[#3776AB]"/>
+  </>
+}/>
+# Python
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="quickstart">

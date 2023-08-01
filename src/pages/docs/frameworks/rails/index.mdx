@@ -9,7 +9,6 @@ import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 
-export const title = 'Rails'
 export const description = 
   'Use .env.vault with Ruby on Rails'
 
@@ -18,15 +17,14 @@ export const sections = [
   { title: 'CI/CDs', id: 'cis' },
 ]
 
-<FrameworksBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
-    </>
-  } />
+<FrameworksBreadcrumb icon={
+  <>
+    <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
+  </>
+} />
+# Rails
+<GuideHeading lead={description} />
+
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="platforms">

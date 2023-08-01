@@ -5,20 +5,17 @@ import { VercelIcon } from '@/components/icons/VercelIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
-export const title = 'Deploy a Node.js App to Vercel'
 export const description = 
   'Deploy a Node.js app with an encrypted .env.vault file to Vercel.'
 
-<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NodeIcon className="h-9 w-9 text-[#339933]"/>
-      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
+  <>
+    <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+}/>
+# Deploy a Node.js App to Vercel
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/vercel">code example on GitHub</a> for this guide.

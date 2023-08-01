@@ -1,11 +1,11 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { CisBreadcrumb } from '@/components/CisBreadcrumb'
 
 import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'Google Cloud Build'
 export const description = 
   'Use .env.vault with Google Cloud Build'
 
@@ -14,15 +14,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### CI/CDs
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
-    </>
-  } />
+<CisBreadcrumb icon={
+  <>
+    <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
+  </>
+} />
+# Google Cloud Build
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

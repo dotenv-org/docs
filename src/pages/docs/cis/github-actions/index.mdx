@@ -1,12 +1,12 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { CisBreadcrumb } from '@/components/CisBreadcrumb'
 
 import { NextIcon } from '@/components/icons/NextIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 
-export const title = 'GitHub Actions'
 export const description = 
   'Use .env.vault with GitHub Actions'
 
@@ -15,15 +15,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### CI/CDs
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
-    </>
-  } />
+<CisBreadcrumb icon={
+  <>
+    <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+  </>
+} />
+# GitHub Actions
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

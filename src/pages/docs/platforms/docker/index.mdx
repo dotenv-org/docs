@@ -1,12 +1,12 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { RailsIcon } from '@/components/icons/RailsIcon'
 
-export const title = 'Docker'
 export const description = 
   'Use .env.vault with Docker & Docker Compose'
 
@@ -15,15 +15,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### Platforms
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
-    </>
-  } />
+<PlatformsBreadcrumb icon={
+  <>
+    <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
+  </>
+} />
+# Docker
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

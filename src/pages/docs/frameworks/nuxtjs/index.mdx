@@ -6,7 +6,6 @@ import { NuxtIcon } from '@/components/icons/NuxtIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 import { EdgioIcon } from '@/components/icons/EdgioIcon'
 
-export const title = 'Nuxt.js'
 export const description = 
   'Use .env.vault with Nuxt.js'
 
@@ -14,15 +13,13 @@ export const sections = [
   { title: 'Platforms', id: 'platforms' },
 ]
 
-<FrameworksBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NuxtIcon className="h-9 w-9 text-[#00DC82]"/>
-    </>
-  } />
+<FrameworksBreadcrumb icon={
+  <>
+    <NuxtIcon className="h-9 w-9 text-[#00DC82]"/>
+  </>
+} />
+# Nuxt.js
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="platforms">

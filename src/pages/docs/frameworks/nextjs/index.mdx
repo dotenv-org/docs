@@ -6,7 +6,6 @@ import { NextIcon } from '@/components/icons/NextIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 
-export const title = 'Next.js'
 export const description = 
   'Use .env.vault with Next.js'
 
@@ -15,15 +14,13 @@ export const sections = [
   { title: 'CI/CDs', id: 'cis' },
 ]
 
-<FrameworksBreadcrumb />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </>
-  } />
+<FrameworksBreadcrumb icon={
+  <>
+    <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+  </>
+}/>
+# Next.js
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="platforms">

@@ -5,20 +5,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'Deploy an Express.js App to Fly.io'
 export const description = 
   'Deploy an Express.js app with an encrypted .env.vault file to Fly.io.'
 
-<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' icon={
+  <>
+    <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
+  </>
+} />
+# Deploy an Express.js App to Fly.io
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/express/fly">code example on GitHub</a> for this guide.

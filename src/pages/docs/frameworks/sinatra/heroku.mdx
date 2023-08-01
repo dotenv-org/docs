@@ -8,20 +8,17 @@ import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
 import { SinatraIcon } from '@/components/icons/SinatraIcon'
 
-export const title = 'Deploy a Sinatra App to Heroku'
 export const description =
   'Deploy a Sinatra app with an encrypted .env.vault file to Heroku.'
 
-<FrameworksBreadcrumb framework='Sinatra' url='/docs#frameworks' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <SinatraIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Sinatra' url='/docs#frameworks' icon={
+  <>
+    <SinatraIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+  </>
+} />
+# Deploy a Sinatra App to Heroku
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/sinatra/heroku">code example on GitHub</a> for this guide.

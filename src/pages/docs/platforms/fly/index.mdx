@@ -1,11 +1,11 @@
 import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
+import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'Fly.io'
 export const description = 
   'Use .env.vault with Fly.io'
 
@@ -14,15 +14,13 @@ export const sections = [
   { title: 'Frameworks', id: 'frameworks' },
 ]
 
-##### Platforms
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
-    </>
-  } />
+<PlatformsBreadcrumb icon={
+  <>
+    <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
+  </>
+} />
+# Fly.io
+<GuideHeading lead={description} />
 
 <div className="my-16 xl:max-w-none">
   <Heading level={2} id="languages">

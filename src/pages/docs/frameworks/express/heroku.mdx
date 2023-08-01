@@ -5,20 +5,17 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 
-export const title = 'Deploy an Express.js App to Heroku'
 export const description =
   'Deploy an Express.js app with an encrypted .env.vault file to Heroku.'
 
-<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' />
-<GuideHeading
-  h1={title}
-  lead={description}
-  icon={
-    <>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-      <HerokuIcon className="h-9 w-9 text-[#430098]"/>
-    </>
-  } />
+<FrameworksBreadcrumb framework='Express.js' url='/docs/frameworks/express' icon={
+  <>
+    <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+  </>
+} />
+# Deploy an Express.js App to Heroku
+<GuideHeading lead={description} />
 
 <Note>
   Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/express/heroku">code example on GitHub</a> for this guide.
