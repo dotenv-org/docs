@@ -68,7 +68,9 @@ Commit that to code and deploy it to Netlify.
 npx netlify-cli@latest deploy --build --prod
 ```
 
-Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.vercel.app" />
+
+Once deployed, your app will say `Hello .` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install dotenv
 
@@ -167,7 +169,13 @@ Or use Netlify's UI.
 
 ## Deploy
 
-Commit those changes safely to code and deploy.
+Commit those changes safely to code and redeploy to netlify.
+
+```shell
+npx netlify-cli@latest deploy --build --prod
+```
+
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.netlify.app' />
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
 

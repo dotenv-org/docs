@@ -23,10 +23,10 @@ export const description =
 
 ## Initial setup
 
-Generate an **astro.js** application.
+Generate an **astro.js** application. When prompted, choose the Empty project option. 
 
 ```shell
-npx create-next-app@latest --example hello-world .
+npm create astro@latest
 ```
 
 This will create a handful of files.
@@ -34,24 +34,39 @@ This will create a handful of files.
 ```shell
 ls -1
 README.md
-next-env.d.ts
-node_modules
+astro.config.mjs
+node_modules/
 package-lock.json
 package.json
-pages
+public/
+src/
 tsconfig.json
 ```
 
-Edit `pages/index.tsx` to include `process.env.NEXT_PUBLIC_HELLO`.
+Edit `src/pages/index.astro` to include `process.env.PUBLIC_HELLO`.
 
-```js {{ title: 'pages/index.tsx' }}
-export default function IndexPage() {
-  return (
-    <div>
-      Hello {process.env.NEXT_PUBLIC_HELLO}.
-    </div>
-  )
-}
+```html {{ title: 'src/pages/index.astro' }}
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Hello {import.meta.env.PUBLIC_HELLO}.</h1>
+	</body>
+</html>
+```
+
+Add the astro netlify adapter.
+
+```
+npx astro add netlify
 ```
 
 Add `netlify.toml`.
@@ -59,7 +74,7 @@ Add `netlify.toml`.
 ```yaml {{ title: 'netlify.toml' }}
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "dist"
 ```
 
 Commit that to code and deploy it to Netlify.
@@ -68,7 +83,9 @@ Commit that to code and deploy it to Netlify.
 npx netlify-cli@latest deploy --build --prod
 ```
 
-Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.netlify.app" />
+
+Once deployed, your app will say `Hello .` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install dotenv
 
@@ -82,16 +99,22 @@ Create a `.env` file in the root of your project.
 
 ```shell {{ title: '.env' }}
 # .env
-NEXT_PUBLIC_HELLO="World"
+PUBLIC_HELLO="World"
 ```
 
 Preface your npm `package.json scripts` with dotenv [preloading](https://github.com/motdotla/dotenv#preload).
 
 ```json {{ title: 'package.json' }}
-"scripts": {
-  "dev": "node -r dotenv/config ./node_modules/.bin/next",
-  "build": "node -r dotenv/config ./node_modules/.bin/next build",
-  "start": "node -r dotenv/config ./node_modules/.bin/next start"
+{
+  ...
+  "scripts": {
+    "dev": "node -r dotenv/config ./node_modules/.bin/astro dev",
+    "start": "node -r dotenv/config ./node_modules/.bin/astro dev",
+    "build": "node -r dotenv/config ./node_modules/.bin/astro build",
+    "preview": "node -r dotenv/config ./node_modules/.bin/astro preview",
+    "astro": "node -r dotenv/config ./node_modules/.bin/astro"
+  },
+  ...
 }
 ```
 
@@ -99,7 +122,7 @@ Try running it locally.
 
 ```shell
 npm run dev
-started server on 0.0.0.0:3000, url: http://localhost:3000
+Local    http://localhost:3000/
 ```
 
 Visit [localhost:3000](http://localhost:3000)
@@ -121,7 +144,7 @@ npx dotenv-vault@latest open production
 
 Use the UI to configure those secrets per environment.
 
-<ScreenshotBrowser url='/assets/img/docs/nextjs-edit-production-value.gif' www='dotenv.org' />
+<ScreenshotBrowser url='/assets/img/docs/edit-production-public-hello.gif' www='dotenv.org' />
 
 Then build your encrypted `.env.vault` file.
 
@@ -167,12 +190,17 @@ Or use Netlify's UI.
 
 ## Deploy
 
-Commit those changes safely to code and deploy.
+Commit those changes safely to code and redeploy to netlify.
+
+```shell
+npx netlify-cli@latest deploy --build --prod
+```
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.netlify.app' />
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url='/assets/img/docs/netlify-logs-vault.png' www='npx netlify-cli@latest deploy --build --prod' />
+<ScreenshotBrowser url='/assets/img/docs/netlify-astro-logs-vault.png' www='npx netlify-cli@latest deploy --build --prod' />
 
 <WellDone/>
