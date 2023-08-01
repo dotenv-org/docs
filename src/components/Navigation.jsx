@@ -220,7 +220,7 @@ export const navigation = [
       { title: 'Rails', href: '/docs/frameworks/rails' },
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Sinatra', href: '/docs/frameworks/sinatra/heroku' },
-      { title: 'Astro', href: '/docs-old/integrations/netlify/astro' },
+      { title: 'Astro', href: '/docs/frameworks/astro/netlify' },
       { title: 'Angular', href: '/docs-old/integrations/vercel/angular' },
       { title: 'Vite', href: '/docs-old/integrations/vercel/vite' },
     ],
