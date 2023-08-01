@@ -69,7 +69,7 @@ Once pushed, the GitHub actions build will say `'Hello undefined'` as it doesn't
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'cli' }}
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -92,7 +92,7 @@ console.log(`Hello ${process.env.HELLO}`)
 
 Try running it locally.
 
-```shell {{ title: 'cli' }}
+```shell
 node build.js
 {
   ...
@@ -109,7 +109,7 @@ That covers local simulation of the CI. Let's solve for the real CI environment 
 
 Push your latest `.env` file changes and edit your CI secrets. [Learn more about syncing](/docs/tutorials/sync)
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open ci
 ```
@@ -120,7 +120,7 @@ Use the UI to configure those secrets per environment.
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -145,7 +145,7 @@ DOTENV_VAULT_CI_VERSION=2
 
 Fetch your CI `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```

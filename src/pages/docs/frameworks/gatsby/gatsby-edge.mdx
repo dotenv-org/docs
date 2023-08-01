@@ -25,13 +25,13 @@ export const description =
 
 Generate a gatsby.js application.
 
-```shell {{ title: 'cli' }}
+```shell
 npm init gatsby
 ```
 
 This will create a handful of files.
 
-```shell {{ title: 'cli' }}
+```shell
 ls -1
 README.md
 gatsby-config.js
@@ -44,7 +44,7 @@ src/
 Install the latest dotenv. This is **important** because the Gatsby framework is currently using an [old version](https://github.com/gatsbyjs/gatsby/blob/fd8de341684df7aa5fcd911a25786beac471925c/benchmarks/mdx/package.json#L23) of dotenv without `.env.vault` support.
 
 
-```shell {{ title: 'cli' }}
+```shell
 npm install dotenv --save
 ```
 
@@ -89,7 +89,7 @@ GATSBY_HELLO="World"
 
 Run Gatsby.
 
-```shell {{ title: 'cli' }}
+```shell
 npm run develop
 started server on http://localhost:8000/
 ```
@@ -106,7 +106,7 @@ That covers local development. Let's solve for production next.
 
 Push your latest `.env` file changes and edit your production secrets. [Learn more about syncing](/docs/tutorials/sync)
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
@@ -117,7 +117,7 @@ Use the UI to configure those secrets per environment.
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -142,14 +142,14 @@ DOTENV_VAULT_PRODUCTION_VERSION=2
 
 Fetch your production `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
 Test production `DOTENV_KEY` locally using the CLI.
 
-```shell {{ title: 'cli' }}
+```shell
 DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' npm run develop
 ```
 <ScreenshotBrowser url='/assets/img/docs/hello-production.png' />

@@ -23,15 +23,15 @@ export const description =
 
 ## Initial setup
 
-Generate a **next.js** application (or the front-end framework of your choice).
+Generate an **astro.js** application.
 
-```shell {{ title: 'cli' }}
+```shell
 npx create-next-app@latest --example hello-world .
 ```
 
 This will create a handful of files.
 
-```shell {{ title: 'cli' }}
+```shell
 ls -1
 README.md
 next-env.d.ts
@@ -64,7 +64,7 @@ Add `netlify.toml`.
 
 Commit that to code and deploy it to Netlify.
 
-```shell {{ title: 'cli' }}
+```shell
 npx netlify-cli@latest deploy --build --prod
 ```
 
@@ -74,7 +74,7 @@ Once deployed, your app will say `'Hello .'` as it doesn't have a way to access 
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: 'cli' }}
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -97,7 +97,7 @@ Preface your npm `package.json scripts` with dotenv [preloading](https://github.
 
 Try running it locally.
 
-```shell {{ title: 'cli' }}
+```shell
 npm run dev
 started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
@@ -114,7 +114,7 @@ That covers local development. Let's solve for production next.
 
 Push your latest `.env` file changes and edit your production secrets. [Learn more about syncing](/docs/tutorials/sync)
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
@@ -125,7 +125,7 @@ Use the UI to configure those secrets per environment.
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -150,14 +150,14 @@ DOTENV_VAULT_PRODUCTION_VERSION=2
 
 Fetch your production `DOTENV_KEY`.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
 Set `DOTENV_KEY` on Netlify using the CLI.
 
-```shell {{ title: 'cli' }}
+```shell
 npx netlify-cli@latest env:set DOTENV_KEY "dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production"
 ```
 

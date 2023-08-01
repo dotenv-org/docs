@@ -65,7 +65,7 @@ CMD node index.js
 
 Commit that to code and build it locally with Docker.
 
-```shell {{ title: "cli" }}
+```shell
 docker build -t docker-nodejs . && docker run --rm -it -p 3000:3000 --init docker-nodejs
 ```
 
@@ -77,7 +77,7 @@ Once built, your app will say `'Hello undefined'` at [localhost:3000](http://loc
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
-```shell {{ title: "cli" }}
+```shell
 npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
@@ -102,7 +102,7 @@ const http = require('http')
 
 Try rebuilding it locally.
 
-```shell {{ title: "cli" }}
+```shell
 docker build -t docker-nodejs . && docker run --rm -it -p 3000:3000 --init docker-nodejs
 {
   ...
@@ -119,7 +119,7 @@ That covers the local development build. Let's solve for production next.
 
 Push your latest `.env` file changes and edit your production secrets. [Learn more about syncing](/docs/tutorials/sync)
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
@@ -130,7 +130,7 @@ Use the UI to configure those secrets per environment.
 
 Then build your encrypted `.env.vault` file.
 
-```shell {{ title: 'cli' }}
+```shell
 npx dotenv-vault@latest build
 ```
 
@@ -155,14 +155,14 @@ DOTENV_VAULT_PRODUCTION_VERSION=2
 
 Fetch your production `DOTENV_KEY`.
 
-```shell {{ title: "cli" }}
+```shell
 npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
 Set `DOTENV_KEY` for Docker run.
 
-```shell {{ title: "cli" }}
+```shell
 docker build -t docker-nodejs . && docker run -e DOTENV_KEY="dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production" --rm -it -p 3000:3000 --init docker-nodejs
 ```
 
