@@ -7,15 +7,15 @@ import { AngularIcon } from '@/components/icons/AngularIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
-  'Deploy an Angular.js app with an encrypted .env.vault file to Vercel.'
+  'Deploy an Angular app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Angular.js' url='/docs/frameworks/angular' icon={
+<FrameworksBreadcrumb framework='Angular' url='/docs/frameworks/angular' icon={
   <>
     <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
     <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
   </>
 } />
-# Deploy a Angular.js App to Vercel
+# Deploy an Angular App to Vercel
 <GuideHeading lead={description} />
 
 <Note>
@@ -24,7 +24,7 @@ export const description =
 
 ## Initial setup
 
-Create an Angular.js application.
+Create an Angular application.
 
 ```bash
 npx @angular/cli new
@@ -113,7 +113,7 @@ Create a `.env` file in the root of your project.
 NG_APP_HELLO="World"
 ```
 
-Preload Angular.js scripts using dotenv. This will inject environment variables ahead of Angular.js.
+Preload Angular scripts using dotenv. This will inject environment variables ahead of Angular.
 
 ```json {{ title: 'package.json' }}
 "scripts": {
