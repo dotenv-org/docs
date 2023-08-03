@@ -98,7 +98,7 @@ npx vercel@latest deploy --prod
 
 Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-## Install dotenv
+## Preload dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
@@ -111,6 +111,18 @@ Create a `.env` file in the root of your project.
 ```shell {{ title: '.env' }}
 # .env
 NG_APP_HELLO="World"
+```
+
+Preload Angular.js scripts using dotenv. This will inject environment variables ahead of Angular.js.
+
+```json {{ title: 'package.json' }}
+"scripts": {
+  "ng": "node -r dotenv/config ./node_modules/.bin/ng",
+  "start": "node -r dotenv/config ./node_modules/.bin/ng serve",
+  "build": "node -r dotenv/config ./node_modules/.bin/ng build",
+  "watch": "node -r dotenv/config ./node_modules/.bin/ng build --watch --configuration development",
+  "test": "node -r dotenv/config ./node_modules/.bin/ng test"
+},
 ```
 
 Try running it locally.
