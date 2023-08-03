@@ -3,31 +3,31 @@ import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { GuideHeading } from '@/components/GuideHeading'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
-import { RemixIcon } from '@/components/icons/RemixIcon'
+import { AngularIcon } from '@/components/icons/AngularIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
-  'Deploy a Remix.js app with an encrypted .env.vault file to Vercel.'
+  'Deploy an Angular.js app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Remix.js' url='/docs/frameworks/remix' icon={
+<FrameworksBreadcrumb framework='Angular.js' url='/docs/frameworks/angular' icon={
   <>
-    <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
     <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
   </>
 } />
-# Deploy a Remix.js App to Vercel
+# Deploy a Angular.js App to Vercel
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/remix/vercel">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/angular/vercel">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
-Create a Remix.js application.
+Create an Angular.js application.
 
 ```bash
-npx create-remix@latest
+npx @angular/cli new
 ```
 
 This will create a handful of files.
@@ -35,50 +35,48 @@ This will create a handful of files.
 ```shell
 ls -1
 README.md
-app/
-build/
+angular.json
 node_modules/
 package-lock.json
 package.json
-public/
-remix.config.js
-remix.env.d.ts
+src/
+tsconfig.app.json
 tsconfig.json
+tsconfig.spec.json
 ```
 
-Edit `app/routes/_index.tsx` to include `process.env.HELLO` using a Remix [loader](https://remix.run/docs/en/main/route/loader).
+Add [`@ngx-env/builder`](https://github.com/chihab/ngx-env) so we can get `process.env` support in Angular.
 
-```js {{ title: 'app/routes/_index.tsx' }}
-import type { V2_MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+```bash
+npx @angular/cli add @ngx-env/builder
+```
 
-export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
-  ];
-};
+Generate the environment files (for Angular 16 and greater).
 
-export async function loader() {
-  require('dotenv').config()
+```bash
+npx @angular/cli generate environments
+```
 
-  return json({
-    ENV: {
-      HELLO: process.env.HELLO, // HELLO="World" in .env file
-    },
-  });
+Edit `src/app/app.component.ts` to include the environment variable `NG_APP_HELLO`.
+
+```js {{ title: 'src/app/app.component.ts' }}
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'vercel';
+  NG_APP_HELLO = process.env['NG_APP_HELLO']
 }
+```
 
-export default function Index() {
-  const data = useLoaderData()
+Change `src/app/app.component.html` to a simple `Hello {{ NG_APP_HELLO }}`.
 
-  return (
-    <div>
-      Hello {data.ENV.HELLO}.
-    </div>
-  );
-}
+```js {{ title: 'src/app/app.component.html' }}
+Hello {{ NG_APP_HELLO }}.
 ```
 
 Add `.vercelignore` file.
@@ -112,24 +110,28 @@ Create a `.env` file in the root of your project.
 
 ```shell {{ title: '.env' }}
 # .env
-HELLO="World"
+NG_APP_HELLO="World"
 ```
 
-Preload Remix.js scripts using dotenv. This will inject environment variables ahead of Remix.js.
+Preload Angular.js scripts using dotenv. This will inject environment variables ahead of Angular.js.
 
 ```json {{ title: 'package.json' }}
 "scripts": {
-  "build": "node -r dotenv/config ./node_modules/.bin/remix build",
-  "dev": "node -r dotenv/config ./node_modules/.bin/remix dev",
-  "start": "node -r dotenv/config ./node_modules/.bin/remix-serve build",
+  "scripts": {
+    "ng": "node -r dotenv/config ./node_modules/.bin/ng",
+    "start": "node -r dotenv/config ./node_modules/.bin/ng serve",
+    "build": "node -r dotenv/config ./node_modules/.bin/ng build",
+    "watch": "node -r dotenv/config ./node_modules/.bin/ng build --watch --configuration development",
+    "test": "node -r dotenv/config ./node_modules/.bin/ng test"
+  },
 },
 ```
 
 Try running it locally.
 
 ```shell
-npm run dev
-# Visit http://localhost:3000
+npm run start
+# Angular Live Development Server is listening on localhost:4200
 ```
 
 It will say 'Hello World'.

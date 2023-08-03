@@ -211,7 +211,7 @@ export const navigation = [
   {
     title: 'Frameworks', href: '/docs#frameworks',
     links: [
-      { title: 'Angular', href: '/docs-old/integrations/vercel/angular' },
+      { title: 'Angular', href: '/docs/frameworks/angular/vercel' },
       { title: 'Astro', href: '/docs/frameworks/astro/netlify' },
       { title: 'Express', href: '/docs/frameworks/express' },
       { title: 'Gatsby', href: '/docs/frameworks/gatsby' },

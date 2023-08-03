@@ -19,7 +19,7 @@ export function FrameworksNodejs() {
             Angular
           </h3>
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Angular</p>
-          <p className="mt-4"><Button href="/docs-old/integrations/vercel/angular" variant="text" arrow="right">Read guide</Button></p>
+          <p className="mt-4"><Button href="/docs/frameworks/angular/vercel" variant="text" arrow="right">Read guide</Button></p>
         </div>
         <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
       </div>
