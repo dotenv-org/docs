@@ -2,10 +2,12 @@ import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
 import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
-import { VercelIcon } from '@/components/icons/VercelIcon'
-import { NodeIcon } from '@/components/icons/NodeIcon'
+import { AngularIcon } from '@/components/icons/AngularIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
+import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
+import { VercelIcon } from '@/components/icons/VercelIcon'
+import { ViteIcon } from '@/components/icons/ViteIcon'
 
 export const description = 
   'Use .env.vault with Vercel'
@@ -43,6 +45,16 @@ export const sections = [
     Frameworks
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="angular" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Angular
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Angular</p>
+        <p className="mt-4"><Button href="/docs/frameworks/angular/vercel" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
+    </div>
     <div key="express" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -62,6 +74,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/frameworks/remix/vercel" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+    <div key="vite" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Vite
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Vite App to Vercel</p>
+        <p className="mt-4"><Button href="/docs/frameworks/vite/vercel" variant="text" arrow="right">Start</Button></p>
+      </div>
+      <ViteIcon className="h-9 w-9 text-[#646CFF]"/>
     </div>
   </div>
 </div>

@@ -219,7 +219,7 @@ export const navigation = [
       { title: 'Nuxt', href: '/docs/frameworks/nuxtjs' },
       { title: 'Remix', href: '/docs/frameworks/remix' },
       { title: 'Serverless', href: '/docs/frameworks/serverless/aws-lambda' },
-      { title: 'Vite', href: '/docs-old/integrations/vercel/vite' },
+      { title: 'Vite', href: '/docs/frameworks/vite/vercel' },
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Rails', href: '/docs/frameworks/rails' },
       { title: 'Sinatra', href: '/docs/frameworks/sinatra/heroku' },

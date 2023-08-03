@@ -100,8 +100,8 @@ export function FrameworksNodejs() {
           <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
             Vite
           </h3>
-          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Vite</p>
-          <p className="mt-4"><Button href="/docs-old/integrations/vercel/vite" variant="text" arrow="right">Start</Button></p>
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy Vite App to Vercel</p>
+          <p className="mt-4"><Button href="/docs/frameworks/vite/vercel" variant="text" arrow="right">Read guide</Button></p>
         </div>
         <ViteIcon className="h-9 w-9 text-[#646CFF]"/>
       </div>

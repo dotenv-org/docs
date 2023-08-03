@@ -3,80 +3,52 @@ import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 import { GuideHeading } from '@/components/GuideHeading'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
-import { AngularIcon } from '@/components/icons/AngularIcon'
+import { ViteIcon } from '@/components/icons/ViteIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
-  'Deploy an Angular.js app with an encrypted .env.vault file to Vercel.'
+  'Deploy Vite app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Angular.js' url='/docs/frameworks/angular' icon={
+<FrameworksBreadcrumb framework='Vite' url='/docs/frameworks/vite' icon={
   <>
-    <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
+    <ViteIcon className="h-9 w-9 text-[#646CFF]"/>
     <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
   </>
 } />
-# Deploy a Angular.js App to Vercel
+# Deploy a Vite App to Vercel
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/angular/vercel">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/vite/vercel">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
-Create an Angular.js application.
+Create a Vite application.
 
 ```bash
-npx @angular/cli new
+npm create vite@latest
 ```
 
 This will create a handful of files.
 
 ```shell
 ls -1
-README.md
-angular.json
+index.html
 node_modules/
 package-lock.json
 package.json
+public/
 src/
-tsconfig.app.json
 tsconfig.json
-tsconfig.spec.json
 ```
 
-Add [`@ngx-env/builder`](https://github.com/chihab/ngx-env) so we can get `process.env` support in Angular.
+Edit `src/main.ts` to include to a simple `Hello ${process.env.HELLO}.`.
 
-```bash
-npx @angular/cli add @ngx-env/builder
-```
-
-Generate the environment files (for Angular 16 and greater).
-
-```bash
-npx @angular/cli generate environments
-```
-
-Edit `src/app/app.component.ts` to include the environment variable `NG_APP_HELLO`.
-
-```js {{ title: 'src/app/app.component.ts' }}
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'vercel';
-  NG_APP_HELLO = process.env['NG_APP_HELLO']
-}
-```
-
-Change `src/app/app.component.html` to a simple `Hello {{ NG_APP_HELLO }}`.
-
-```js {{ title: 'src/app/app.component.html' }}
-Hello {{ NG_APP_HELLO }}.
+```js {{ title: 'src/main.ts' }}
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
+  Hello ${import.meta.env.VITE_HELLO}.
+`
 ```
 
 Add `.vercelignore` file.
@@ -94,9 +66,9 @@ Commit that to code and deploy it to Vercel.
 npx vercel@latest deploy --prod
 ```
 
-<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.vercel.app" />
+<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp.vercel.app" />
 
-Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+Once deployed, your app will say `'Hello undefined.'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Preload dotenv
 
@@ -110,26 +82,26 @@ Create a `.env` file in the root of your project.
 
 ```shell {{ title: '.env' }}
 # .env
-NG_APP_HELLO="World"
+VITE_HELLO="World"
 ```
 
-Preload Angular.js scripts using dotenv. This will inject environment variables ahead of Angular.js.
+Preload Vite.js scripts using dotenv. This will inject environment variables ahead of Vite.js.
 
 ```json {{ title: 'package.json' }}
+...
 "scripts": {
-  "ng": "node -r dotenv/config ./node_modules/.bin/ng",
-  "start": "node -r dotenv/config ./node_modules/.bin/ng serve",
-  "build": "node -r dotenv/config ./node_modules/.bin/ng build",
-  "watch": "node -r dotenv/config ./node_modules/.bin/ng build --watch --configuration development",
-  "test": "node -r dotenv/config ./node_modules/.bin/ng test"
+  "dev": "node -r dotenv/config ./node_modules/.bin/vite",
+  "build": "tsc && node -r dotenv/config ./node_modules/.bin/vite build",
+  "preview": "node -r dotenv/config ./node_modules/.bin/vite preview"
 },
+...
 ```
 
 Try running it locally.
 
 ```shell
-npm run start
-# Angular Live Development Server is listening on localhost:4200
+npm run dev
+Local:   http://localhost:5173/
 ```
 
 It will say 'Hello World'.
@@ -151,7 +123,7 @@ npx dotenv-vault@latest open production
 
 Use the UI to configure those secrets per environment.
 
-<ScreenshotBrowser url="/assets/img/docs/edit-production-value.gif" www="www.dotenv.org" />
+<ScreenshotBrowser url="/assets/img/docs/edit-production-vite-hello.gif" www="www.dotenv.org" />
 
 Then build your encrypted `.env.vault` file.
 
