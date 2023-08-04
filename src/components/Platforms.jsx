@@ -28,8 +28,8 @@ export function Platforms() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               AWS Lambda
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to AWS Lambda</p>
-            <p className="mt-4"><Button href="docs-old/integrations/aws-lambda/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with AWS Lambda</p>
+            <p className="mt-4"><Button href="/docs/platforms/aws-lambda" variant="text" arrow="right">AWS Lambda Guides</Button></p>
           </div>
           <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
         </div>
