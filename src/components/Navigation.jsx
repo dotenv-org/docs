@@ -229,7 +229,7 @@ export const navigation = [
     title: 'Platforms', href: '/docs#platforms',
     links: [
       { title: 'AWS Lambda', href: '/docs/platforms/aws-lambda' },
-      { title: 'Cloud66', href: '/docs-old/integrations/cloud66/nodejs' },
+      { title: 'Cloud66', href: '/docs/languages/nodejs/cloud66' },
       { title: 'Digital Ocean', href: '/docs/languages/nodejs/digital-ocean' },
       { title: 'Docker', href: '/docs/platforms/docker' },
       { title: 'Edgio', href: '/docs-old/integrations/edgio/nuxtjs' },

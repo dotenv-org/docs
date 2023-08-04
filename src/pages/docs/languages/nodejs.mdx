@@ -5,6 +5,7 @@ import { Heading } from '@/components/Heading'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
 import { AwsIcon } from '@/components/icons/AwsIcon'
+import { Cloud66Icon } from '@/components/icons/Cloud66Icon'
 import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
@@ -68,6 +69,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/aws-lambda" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
+    </div>
+    <div key="cloud66" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Cloud66
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Cloud66</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/cloud66" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <Cloud66Icon className="h-9 w-9 text-[#3C72B9]"/>
     </div>
     <div key="digital-ocean" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">

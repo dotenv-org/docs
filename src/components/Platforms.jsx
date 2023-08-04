@@ -39,7 +39,7 @@ export function Platforms() {
               Cloud66
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Cloud66</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/cloud66/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/cloud66" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <Cloud66Icon className="h-9 w-9 text-[#3C72B9]"/>
         </div>
