@@ -4,14 +4,13 @@ import { Heading } from '@/components/Heading'
 
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
-import { RailsIcon } from '@/components/icons/RailsIcon'
+import { RubyIcon } from '@/components/icons/RubyIcon'
 
 export const description = 
   'Use .env.vault with CircleCi.'
 
 export const sections = [
   { title: 'Languages', id: 'languages' },
-  { title: 'Frameworks', id: 'frameworks' },
 ]
 
 <CisBreadcrumb icon={
@@ -38,19 +37,16 @@ export const sections = [
       <NodeIcon className="h-9 w-9 text-[#339933]"/>
     </div>
   </div>
-  <Heading level={2} id="frameworks">
-    Frameworks
-  </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="rails" className="flex flex-row-reverse gap-6">
+    <div key="ruby" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Rails
+          Ruby
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Rails with CircleCi</p>
-        <p className="mt-4"><Button href="/docs-old/integrations/circleci/rails" variant="text" arrow="right">Read guide</Button></p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Ruby with CircleCi</p>
+        <p className="mt-4"><Button href="/docs/languages/ruby/circleci" variant="text" arrow="right">Read guide</Button></p>
       </div>
-      <RailsIcon className="h-9 w-9 text-[#CC0000]"/>
+      <RubyIcon className="h-9 w-9 text-[#CC342D]"/>
     </div>
   </div>
 </div>

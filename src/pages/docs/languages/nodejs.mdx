@@ -5,6 +5,7 @@ import { Heading } from '@/components/Heading'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
 import { AwsIcon } from '@/components/icons/AwsIcon'
+import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { Cloud66Icon } from '@/components/icons/Cloud66Icon'
 import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
 import { DockerIcon } from '@/components/icons/DockerIcon'
@@ -155,6 +156,16 @@ export const sections = [
     CI/CDs
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+    <div key="circle-ci" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          CircleCI
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with CircleCI</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/circleci" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
+    </div>
     <div key="github-actions" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
