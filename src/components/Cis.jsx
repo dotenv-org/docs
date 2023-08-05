@@ -26,7 +26,7 @@ export function Cis() {
               AWS Beanstalk
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with AWS Beanstalk</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/aws-beanstalk/express" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/aws-beanstalk" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <AwsIcon className="h-9 w-9 text-[#3C693B]"/>
         </div>
