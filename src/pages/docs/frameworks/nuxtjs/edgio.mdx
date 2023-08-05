@@ -86,7 +86,7 @@ npm run edgio:deploy
 
 Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-## Preload dotenv
+## Install dotenv
 
 Install [`dotenv`](https://github.com/motdotla/dotenv).
 
@@ -99,6 +99,22 @@ Create a `.env` file in the root of your project.
 ```shell {{ title: '.env' }}
 # .env
 HELLO="World"
+```
+
+As early as possible in `nuxt.config.ts` require and load dotenv.
+
+```js {{ title: 'nuxt.config.ts' }}
+// https://nuxt.com/docs/api/configuration/nuxt-config
+require("dotenv").config()
+
+export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      HELLO: process.env.HELLO
+    }
+  },
+  devtools: { enabled: true }
+})
 ```
 
 Try running it locally.
@@ -167,6 +183,12 @@ Set `DOTENV_KEY` on Edgio using the UI.
 
 ## Deploy
 
+You'll have to delete your `.env` file now to make use of the `.env.vault` file with edgio and Nuxt. Otherwise, Nuxt prioritizes the `.env` file over everything.
+
+```
+rm .env
+```
+
 Commit those changes safely to code and redeploy.
 
 ```shell
@@ -174,6 +196,10 @@ npm run edgio:deploy
 ```
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
+
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.edgio.link' />
+
+You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
 <ScreenshotBrowser url='/assets/img/docs/nuxt-logs-vault.png' www='edgio.app' />
 
