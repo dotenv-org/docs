@@ -232,7 +232,7 @@ export const navigation = [
       { title: 'Cloud66', href: '/docs/languages/nodejs/cloud66' },
       { title: 'Digital Ocean', href: '/docs/languages/nodejs/digital-ocean' },
       { title: 'Docker', href: '/docs/platforms/docker' },
-      { title: 'Edgio', href: '/docs-old/integrations/edgio/nuxtjs' },
+      { title: 'Edgio', href: '/docs/frameworks/nuxtjs/edgio' },
       { title: 'Fly', href: '/docs/platforms/fly' },
       { title: 'Gatsby Edge', href: '/docs/frameworks/gatsby/gatsby-edge' },
       { title: 'Heroku', href: '/docs/platforms/heroku' },

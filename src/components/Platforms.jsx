@@ -66,10 +66,10 @@ export function Platforms() {
         <div key="edgio" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Edge.io
+              Edgio
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Nuxt.js App to Edgio</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/edgio/nuxtjs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/frameworks/nuxtjs/edgio" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
         </div>
