@@ -1,17 +1,17 @@
 import WellDone from '@/pages/partials/wellDone.mdx'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
-import { GitHubIcon } from '@/components/icons/GitHubIcon'
+import { GitlabIcon } from '@/components/icons/GitlabIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
 export const description = 
-  'Run Node.js CI/CD in GitHub Actions with an encrypted .env.vault file'
+  'Run Node.js CI/CD in Gitlab CI with an encrypted .env.vault file'
 
 <LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
   <>
     <NodeIcon className="h-9 w-9 text-[#339933]"/>
-    <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+    <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
   </>
 }/>
 # CI/CD in Node.js with Gitlab CI
@@ -40,30 +40,23 @@ Create a `package.json` file.
 }
 ```
 
-Create a `.github/workflows/ci.yml` file.
+Create a `.gitlab-ci.yml` file.
 
-```yaml {{ title: '.github/workflows/ci.yml' }}
-name: npm run build
-on: [push]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16
-    - run: npm install
-    - run: npm run build
-      env:
-        DOTENV_KEY: ${{ secrets.DOTENV_KEY }}
+```yaml {{ title: '.gitlab-ci.yml' }}
+image: node:20.5
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
 ```
 
-Commit that to code and push to GitHub.
+Commit that to code and push to Gitlab.
 
-Once pushed, the GitHub actions build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+<ScreenshotBrowser url='/assets/img/docs/gitlab-hello-undefined.png' www='gitlab.com/your-org/your-repo' />
 
-<ScreenshotBrowser url='/assets/img/docs/github-actions-hello-undefined.png' www='github.com/you/app/actions' />
+Once pushed, the Gitlab CI build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install dotenv
 
@@ -150,9 +143,9 @@ npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```
 
-Set `DOTENV_KEY` on GitHub Actions.
+Set `DOTENV_KEY` on Gitlab.
 
-<ScreenshotBrowser url='/assets/img/docs/github-actions-config-vars.png' />
+<ScreenshotBrowser url='/assets/img/docs/gitlab-config-vars.gif' www='gitlab.com' />
 
 ## Build CI
 
@@ -162,6 +155,6 @@ That's it! On re-run, your `.env.vault` file will be decrypted and its CI secret
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
-<ScreenshotBrowser url='/assets/img/docs/github-actions-logs-vault.png' www='github actions build' />
+<ScreenshotBrowser url='/assets/img/docs/gitlab-logs-vault.png' www='gitlab.com' />
 
 <WellDone/>
