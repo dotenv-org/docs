@@ -119,7 +119,7 @@ export function Platforms() {
               Northflank
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Northflank</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/northflank/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/northflank" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <NorthflankIcon className="h-9 w-9 text-[#01E3C5]"/>
         </div>

@@ -237,7 +237,7 @@ export const navigation = [
       { title: 'Gatsby Edge', href: '/docs/frameworks/gatsby/gatsby-edge' },
       { title: 'Heroku', href: '/docs/platforms/heroku' },
       { title: 'Netlify', href: '/docs/platforms/netlify' },
-      { title: 'Northflank', href: '/docs-old/integrations/northflank/nodejs' },
+      { title: 'Northflank', href: '/docs/languages/nodejs/northflank' },
       { title: 'Railway', href: '/docs/languages/nodejs/railway' },
       { title: 'Render', href: '/docs/languages/nodejs/render' },
       { title: 'Supabase', href: '/docs-old/integrations/supabase/nodejs' },
