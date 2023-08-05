@@ -251,7 +251,7 @@ export const navigation = [
       { title: 'CircleCI', href: '/docs/cis/circleci' },
       { title: 'Dagger', href: '/docs-old/integrations/dagger/nodejs' },
       { title: 'GitHub Actions', href: '/docs/cis/github-actions' },
-      { title: 'Gitlab CI/CD', href: '/docs-old/integrations/gitlab/ci-quickstart' },
+      { title: 'Gitlab CI/CD', href: '/docs/languages/nodejs/gitlab-ci' },
       { title: 'Google Cloud Build', href: '/docs/cis/google-cloud-build' },
       { title: 'Jenkins', href: '/docs-old/integrations/jenkins/nodejs' },
       { title: 'Pulumi', href: '/docs-old/integrations/pulumi/nodejs' },

@@ -11,6 +11,7 @@ import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
+import { GitlabIcon } from '@/components/icons/GitlabIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
@@ -175,6 +176,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/github-actions" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/>
+    </div>
+    <div key="gitlab" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Gitlab CI/CD
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Gitlab CI</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/gitlab-ci" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
     </div>
   </div>
 </div>

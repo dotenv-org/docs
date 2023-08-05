@@ -74,8 +74,8 @@ export function Cis() {
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
               Gitlab CI/CD
             </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Gitlab</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/gitlab/ci-quickstart" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Gitlab CI</p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/gitlab-ci" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
         </div>
