@@ -240,7 +240,6 @@ export const navigation = [
       { title: 'Northflank', href: '/docs/languages/nodejs/northflank' },
       { title: 'Railway', href: '/docs/languages/nodejs/railway' },
       { title: 'Render', href: '/docs/languages/nodejs/render' },
-      { title: 'Supabase', href: '/docs-old/integrations/supabase/nodejs' },
       { title: 'Vercel', href: '/docs/platforms/vercel' },
     ],
   },

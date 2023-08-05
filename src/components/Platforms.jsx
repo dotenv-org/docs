@@ -13,7 +13,6 @@ import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 import { NorthflankIcon } from '@/components/icons/NorthflankIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
 import { RenderIcon } from '@/components/icons/RenderIcon'
-import { SupabaseIcon } from '@/components/icons/SupabaseIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export function Platforms() {
@@ -142,16 +141,6 @@ export function Platforms() {
             <p className="mt-4"><Button href="/docs/languages/nodejs/render" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <RenderIcon className="h-9 w-9 text-[#46E3B7]"/>
-        </div>
-        <div key="supabase" className="flex flex-row-reverse gap-6">
-          <div className="flex-auto">
-            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-              Supabase
-            </h3>
-            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Node.js App to Supabase</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/supabase/nodejs" variant="text" arrow="right">Read guide</Button></p>
-          </div>
-          <SupabaseIcon className="h-9 w-9 text-[#3FCF8E]"/>
         </div>
         <div key="vercel" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
