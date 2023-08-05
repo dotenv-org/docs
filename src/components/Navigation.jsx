@@ -255,7 +255,7 @@ export const navigation = [
       { title: 'Google Cloud Build', href: '/docs/cis/google-cloud-build' },
       { title: 'Jenkins', href: '/docs-old/integrations/jenkins/nodejs' },
       { title: 'Pulumi', href: '/docs-old/integrations/pulumi/nodejs' },
-      { title: 'Travis', href: '/docs-old/integrations/travis-ci/nodejs' },
+      { title: 'Travis', href: '/docs/languages/nodejs/travis-ci' },
     ]
   },
   {

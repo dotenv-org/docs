@@ -16,6 +16,7 @@ import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
 import { RenderIcon } from '@/components/icons/RenderIcon'
+import { TravisCiIcon } from '@/components/icons/TravisCiIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
@@ -186,6 +187,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/gitlab-ci" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
+    </div>
+    <div key="travis-ci" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Travis CI
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Travis CI</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/travis-ci" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <TravisCiIcon className="h-9 w-9 text-[#3EAAAF]"/>
     </div>
   </div>
 </div>

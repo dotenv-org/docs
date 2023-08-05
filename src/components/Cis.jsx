@@ -115,7 +115,7 @@ export function Cis() {
               Travis CI
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Travis CI</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/travis-ci/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/travis-ci" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <TravisCiIcon className="h-9 w-9 text-[#3EAAAF]"/>
         </div>
