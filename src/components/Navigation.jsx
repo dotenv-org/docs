@@ -249,7 +249,7 @@ export const navigation = [
       { title: 'Bitbucket', href: '/docs/languages/nodejs/bitbucket' },
       { title: 'Buddy', href: '/docs/languages/nodejs/buddy' },
       { title: 'CircleCI', href: '/docs/cis/circleci' },
-      { title: 'Dagger', href: '/docs-old/integrations/dagger/nodejs' },
+      { title: 'Dagger', href: '/docs/languages/nodejs/dagger' },
       { title: 'GitHub Actions', href: '/docs/cis/github-actions' },
       { title: 'Gitlab CI/CD', href: '/docs/languages/nodejs/gitlab-ci' },
       { title: 'Google Cloud Build', href: '/docs/cis/google-cloud-build' },

@@ -55,7 +55,7 @@ export function Cis() {
               Dagger
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Dagger</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/dagger/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/dagger" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <DaggerIcon className="h-9 w-9 text-[#1d1d1b] dark:invert"/>
         </div>

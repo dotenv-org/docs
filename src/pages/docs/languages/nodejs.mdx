@@ -9,6 +9,7 @@ import { BitbucketIcon } from '@/components/icons/BitbucketIcon'
 import { BuddyIcon } from '@/components/icons/BuddyIcon'
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { Cloud66Icon } from '@/components/icons/Cloud66Icon'
+import { DaggerIcon } from '@/components/icons/DaggerIcon'
 import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
@@ -189,6 +190,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/circleci" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <CircleCiIcon className="h-9 w-9 text-[#343434] dark:invert"/>
+    </div>
+    <div key="dagger" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Dagger
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Dagger</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/dagger" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <DaggerIcon className="h-9 w-9 text-[#1d1d1b] dark:invert"/>
     </div>
     <div key="github-actions" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
