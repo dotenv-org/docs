@@ -3,23 +3,23 @@ import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import WellDone from '@/pages/partials/wellDone.mdx'
 
-import { BitbucketIcon } from '@/components/icons/BitbucketIcon'
+import { BuddyIcon } from '@/components/icons/BuddyIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const description = 
-  'Run Node.js CI/CD in Bitbucket Pipelines with an encrypted .env.vault file'
+  'Run Node.js CI/CD in Buddy with an encrypted .env.vault file'
 
 <LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
   <>
     <NodeIcon className="h-9 w-9 text-[#339933]"/>
-    <BitbucketIcon className="h-9 w-9 text-[#1A86FD]"/>
+    <BuddyIcon className="h-9 w-9 text-[#1A86FD]"/>
   </>
 }/>
-# CI/CD in Node.js with Bitbucket
+# CI/CD in Node.js with Buddy
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/bitbucket">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/buddy">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
@@ -41,23 +41,29 @@ Create a `package.json` file.
 }
 ```
 
-Create a `bitbucket-pipelines.yml` file.
+Create a `buddy.yml` file.
 
-```yaml {{ title: 'bitbucket-pipelines.yml' }}
-image: node:20
-pipelines:
-  default:
-    - step:
-        script:
-          - npm install
-          - npm run build
+```yaml {{ title: 'buddy.yml' }}
+- pipeline: "Build"
+  on: "EVENT"
+  events:
+  - type: "PUSH"
+  resources: "DEFAULT"
+  actions:
+  - action: "build"
+    type: "BUILD"
+    docker_image_name: "library/node"
+    docker_image_tag: "16"
+    execute_commands:
+      - npm install
+      - npm run build
 ```
 
-Commit that to code and push to Bitbucket.
+Commit that to code and push to Buddy.
 
-<ScreenshotBrowser url='/assets/img/docs/bitbucket-hello-undefined.png' www='bitbucket.org/org/app/pipelines' />
+<ScreenshotBrowser url='/assets/img/docs/buddy-hello-undefined.png' www='buddy.works/org/app/pipelines' />
 
-Once pushed, the Bitbucket pipeline build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+Once pushed, the Buddy pipeline build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install dotenv
 
@@ -144,9 +150,9 @@ npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```
 
-Set `DOTENV_KEY` on Bitbucket.
+Set `DOTENV_KEY` on Buddy.
 
-<ScreenshotBrowser url='/assets/img/docs/bitbucket-config-vars.gif' www='bitbucket.org' />
+<ScreenshotBrowser url='/assets/img/docs/buddy-ci-config-vars.gif' www='buddy.works' />
 
 ## Build CI
 
@@ -154,7 +160,7 @@ Commit those changes safely to code and rerun the build.
 
 That's it! On rerun, your `.env.vault` file will be decrypted and its CI secrets injected as environment variables – just in time.
 
-<ScreenshotBrowser url='/assets/img/docs/bitbucket-logs-vault.png' www='bitbucket.org' />
+<ScreenshotBrowser url='/assets/img/docs/buddy-logs-vault.png' www='buddy.works' />
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 

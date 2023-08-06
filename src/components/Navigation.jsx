@@ -247,7 +247,7 @@ export const navigation = [
     title: 'CI/CDs', href: '/docs#cis',
     links: [
       { title: 'Bitbucket', href: '/docs/languages/nodejs/bitbucket' },
-      { title: 'Buddy', href: '/docs-old/integrations/buddy/nodejs' },
+      { title: 'Buddy', href: '/docs/languages/nodejs/buddy' },
       { title: 'CircleCI', href: '/docs/cis/circleci' },
       { title: 'Dagger', href: '/docs-old/integrations/dagger/nodejs' },
       { title: 'GitHub Actions', href: '/docs/cis/github-actions' },
