@@ -3,7 +3,7 @@ import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import WellDone from '@/pages/partials/wellDone.mdx'
 
-import { GitlabIcon } from '@/components/icons/GitlabIcon'
+import { BitbucketIcon } from '@/components/icons/BitbucketIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 
 export const description = 
@@ -12,14 +12,14 @@ export const description =
 <LanguagesBreadcrumb language="Node.js" url="/docs/languages/nodejs" icon={
   <>
     <NodeIcon className="h-9 w-9 text-[#339933]"/>
-    <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
+    <BitbucketIcon className="h-9 w-9 text-[#1A86FD]"/>
   </>
 }/>
-# CI/CD in Node.js with Gitlab CI
+# CI/CD in Node.js with Bitbucket
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/gitlab-ci">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nodejs/bitbucket">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
@@ -41,23 +41,23 @@ Create a `package.json` file.
 }
 ```
 
-Create a `.gitlab-ci.yml` file.
+Create a `bitbucket-pipelines.yml` file.
 
-```yaml {{ title: '.gitlab-ci.yml' }}
-image: node:20.5
-
-build:
-  stage: build
-  script:
-    - npm install
-    - npm run build
+```yaml {{ title: 'bitbucket-pipelines.yml' }}
+image: node:20
+pipelines:
+  default:
+    - step:
+        script:
+          - npm install
+          - npm run build
 ```
 
-Commit that to code and push to Gitlab.
+Commit that to code and push to Bitbucket.
 
-<ScreenshotBrowser url='/assets/img/docs/gitlab-hello-undefined.png' www='gitlab.com/your-org/your-repo' />
+<ScreenshotBrowser url='/assets/img/docs/bitbucket-hello-undefined.png' www='bitbucket.org/org/app/pipelines' />
 
-Once pushed, the Gitlab CI build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+Once pushed, the Bitbucket pipeline build will say `'Hello undefined'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install dotenv
 
@@ -144,9 +144,9 @@ npx dotenv-vault@latest keys ci
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=ci
 ```
 
-Set `DOTENV_KEY` on Gitlab.
+Set `DOTENV_KEY` on Bitbucket.
 
-<ScreenshotBrowser url='/assets/img/docs/gitlab-config-vars.gif' www='gitlab.com' />
+<ScreenshotBrowser url='/assets/img/docs/bitbucket-config-vars.gif' www='bitbucket.org' />
 
 ## Build CI
 
@@ -154,8 +154,8 @@ Commit those changes safely to code and rerun the build.
 
 That's it! On rerun, your `.env.vault` file will be decrypted and its CI secrets injected as environment variables – just in time.
 
-You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
+<ScreenshotBrowser url='/assets/img/docs/bitbucket-logs-vault.png' www='bitbucket.org' />
 
-<ScreenshotBrowser url='/assets/img/docs/gitlab-logs-vault.png' www='gitlab.com' />
+You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
 <WellDone/>

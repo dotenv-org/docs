@@ -5,6 +5,7 @@ import { Heading } from '@/components/Heading'
 import { LanguagesBreadcrumb } from '@/components/LanguagesBreadcrumb'
 
 import { AwsIcon } from '@/components/icons/AwsIcon'
+import { BitbucketIcon } from '@/components/icons/BitbucketIcon'
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
 import { Cloud66Icon } from '@/components/icons/Cloud66Icon'
 import { DigitalOceanIcon } from '@/components/icons/DigitalOceanIcon'
@@ -72,6 +73,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/aws-lambda" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <AwsIcon className="h-9 w-9 text-[#FF9900]"/>
+    </div>
+    <div key="bitbucket" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Bitbucket
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Bitbucket</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/bitbucket" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <BitbucketIcon className="h-9 w-9 text-[#1A86FD]"/>
     </div>
     <div key="cloud66" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">

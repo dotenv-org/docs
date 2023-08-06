@@ -156,9 +156,9 @@ Set `DOTENV_KEY` on GitHub Actions.
 
 ## Build CI
 
-Commit those changes safely to code and re-run the build.
+Commit those changes safely to code and rerun the build.
 
-That's it! On re-run, your `.env.vault` file will be decrypted and its CI secrets injected as environment variables – just in time.
+That's it! On rerun, your `.env.vault` file will be decrypted and its CI secrets injected as environment variables – just in time.
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
 
