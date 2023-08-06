@@ -15,6 +15,7 @@ import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { GitlabIcon } from '@/components/icons/GitlabIcon'
+import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
@@ -220,6 +221,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/languages/nodejs/gitlab-ci" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <GitlabIcon className="h-9 w-9 text-[#FC6D26]"/>
+    </div>
+    <div key="google-cloud-build" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Google Cloud Build
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Google Cloud Build</p>
+        <p className="mt-4"><Button href="/docs/cis/google-cloud-build" variant="text" arrow="right">Cloud Build Guides</Button></p>
+      </div>
+      <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
     </div>
     <div key="travis-ci" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
