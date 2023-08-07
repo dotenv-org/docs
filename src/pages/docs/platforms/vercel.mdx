@@ -6,6 +6,7 @@ import { AngularIcon } from '@/components/icons/AngularIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
+import { SvelteIcon } from '@/components/icons/SvelteIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 import { ViteIcon } from '@/components/icons/ViteIcon'
 
@@ -50,7 +51,7 @@ export const sections = [
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
           Angular
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Angular</p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy an Angular App to Vercel</p>
         <p className="mt-4"><Button href="/docs/frameworks/angular/vercel" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <AngularIcon className="h-9 w-9 text-[#DD0031]"/>
@@ -74,6 +75,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/frameworks/remix/vercel" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <RemixIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+    <div key="svelte-kit" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          SvelteKit
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a SvelteKit App to Vercel</p>
+        <p className="mt-4"><Button href="/docs/frameworks/svelte-kit/vercel" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <SvelteIcon className="h-9 w-9 text-[#FF3E00]"/>
     </div>
     <div key="vite" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">

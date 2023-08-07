@@ -8,6 +8,7 @@ import { NextIcon } from '@/components/icons/NextIcon'
 import { NuxtIcon } from '@/components/icons/NuxtIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 import { ServerlessIcon } from '@/components/icons/ServerlessIcon'
+import { SvelteIcon } from '@/components/icons/SvelteIcon'
 import { ViteIcon } from '@/components/icons/ViteIcon'
 
 export function FrameworksNodejs() {
@@ -94,6 +95,16 @@ export function FrameworksNodejs() {
           <p className="mt-4"><Button href="/docs/frameworks/serverless/aws-lambda" variant="text" arrow="right">Read guide</Button></p>
         </div>
         <ServerlessIcon className="h-9 w-9 text-[#FD5750]"/>
+      </div>
+      <div key="svelte-kit" className="flex flex-row-reverse gap-6">
+        <div className="flex-auto">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+            SvelteKit
+          </h3>
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a SvelteKit App to Vercel</p>
+          <p className="mt-4"><Button href="/docs/frameworks/svelte-kit/vercel" variant="text" arrow="right">Read guide</Button></p>
+        </div>
+        <SvelteIcon className="h-9 w-9 text-[#FF3E00]"/>
       </div>
       <div key="vite" className="flex flex-row-reverse gap-6">
         <div className="flex-auto">

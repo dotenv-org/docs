@@ -219,6 +219,7 @@ export const navigation = [
       { title: 'Nuxt', href: '/docs/frameworks/nuxtjs' },
       { title: 'Remix', href: '/docs/frameworks/remix' },
       { title: 'Serverless', href: '/docs/frameworks/serverless/aws-lambda' },
+      { title: 'SvelteKit', href: '/docs/frameworks/svelte-kit/vercel' },
       { title: 'Vite', href: '/docs/frameworks/vite/vercel' },
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Rails', href: '/docs/frameworks/rails' },
