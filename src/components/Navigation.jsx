@@ -246,6 +246,7 @@ export const navigation = [
   {
     title: 'CI/CDs', href: '/docs#cis',
     links: [
+      { title: 'AWS Beanstalk', href: '/docs/languages/nodejs/aws-beanstalk' },
       { title: 'Bitbucket', href: '/docs/languages/nodejs/bitbucket' },
       { title: 'Buddy', href: '/docs/languages/nodejs/buddy' },
       { title: 'CircleCI', href: '/docs/cis/circleci' },

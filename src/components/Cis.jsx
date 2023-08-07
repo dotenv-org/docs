@@ -1,6 +1,7 @@
 import { Button } from '@/components/Button'
 import { Heading } from '@/components/Heading'
 
+import { AwsIcon } from '@/components/icons/AwsIcon'
 import { BitbucketIcon } from '@/components/icons/BitbucketIcon'
 import { BuddyIcon } from '@/components/icons/BuddyIcon'
 import { CircleCiIcon } from '@/components/icons/CircleCiIcon'
@@ -19,6 +20,16 @@ export function Cis() {
         CI/CD
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
+        <div key="aws-beanstalk" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              AWS Beanstalk
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with AWS Beanstalk</p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/aws-beanstalk" variant="text" arrow="right">Read guide</Button></p>
+          </div>
+          <AwsIcon className="h-9 w-9 text-[#7C974A]"/>
+        </div>
         <div key="bitbucket" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
