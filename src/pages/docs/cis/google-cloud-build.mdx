@@ -11,7 +11,6 @@ export const description =
 
 export const sections = [
   { title: 'Languages', id: 'languages' },
-  { title: 'Frameworks', id: 'frameworks' },
 ]
 
 <CisBreadcrumb icon={
@@ -36,21 +35,6 @@ export const sections = [
         <p className="mt-1"><Button href="/docs/languages/nodejs/google-cloud-build" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <NodeIcon className="h-9 w-9 text-[#339933]"/>
-    </div>
-  </div>
-  <Heading level={2} id="frameworks">
-    Frameworks
-  </Heading>
-  <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="express" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Express.js
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Express.js with Google Cloud Build</p>
-        <p className="mt-4"><Button href="/docs-old/integrations/google-cloud/express" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
     </div>
   </div>
 </div>
