@@ -16,6 +16,7 @@ import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { GitlabIcon } from '@/components/icons/GitlabIcon'
 import { GoogleCloudIcon } from '@/components/icons/GoogleCloudIcon'
+import { JenkinsIcon } from '@/components/icons/JenkinsIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
@@ -232,6 +233,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/cis/google-cloud-build" variant="text" arrow="right">Cloud Build Guides</Button></p>
       </div>
       <GoogleCloudIcon className="h-9 w-9 text-[#4285F4]"/>
+    </div>
+    <div key="jenkins" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Jenkins
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Jenkins</p>
+        <p className="mt-4"><Button href="/docs/languages/nodejs/jenkins" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <JenkinsIcon className="h-9 w-9 text-[#D24939]"/>
     </div>
     <div key="pulumi" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">

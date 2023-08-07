@@ -95,7 +95,7 @@ export function Cis() {
               Jenkins
             </h3>
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">CI/CD in Node.js with Jenkins</p>
-            <p className="mt-4"><Button href="/docs-old/integrations/jenkins/nodejs" variant="text" arrow="right">Read guide</Button></p>
+            <p className="mt-4"><Button href="/docs/languages/nodejs/jenkins" variant="text" arrow="right">Read guide</Button></p>
           </div>
           <JenkinsIcon className="h-9 w-9 text-[#D24939]"/>
         </div>
