@@ -220,6 +220,7 @@ export const navigation = [
       { title: 'Remix', href: '/docs/frameworks/remix' },
       { title: 'Serverless', href: '/docs/frameworks/serverless/aws-lambda' },
       { title: 'SvelteKit', href: '/docs/frameworks/svelte-kit/vercel' },
+      { title: 'Turborepo', href: '/docs/frameworks/turborepo/vercel' },
       { title: 'Vite', href: '/docs/frameworks/vite/vercel' },
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Rails', href: '/docs/frameworks/rails' },

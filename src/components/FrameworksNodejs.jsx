@@ -9,6 +9,7 @@ import { NuxtIcon } from '@/components/icons/NuxtIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 import { ServerlessIcon } from '@/components/icons/ServerlessIcon'
 import { SvelteIcon } from '@/components/icons/SvelteIcon'
+import { TurborepoIcon } from '@/components/icons/TurborepoIcon'
 import { ViteIcon } from '@/components/icons/ViteIcon'
 
 export function FrameworksNodejs() {
@@ -106,6 +107,17 @@ export function FrameworksNodejs() {
         </div>
         <SvelteIcon className="h-9 w-9 text-[#FF3E00]"/>
       </div>
+      <div key="turborepo" className="flex flex-row-reverse gap-6">
+        <div className="flex-auto">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+            Turborepo
+          </h3>
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Turborepo App to Vercel</p>
+          <p className="mt-4"><Button href="/docs/frameworks/turborepo/vercel" variant="text" arrow="right">Read guide</Button></p>
+        </div>
+        <TurborepoIcon className="h-9 w-9 text-[#EF4444]"/>
+      </div>
+
       <div key="vite" className="flex flex-row-reverse gap-6">
         <div className="flex-auto">
           <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
