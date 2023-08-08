@@ -1,74 +1,59 @@
 import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
-import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { GuideHeading } from '@/components/GuideHeading'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import WellDone from '@/pages/partials/wellDone.mdx'
 
-import { TurborepoIcon } from '@/components/icons/TurborepoIcon'
+import { NextIcon } from '@/components/icons/NextIcon'
 import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
-  'Deploy a Turborepo app with an encrypted .env.vault file to Vercel.'
+  'Deploy a Next.js app with an encrypted .env.vault file to Vercel.'
 
-<FrameworksBreadcrumb framework='Turborepo' url='/docs/frameworks/turborepo' icon={
+<FrameworksBreadcrumb framework="Next.js" url="/docs/frameworks/nextjs" icon={
   <>
-    <TurborepoIcon className="h-9 w-9 text-[#EF4444]"/>
+    <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
     <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
   </>
-} />
-# Deploy a Turborepo App to Vercel
+}/>
+# Deploy a Next.js App to Vercel
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/turborepo/vercel">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nextjs/vercel">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
 
-Create a new monorepo.
+Generate a **next.js** application.
 
-```bash
-npx create-turbo@latest
+```shell
+npx create-next-app@latest --example hello-world .
 ```
 
-This will create a handful of files and a couple workspaces (apps).
+This will create a handful of files.
 
 ```shell
 ls -1
 README.md
-apps/
-node_modules/
+next-env.d.ts
+node_modules
 package-lock.json
 package.json
-packages/
-turbo.json
+pages
+tsconfig.json
 ```
 
-Edit `apps/web/app/page.tsx` to include `process.env.NEXT_PUBLIC_HELLO` and say 'Hello World'.
+Edit `pages/index.tsx` to include `process.env.NEXT_PUBLIC_HELLO`.
 
-```js {{ title: 'apps/web/app/page.tsx' }}
-export default function Page() {
+```js {{ title: 'pages/index.tsx' }}
+export default function IndexPage() {
   return (
-    <>
+    <div>
       Hello {process.env.NEXT_PUBLIC_HELLO}.
-    </>
-  );
+    </div>
+  )
 }
 ```
-
-Declare the environment variable in `turbo.json`.
-
-```js
-{
-  ..
-  "globalEnv": [
-    "NEXT_PUBLIC_HELLO"
-  ]
-}
-```
-<Note>
-  If you prefer to set an environment variable on a workspace only and not globally across your turborepo, you can do that with [the pipeline env key](https://vercel.com/docs/concepts/monorepos/turborepo#handling-environment-variables).
-</Note>
 
 Add `.vercelignore` file.
 
@@ -77,23 +62,7 @@ Add `.vercelignore` file.
 !.env.vault
 ```
 
-Commit that to code and deploy it to Vercel.
-
-```shell
-npx vercel@latest deploy --prod
-```
-
-Your first deploy will likely fail because you need to add a couple custom configurations. Go to project settings and do the following.
-
-Set `Build & Development Settings` > `Framework Preset` to Next.js and override the build command with `cd ../.. && npm run build --filter=web`.
-
-<ScreenshotBrowser url="/assets/img/docs/vercel-settings-project-framework-overrides.png" www="vercel.com/org/project/settings" />
-
-Set the root directory to `apps/web`.
-
-<ScreenshotBrowser url="/assets/img/docs/vercel-settings-project-root.png" www="vercel.com/org/project/settings" />
-
-Deploy again.
+Commit that to code and deploy to Vercel.
 
 ```shell
 npx vercel@latest deploy --prod
@@ -101,14 +70,14 @@ npx vercel@latest deploy --prod
 
 <ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.vercel.app" />
 
-Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+Once deployed, your app will say `Hello .` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-## Install dotenv-cli
+## Preload dotenv
 
-Install [`dotenv-cli`](https://github.com/motdotla/dotenv-cli).
+Install [`dotenv`](https://github.com/motdotla/dotenv).
 
 ```shell
-npm install github:motdotla/dotenv-cli --save
+npm install dotenv --save # Requires dotenv >= 16.1.0
 ```
 
 Create a `.env` file in the root of your project.
@@ -118,28 +87,24 @@ Create a `.env` file in the root of your project.
 NEXT_PUBLIC_HELLO="World"
 ```
 
-Adjust your `package.json` scripts to inject the environment variables into the `turbo` command.
+Preface your npm `package.json scripts` with dotenv [preloading](https://github.com/motdotla/dotenv#preload).
 
 ```json {{ title: 'package.json' }}
 "scripts": {
-  "build": "dotenv -- turbo run build",
-  "dev": "dotenv -- turbo run dev",
-  "lint": "dotenv -- turbo run lint",
-},
+  "dev": "node -r dotenv/config ./node_modules/.bin/next",
+  "build": "node -r dotenv/config ./node_modules/.bin/next build",
+  "start": "node -r dotenv/config ./node_modules/.bin/next start"
+}
 ```
-<Note>
-  See more about [using environment variables with turborepo](https://turbo.build/repo/docs/handbook/environment-variables).
-</Note>
 
 Try running it locally.
 
 ```shell
 npm run dev
-docs:dev: - ready started server on 0.0.0.0:3001, url: http://localhost:3001
-web:dev: - ready started server on 0.0.0.0:3002, url: http://localhost:3002
+started server on 0.0.0.0:3000, url: http://localhost:3000
 ```
 
-Visit [localhost:3002](http://localhost:3002)
+Visit [localhost:3000](http://localhost:3000)
 
 <ScreenshotBrowser url='/assets/img/docs/nextjs-hello-world.png' />
 
@@ -208,7 +173,7 @@ Or use Vercel's UI.
 
 ## Deploy
 
-Commit those changes safely to code and deploy.
+Commit those changes safely to code and redeploy to Vercel.
 
 ```shell
 npx vercel@latest deploy --prod

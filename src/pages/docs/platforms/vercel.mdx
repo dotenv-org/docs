@@ -4,6 +4,7 @@ import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
 import { AngularIcon } from '@/components/icons/AngularIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
+import { NextIcon } from '@/components/icons/NextIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { RemixIcon } from '@/components/icons/RemixIcon'
 import { SvelteIcon } from '@/components/icons/SvelteIcon'
@@ -66,6 +67,18 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/frameworks/express/vercel" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+    <div key="nextjs" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Next.js
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Next.js App to Vercel</p>
+        <p className="mt-4 flex gap-x-2">
+          <Button href="/docs/frameworks/nextjs/vercel" variant="text" arrow="right">Read guide</Button>
+        </p>
+      </div>
+      <NextIcon className="h-9 w-9 text-[#000000] dark:invert"/>
     </div>
     <div key="remix" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
