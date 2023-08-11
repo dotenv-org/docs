@@ -9,16 +9,12 @@ const modeScript = `
 
   function updateMode() {
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
+    let isDarkMode = window.localStorage.isDarkMode === 'true' || !('isDarkMode' in window.localStorage)
 
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
-    }
-
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
     }
   }
 
@@ -37,7 +33,7 @@ const modeScript = `
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="en" className="dark">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
