@@ -21,17 +21,14 @@ export default function App({ Component, pageProps }) {
   let router = useRouter()
   let url = `https://www.dotenv.org${router.asPath}`
   let encodedUrl = encodeURIComponent(url)
+  let title = router.pathname === '/' ? 'Dotenv' : `${pageProps.title} | Dotenv`
   
   return (
     <>
       <Head>
-        {router.pathname === '/' ? (
-          <title>Dotenv</title>
-        ) : (
-          <title>{`${pageProps.title} | Dotenv`}</title>
-        )}
+        <title>{title}</title>
         <meta name="description" content={pageProps.description} />
-        <meta property="og:title" content={pageProps.title} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={pageProps.description} />
         <meta property="og:url" content={url} />
         {process.env.NODE_ENV === 'production' ? (
