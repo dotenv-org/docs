@@ -19,9 +19,10 @@ Router.events.on('hashChangeStart', onRouteChange)
 
 export default function App({ Component, pageProps }) {
   let router = useRouter()
+  let title = router.pathname === '/' ? 'Dotenv' : `${pageProps.title} | Dotenv`
   let url = `https://www.dotenv.org${router.asPath}`
   let encodedUrl = encodeURIComponent(url)
-  let title = router.pathname === '/' ? 'Dotenv' : `${pageProps.title} | Dotenv`
+  let imageUrl = `https://api.urlbox.io/v1/Ep4Ip4nNnFMNUg9J/png?url=${encodedUrl}&width=800&height=600&fail_on_4xx=true&fail_on_5xx=true`
   
   return (
     <>
@@ -31,9 +32,14 @@ export default function App({ Component, pageProps }) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={pageProps.description} />
         <meta property="og:url" content={url} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@dotenvorg" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={pageProps.description} />
         {process.env.NODE_ENV === 'production' ? (
           <>
-            <meta property="og:image" content={`https://api.urlbox.io/v1/Ep4Ip4nNnFMNUg9J/png?url=${encodedUrl}&width=800&height=600&fail_on_4xx=true&fail_on_5xx=true`} />
+            <meta property="og:image" content={imageUrl} />
+            <meta name="twitter:image" content={imageUrl} />
           </>
         ) : (
           <>
