@@ -31,6 +31,8 @@
 <h1>.env.vault</h1>
 <p>The .env.vault file uniquely identifies your project in dotenv-vault. You SHOULD commit this file to source control. It is safe to do so. Aside: DON&#x27;T commit your <a href="/docs/security/env">.env</a> or <a href="/docs/security/env-me">.env.me</a> to source control.</p>
 <p>You can think of it like a unique git url at GitHub. It identifies your project so that your teammates pull the correct .env file from dotenv-vault.</p>
+<p>it also does more than just coordinate syncing across teams, machines, and environments. it also encrypts and holds your secrets to be injected just in time.</p>
+<p>meaning you can use .env.vault files without dependence on a 3rd party. more on the <a href="https://github.com/dotenv-org/dotenv-vault#local-build" target="_blank">Locally Managed</a>.</p>
 <h2 id="example" class="scroll-mt-24"><a class="group text-inherit no-underline hover:text-inherit" href="/docs/security/env-vault#example">Example</a></h2>
 <p>Here&#x27;s an example of what a .env.vault file looks like:</p>
 <div class="not-prose my-6 overflow-hidden rounded-2xl bg-zinc-900 shadow-md dark:ring-1 dark:ring-white/10"><div class="group dark:bg-white/2.5"><div class="relative"><pre class="overflow-x-auto p-4 text-xs text-white"><code>DOTENV_VAULT=vlt_9a165d…
