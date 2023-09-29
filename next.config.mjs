@@ -31,6 +31,12 @@ const nextConfig = {
       '/docs/integrations/gitlab/ci-quickstart.html': { page: '/docs/integrations/gitlab/ci-quickstart' },
       '/docs/integrations/vercel/vite.html': { page: '/docs/integrations/vercel/vite' },
       '/docs/libraries': { page: '/docs' },
+      '/docs-old/tutorials/sync.html': { page: '/docs/tutorials/sync' },
+      '/docs-old/security/env-vault.html': { page: '/docs/security/env-vault' },
+      '/docs-old/security/env-me.html': { page: '/docs/security/env-me' },
+      '/docs-old/languages/nodejs/docker.html': { page: '/docs/languages/nodejs/docker' },
+      '/docs-old/languages/nodejs/docker.html': { page: '/docs/languages/nodejs/docker' },
+      '/docs-old/languages/python.html': { page: '/docs/languages/python' },
     };
   },
 }
