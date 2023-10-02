@@ -30,6 +30,7 @@ const nextConfig = {
       '/docs/integrations/supabase/nodejs.html': { page: '/docs/integrations/supabase/nodejs' },
       '/docs/integrations/gitlab/ci-quickstart.html': { page: '/docs/integrations/gitlab/ci-quickstart' },
       '/docs/integrations/vercel/vite.html': { page: '/docs/integrations/vercel/vite' },
+      '/docs/libraries.html': { page: '/docs' },
       '/docs/libraries': { page: '/docs' },
     };
   },
