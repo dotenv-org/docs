@@ -18,6 +18,10 @@ Next, run the development server:
 npm run dev
 ```
 
+```bash
+NODE_ENV='production' npm run build
+```
+
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
 ## Customizing

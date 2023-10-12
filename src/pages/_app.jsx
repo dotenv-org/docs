@@ -27,7 +27,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <Analytics />
         <title>{title}</title>
         <meta name="description" content={pageProps.description} />
         <meta property="og:title" content={title} />
@@ -41,6 +40,7 @@ export default function App({ Component, pageProps }) {
           <>
             <meta property="og:image" content={imageUrl} />
             <meta name="twitter:image" content={imageUrl} />
+            <Analytics />
           </>
         ) : (
           <>
