@@ -77,7 +77,7 @@ export const Header = forwardRef(function Header({ className }, ref) {
           <ModeToggle />
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button variant="outline" href="https://vault.dotenv.org">Log in</Button>
+          <Button variant="outline" href="https://vault.dotenv.org" data-umami-event="Login Clicked">Log in</Button>
         </div>
       </div>
     </motion.div>
