@@ -27,6 +27,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <Analytics />
         <title>{title}</title>
         <meta name="description" content={pageProps.description} />
         <meta property="og:title" content={title} />
@@ -45,8 +46,6 @@ export default function App({ Component, pageProps }) {
           <>
           </>
         )}
-
-        <Analytics />
       </Head>
       <MDXProvider components={mdxComponents}>
         <Layout {...pageProps}>
