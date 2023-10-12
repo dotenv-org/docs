@@ -40,12 +40,13 @@ export default function App({ Component, pageProps }) {
           <>
             <meta property="og:image" content={imageUrl} />
             <meta name="twitter:image" content={imageUrl} />
-            <Analytics />
           </>
         ) : (
           <>
           </>
         )}
+
+        <Analytics />
       </Head>
       <MDXProvider components={mdxComponents}>
         <Layout {...pageProps}>
