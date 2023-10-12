@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import Script from 'next/script';
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -40,6 +41,13 @@ export default function Document() {
       <body className="bg-white antialiased dark:bg-zinc-900">
         <Main />
         <NextScript />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            src="https://dotenv-umami-fd0ec6de187e.herokuapp.com/script.js"
+            data-website-id="681d3274-93f4-459b-b6a3-2f6b2d433009"
+            strategy="beforeInteractive"
+          />
+        )}
       </body>
     </Html>
   )
