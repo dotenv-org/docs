@@ -238,6 +238,7 @@ export const navigation = [
       { title: 'Fly', href: '/docs/platforms/fly' },
       { title: 'Gatsby Edge', href: '/docs/frameworks/gatsby/gatsby-edge' },
       { title: 'Heroku', href: '/docs/platforms/heroku' },
+      { title: 'Kamal', href: '/docs/platforms/kamal' },
       { title: 'Netlify', href: '/docs/platforms/netlify' },
       { title: 'Northflank', href: '/docs/languages/nodejs/northflank' },
       { title: 'Railway', href: '/docs/languages/nodejs/railway' },
