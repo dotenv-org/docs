@@ -65,7 +65,7 @@ flyctl deploy --remote-only --no-cache
 
 Once deployed, your app will say `Hello undefined` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp running on fly.io" />
+<ScreenshotBrowser url="/assets/img/docs/hello-undefined.png" www="yourapp.fly.dev" />
 
 <Note>
   **Fly.io bug:** While writing this guide we ran into the error "failed to fetch an image or build from source: error building: ... node:20.4.0-slim: docker.io/library/node:20.4.0-slim: not found". If you also experience this set **NODE_VERSION=18.16.1** in your Dockerfile and redeploy.
