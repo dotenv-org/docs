@@ -2,10 +2,10 @@ import { Heading } from '@/components/Heading'
 import { GuideHeading } from '@/components/GuideHeading'
 import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 
-import { RailsIcon } from '@/components/icons/RailsIcon'
-import { DockerIcon } from '@/components/icons/DockerIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { KamalIcon } from '@/components/icons/KamalIcon'
+import { RailsIcon } from '@/components/icons/RailsIcon'
 
 export const description = 
   'Use .env.vault with Ruby on Rails'
@@ -28,32 +28,12 @@ export const sections = [
     Platforms
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="docker" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Docker
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Docker with Rails</p>
-        <p className="mt-4"><Button href="/docs-old/integrations/docker/rails" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
-    </div>
-    <div key="docker-compose" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Docker Compose
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy Compose with Rails</p>
-        <p className="mt-4"><Button href="/docs-old/integrations/docker-compose/rails" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <DockerIcon className="h-9 w-9 text-[#2496ED]"/>
-    </div>
     <div key="fly" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
           Fly
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Fly with Rails</p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Rails App to Fly.io</p>
         <p className="mt-4"><Button href="/docs/frameworks/rails/fly" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <FlyIcon className="h-9 w-9 text-[#7B3BE2]"/>
@@ -63,10 +43,20 @@ export const sections = [
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
           Heroku
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Heroku with Rails</p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Rails App to Heroku</p>
         <p className="mt-4"><Button href="/docs/frameworks/rails/heroku" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+    </div>
+    <div key="kamal" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Kamal
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Rails App with Kamal</p>
+        <p className="mt-4"><Button href="/docs/frameworks/rails/kamal" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <KamalIcon className="h-9 w-9 text-[#3A80ED]"/>
     </div>
   </div>
 </div>
