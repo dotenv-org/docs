@@ -123,16 +123,14 @@ Make sure you can ssh to your server.
 ssh root@your_server_ip
 ```
 
-Then modify your `.env` file, setting your `KAMAL_REGISTRY_PASSWORD` to your docker registry's password and your `RAILS_MASTER_KEY`.
+Then modify your `.env` file, setting your `KAMAL_REGISTRY_PASSWORD` to your docker registry's password and your `RAILS_MASTER_KEY`. Find your RAILS_MASTER_KEY at `config/master.key`.
 
 ```shell {{ title: '.env' }}
 KAMAL_REGISTRY_PASSWORD=your-docker-registry-password
 RAILS_MASTER_KEY=11011070047a1cf7bacd3f7fd6bacd9b
 ```
 
-(Find your RAILS_MASTER_KEY at `config/master.key`)
-
-Also, modify `config/environments/production.rb` to permit standard http for now.
+Turn off `force_ssl`.
 
 ```ruby {{ title: 'config/environments/production.rb' }}
 Rails.application.configure do
