@@ -26,16 +26,6 @@ export const sections = [
     Platforms
   </Heading>
   <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
-    <div key="vercel" className="flex flex-row-reverse gap-6">
-      <div className="flex-auto">
-        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-          Vercel
-        </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Nuxt.js and Vercel</p>
-        <p className="mt-4"><Button href="/docs-old/integrations/vercel/nuxtjs" variant="text" arrow="right">Read guide</Button></p>
-      </div>
-      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
-    </div>
     <div key="edgio" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -46,5 +36,16 @@ export const sections = [
       </div>
       <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
     </div>
+    <div key="vercel" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Vercel
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Nuxt.js and Vercel</p>
+        <p className="mt-4"><Button href="/docs/frameworks/nuxtjs/vercel" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    </div>
+
   </div>
 </div>

@@ -3,24 +3,23 @@ import { GuideHeading } from '@/components/GuideHeading'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import WellDone from '@/pages/partials/wellDone.mdx'
 
-import { EdgioIcon } from '@/components/icons/EdgioIcon'
-import { GitHubIcon } from '@/components/icons/GitHubIcon'
 import { NuxtIcon } from '@/components/icons/NuxtIcon'
+import { VercelIcon } from '@/components/icons/VercelIcon'
 
 export const description = 
-  'Deploy a Nuxt.js app with an encrypted .env.vault file to Edgio.'
+  'Deploy a Nuxt.js app with an encrypted .env.vault file to Vercel.'
 
 <FrameworksBreadcrumb framework='Nuxt.js' url='/docs/frameworks/nuxtjs' icon={
   <>
     <NuxtIcon className="h-9 w-9 text-[#00DC82]"/>
-    <EdgioIcon className="h-9 w-9 text-[#000000] dark:invert"/>
+    <VercelIcon className="h-9 w-9 text-[#000000] dark:invert"/>
   </>
 } />
-# Deploy a Nuxt.js App to Edgio
+# Deploy a Nuxt.js App to Vercel
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nuxtjs/edgio">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/nuxtjs/vercel">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
@@ -70,19 +69,13 @@ export default defineNuxtConfig({
 })
 ```
 
-Prepare the app for Edgio. 
+Commit that to code and deploy to Vercel.
 
 ```shell
-npx @edgio/cli init
+npx vercel@latest deploy --prod
 ```
 
-Commit that to code and deploy it to Edgio.
-
-```shell
-npm run edgio:deploy
-```
-
-<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="edgio.link" />
+<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.vercel.app" />
 
 Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
@@ -177,30 +170,36 @@ npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_4567@dotenv.org/vault/.env.vault?environment=production
 ```
 
-Set `DOTENV_KEY` on Edgio using the UI.
+Set `DOTENV_KEY` on Vercel using the CLI.
 
-<ScreenshotBrowser url='/assets/img/docs/edgio-config-vars.gif' www='edgio.app' />
+```shell
+npx vercel@latest env add DOTENV_KEY
+```
+```shell
+? What’s the value of DOTENV_KEY? dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
+✅  Added Environment Variable DOTENV_KEY to Project nodejs-vercel [94ms]
+```
+
+Or use Vercel's UI.
+
+<ScreenshotBrowser url='/assets/img/cloudinary/integrations-vercel-envs_y43bwi.gif' www='vercel.com' />
 
 ## Deploy
 
-You'll have to delete your `.env` file now to make use of the `.env.vault` file with edgio and Nuxt. Otherwise, Nuxt prioritizes the `.env` file over everything.
+You'll have to delete your `.env` file now to make use of the `.env.vault` file with Vercel and Nuxt. Otherwise, Nuxt prioritizes the `.env` file over everything.
 
 ```
 rm .env
 ```
 
-Commit those changes safely to code and redeploy.
+Commit those changes safely to code and redeploy to Vercel.
 
 ```shell
-npm run edgio:deploy
+npx vercel@latest deploy --prod
 ```
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables – just in time.
 
-<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.edgio.link' />
-
-You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
-
-<ScreenshotBrowser url='/assets/img/docs/nuxt-logs-vault.png' www='edgio.app' />
+<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.vercel.app' />
 
 <WellDone/>
