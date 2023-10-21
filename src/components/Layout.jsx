@@ -17,9 +17,12 @@ export function Layout({ children, sections = [] }) {
           className="contents lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex"
         >
           <div className="contents border-t border-yellow-300 lg:pointer-events-auto lg:block lg:w-72 lg:overflow-y-auto lg:border-r lg:border-zinc-900/10 lg:px-5 lg:pb-8 lg:pt-3 lg:dark:border-white/10 xl:w-80">
-            <div className="hidden lg:flex">
-              <Link href="/docs" aria-label="Home">
+            <div className="hidden md:flex">
+              <Link href="/" aria-label="Home">
                 <Logo className="w-10 h-10" />
+              </Link>
+              <Link href="/docs" aria-label="Documentation" className="text-center rounded-full px-4 py-2.5 text-sm font-semibold text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50 active:bg-zinc-300 dark:active:bg-zinc-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-200 ease-in duration-150">
+                Documentation
               </Link>
             </div>
             <Header className="border-t border-yellow-300 dark:rounded-t-lg"/>
