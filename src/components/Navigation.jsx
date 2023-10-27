@@ -205,8 +205,8 @@ export const navigation = [
     links: [
       { title: 'Sync', href: '/docs/quickstart/sync' },
       { title: 'Environments', href: '/docs/quickstart/environments' },
-      { title: 'Load', href: '/docs/quickstart/load' },
-      { title: 'Deploy', href: '/docs/quickstart/deploy' },
+      { title: 'Load', href: '/docs/quickstart/development' },
+      // { title: 'Deploy', href: '/docs/quickstart/deploy' },
     ],
   },
   {

@@ -6,7 +6,7 @@ import { RubyIcon } from '@/components/icons/RubyIcon'
 import { GoIcon } from '@/components/icons/GoIcon'
 
 export const description =
-  'Sync .env files with dotenv-vault. Learn and understand how to sync your .env files – in about 2 minutes.'
+  'Sync your .env files using this quickstart guide.'
 
 ##### [Quickstart](/docs/quickstart)
 # Sync .env files
@@ -40,9 +40,16 @@ Next, set up it's `.env.vault`.
 
 Run [dotenv-vault](https://github.com/dotenv-org/dotenv-vault)'s **new** command.
 
-```bash
-npx dotenv-vault@latest new
+<CodeGroup>
+```bash {{title: "npx"}}
+npx dotenv-vault new
 ```
+
+```bash {{title: "Homebrew"}}
+dotenv-vault new
+```
+</CodeGroup>
+
 <ScreenshotBrowser url='/assets/img/docs/dotenv-new.gif' www='npx dotenv-vault new' />
 
 Running this command sets up your project on [Dotenv](https://dotenv.org) and creates your project's `.env.vault` file. It will look like this.
@@ -62,9 +69,16 @@ Next, log in to your `.env.vault`.
 
 Run the **login** command.
 
-```bash
-npx dotenv-vault@latest login
+<CodeGroup>
+```bash {{title: "npx"}}
+npx dotenv-vault login
 ```
+
+```bash {{title: "Homebrew"}}
+dotenv-vault login
+```
+</CodeGroup>
+
 <ScreenshotBrowser url='/assets/img/docs/dotenv-login.gif' www='npx dotenv-vault login' />
 
 Running this command authenticates you against your project on [Dotenv](https://dotenv.org) and securely generates your `.env.me` credential. Your `.env.me` file will look like this.
@@ -84,9 +98,16 @@ Next, push your `.env` file.
 
 Run the **push** command.
 
-```bash
-npx dotenv-vault@latest push
+<CodeGroup>
+```bash {{title: "npx"}}
+npx dotenv-vault push
 ```
+
+```bash {{title: "Homebrew"}}
+dotenv-vault push
+```
+</CodeGroup>
+
 <ScreenshotBrowser url='/assets/img/docs/dotenv-push.gif' www='npx dotenv-vault push' />
 
 This securely pushes your `.env` file to your Dotenv Account. It works a lot like [git](https://git-scm.com/).
@@ -95,17 +116,23 @@ This securely pushes your `.env` file to your Dotenv Account. It works a lot lik
 
 You can pull the latest changes too. Run the **pull** command.
 
-```bash {{ title: "$ npx dotenv-vault pull" }}
-npx dotenv-vault@latest pull
+<CodeGroup>
+```bash {{title: "npx"}}
+npx dotenv-vault pull
 ```
+
+```bash {{title: "Homebrew"}}
+dotenv-vault pull
+```
+</CodeGroup>
+
 <ScreenshotBrowser url='/assets/img/docs/dotenv-pull.gif' www='npx dotenv-vault pull' />
 
 ## Conclusion
 
-Congrats! You synced your `.env` file and completed this quickstart guide. What's next? I recommend learning how to manage multiple environments like `.env.production`.
+Congrats! You synced your `.env` file and completed this quickstart guide. What's next? I recommend learning how to [manage multiple environments like `.env.production`](/docs/quickstart/environments) next.
 
 * [Manage multiple environments](/docs/quickstart/environments) like `.env.production`
-* [Load `.env` files](/docs/quickstart/load) in development
 * [Add teammates](/docs/tutorials/teammates) to your projects
 
 Thanks for using Dotenv!
