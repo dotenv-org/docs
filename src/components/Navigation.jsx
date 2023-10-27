@@ -206,7 +206,7 @@ export const navigation = [
       { title: 'Sync', href: '/docs/quickstart/sync' },
       { title: 'Environments', href: '/docs/quickstart/environments' },
       { title: 'Load', href: '/docs/quickstart/development' },
-      // { title: 'Deploy', href: '/docs/quickstart/deploy' },
+      { title: 'Deploy', href: '/docs/quickstart/deploy' },
     ],
   },
   {
