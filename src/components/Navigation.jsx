@@ -200,6 +200,16 @@ export const navigation = [
     ],
   },
   {
+    title: 'Quickstart Guides',
+    href: '/docs/quickstart',
+    links: [
+      { title: 'Sync', href: '/docs/quickstart/sync' },
+      { title: 'Environments', href: '/docs/quickstart/environments' },
+      { title: 'Load', href: '/docs/quickstart/load' },
+      { title: 'Deploy', href: '/docs/quickstart/deploy' },
+    ],
+  },
+  {
     title: 'Languages', href: '/docs#languages',
     links: [
       { title: 'Node.js', href: '/docs/languages/nodejs' },
