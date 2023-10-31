@@ -302,6 +302,16 @@ export const navigation = [
     ],
   },
   {
+    title: 'Features', href: '/docs/features',
+    links: [
+      { title: 'Sync .env files', href: '/docs/features/sync' },
+      { title: 'Unlimited projects', href: '/docs/features/unlimited-projects' },
+      { title: 'Multiple environments', href: '/docs/features/environments' },
+      { title: 'Compare environments', href: '/docs/features/compare-environments' },
+      { title: 'Encrypted deploys', href: '/docs/features/encrypted-deploys' },
+    ],
+  },
+  {
     title: 'Add-ons',
     links: [
       { title: 'Overview', href: '/docs/addons' },
