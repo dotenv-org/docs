@@ -72,8 +72,6 @@ As early as possible in your application, load dotenv.
   $dotenv = DotenvVault\DotenvVault::createImmutable(__DIR__);
   $dotenv->safeLoad();
 
-  var_dump($_ENV); // remove this after you've confirmed it is working
-
   echo "Hello {$_ENV['HELLO']}";
 ```
 
@@ -81,10 +79,6 @@ Try running it locally.
 
 ```shell
 $ php index.php
-array(1) {
-  ["HELLO"]=>
-  string(5) "World"
-}
 Hello World
 ```
 
@@ -97,6 +91,7 @@ That covers local development. Let's solve for production next.
 Push your latest `.env` file changes and edit your production secrets. [Learn more about syncing](/docs/tutorials/sync)
 
 ```shell
+npx dotenv-vault@latest new
 npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
@@ -157,6 +152,6 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/vlucas/phpdotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault.png" www="heroku logs --tail" />
+<ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault-php.png" www="heroku logs --tail" />
 
 <WellDone/>

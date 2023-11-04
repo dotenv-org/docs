@@ -3,6 +3,7 @@ import { GuideHeading } from '@/components/GuideHeading'
 import { PlatformsBreadcrumb } from '@/components/PlatformsBreadcrumb'
 
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { PhpIcon } from '@/components/icons/PhpIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
@@ -38,6 +39,16 @@ export const sections = [
         <p className="mt-1"><Button href="/docs/languages/nodejs/heroku" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <NodeIcon className="h-9 w-9 text-[#339933]"/>
+    </div>
+    <div key="php" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          PHP
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a PHP App to Heroku</p>
+        <p className="mt-1"><Button href="/docs/languages/php/heroku" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <PhpIcon className="h-10 w-10 text-[#777BB4]"/>
     </div>
   </div>
   <Heading level={2} id="frameworks">
