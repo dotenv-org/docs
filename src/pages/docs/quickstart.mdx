@@ -1,10 +1,11 @@
 import { Video } from '@/components/Video'
 import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 
+import { GoIcon } from '@/components/icons/GoIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
+import { PhpIcon } from '@/components/icons/PhpIcon'
 import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
-import { GoIcon } from '@/components/icons/GoIcon'
 
 export const description =
   'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
@@ -19,6 +20,7 @@ Sync, manage, and deploy your secrets the dotenv-vault way using this quickstart
   <a href="/docs/languages/python"><PythonIcon className="h-9 w-9 text-[#3776AB]"/></a>
   <a href="/docs/languages/ruby"><RubyIcon className="h-9 w-9 text-[#CC342D]"/></a>
   <a href="/docs/languages/go"><GoIcon className="h-10 w-10 text-[#00ADD8]"/></a>
+  <a href="/docs/languages/php"><PhpIcon className="h-10 w-10 text-[#777BB4]"/></a>
 </div>
 
 ## Initial setup
@@ -44,6 +46,10 @@ bundle add sinatra puma dotenv-vault
 go mod init hello-world
 go get github.com/labstack/echo/v4
 go get github.com/dotenv-org/godotenvvault
+```
+
+```bash {{ title: "PHP" }}
+TODO
 ```
 
 </CodeGroup>
