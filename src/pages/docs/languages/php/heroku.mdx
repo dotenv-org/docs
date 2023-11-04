@@ -35,8 +35,7 @@ Your `index.php` file should look something like this.
 ```php {{ title: 'index.php'}}
 <?php
   // index.php
-  echo "Hello " . $_ENV['HELLO'];
-?>
+  echo "Hello {$_ENV['HELLO']}";
 ```
 
 Commit that to code and push it to Heroku.
@@ -75,8 +74,7 @@ As early as possible in your application, load dotenv.
 
   var_dump($_ENV); // remove this after you've confirmed it is working
 
-  echo "Hello " . $_ENV['HELLO'];
-?>
+  echo "Hello {$_ENV['HELLO']}";
 ```
 
 Try running it locally.
