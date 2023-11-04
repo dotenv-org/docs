@@ -71,7 +71,7 @@ As early as possible in your application, load dotenv.
   require 'vendor/autoload.php';
 
   $dotenv = DotenvVault\DotenvVault::createImmutable(__DIR__);
-  $dotenv->load();
+  $dotenv->safeLoad();
 
   var_dump($_ENV); // remove this after you've confirmed it is working
 
@@ -157,7 +157,7 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 <ScreenshotBrowser url="/assets/img/docs/hello-production.png" />
 
-You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/motdotla/dotenv) functionality.
+You'll know things worked correctly when you see `'Loading env from encrypted .env.vault'` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/vlucas/phpdotenv) functionality.
 
 <ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault.png" www="heroku logs --tail" />
 

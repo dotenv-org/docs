@@ -217,6 +217,7 @@ export const navigation = [
       { title: 'Python', href: '/docs/languages/python' },
       { title: 'Ruby', href: '/docs/languages/ruby' },
       { title: 'Go', href: '/docs/languages/go' },
+      { title: 'PHP', href: '/docs/languages/php' },
     ],
   },
   {
