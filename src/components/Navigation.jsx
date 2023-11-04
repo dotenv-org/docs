@@ -269,7 +269,7 @@ export const navigation = [
       { title: 'GitHub Actions', href: '/docs/cis/github-actions' },
       { title: 'Gitlab CI/CD', href: '/docs/languages/nodejs/gitlab-ci' },
       { title: 'Google Cloud Build', href: '/docs/cis/google-cloud-build' },
-      { title: 'Jenkins', href: '/docs/langauges/nodejs/jenkins' },
+      { title: 'Jenkins', href: '/docs/languages/nodejs/jenkins' },
       { title: 'Pulumi', href: '/docs/languages/nodejs/pulumi' },
       { title: 'Travis', href: '/docs/languages/nodejs/travis-ci' },
     ]
