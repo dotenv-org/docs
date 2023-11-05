@@ -226,6 +226,7 @@ export const navigation = [
       { title: 'Angular', href: '/docs/frameworks/angular/vercel' },
       { title: 'Astro', href: '/docs/frameworks/astro/netlify' },
       { title: 'Express', href: '/docs/frameworks/express' },
+      { title: 'Laravel', href: '/docs/frameworks/laravel' },
       { title: 'Gatsby', href: '/docs/frameworks/gatsby' },
       { title: 'Next.js', href: '/docs/frameworks/nextjs' },
       { title: 'Nuxt', href: '/docs/frameworks/nuxtjs' },
