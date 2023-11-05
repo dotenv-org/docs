@@ -125,9 +125,13 @@ npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
 
-Use the UI to configure those secrets per environment. Make sure you set both the `HELLO` and `DUDE`.
+Use the [compare environments feature](/docs/features/compare-environments) to copy Laravel's development values to production. (Additionally, modify any production values as needed.)
 
-<ScreenshotBrowser url="/assets/img/docs/edit-production-value.gif" www="www.dotenv.org" />
+<ScreenshotBrowser url="/assets/img/docs/compare-environments-laravel.gif" www="www.dotenv.org" />
+
+Next, modify `HELLO` to `production`.
+
+<ScreenshotBrowser url="/assets/img/docs/edit-production-laravel-hello.gif" www="www.dotenv.org" />
 
 Then build your encrypted `.env.vault` file.
 
@@ -181,6 +185,6 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 You'll know things worked correctly when you see `Loading env from encrypted .env.vault` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/bkeepers/dotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault-rails.png" www="heroku logs --tail" />
+<ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault-php.png" www="heroku logs --tail" />
 
 <WellDone/>
