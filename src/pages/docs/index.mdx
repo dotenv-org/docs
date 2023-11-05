@@ -6,6 +6,7 @@ import { NodeIcon } from '@/components/icons/NodeIcon'
 import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
 import { GoIcon } from '@/components/icons/GoIcon'
+import { PhpIcon } from '@/components/icons/PhpIcon'
 
 import { Frameworks } from '@/components/Frameworks'
 import { Platforms } from '@/components/Platforms'
@@ -109,6 +110,17 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
       </div>
       <GoIcon className="h-10 w-10 text-[#00ADD8]"/>
     </div>
+    <div key="php" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          PHP
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with PHP</p>
+        <p className="mt-1"><Button href="/docs/languages/php" variant="text" arrow="right">PHP Guides</Button></p>
+      </div>
+      <PhpIcon className="h-10 w-10 text-[#777BB4]"/>
+    </div>
+
   </div>
 </div>
 
