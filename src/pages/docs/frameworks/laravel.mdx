@@ -4,6 +4,7 @@ import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 
 import { LaravelIcon } from '@/components/icons/LaravelIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { LaravelForgeIcon } from '@/components/icons/LaravelForgeIcon'
 
 export const description = 
   'Use .env.vault with Laravel'
@@ -14,7 +15,7 @@ export const sections = [
 
 <FrameworksBreadcrumb icon={
   <>
-    <LaravelIcon className="h-9 w-9 text-[#FF2D20] dark:invert"/>
+    <LaravelIcon className="h-9 w-9 text-[#FF2D20]"/>
   </>
 } />
 # Laravel
@@ -34,6 +35,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/frameworks/laravel/heroku" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+    </div>
+    <div key="laravel-forge" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Laravel Forge
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Laravel App to Laravel Forge</p>
+        <p className="mt-4"><Button href="/docs/frameworks/laravel/laravel-forge" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <LaravelForgeIcon className="h-9 w-9 text-[#212936]"/>
     </div>
   </div>
 </div>

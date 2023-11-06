@@ -4,7 +4,7 @@ import { ScreenshotBrowser } from '@/components/ScreenshotBrowser'
 import { GuideHeading } from '@/components/GuideHeading'
 import { FrameworksBreadcrumb } from '@/components/FrameworksBreadcrumb'
 
-import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { LaravelForgeIcon } from '@/components/icons/LaravelForgeIcon'
 import { LaravelIcon } from '@/components/icons/LaravelIcon'
 
 export const description =
@@ -13,14 +13,14 @@ export const description =
 <FrameworksBreadcrumb framework='Laravel' url='/docs/frameworks/laravel' icon={
   <>
     <LaravelIcon className="h-9 w-9 text-[#CC0000]"/>
-    <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+    <LaravelForgeIcon className="h-10 w-10 text-[#212936]"/>
   </>
 } />
-# Deploy a Laravel App to Heroku
+# Deploy a Laravel App to Laravel Forge
 <GuideHeading lead={description} />
 
 <Note>
-  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/laravel/heroku">code example on GitHub</a> for this guide.
+  Find a complete <a href="https://github.com/dotenv-org/examples/tree/master/laravel/laravel-forge">code example on GitHub</a> for this guide.
 </Note>
 
 ## Initial setup
@@ -31,40 +31,54 @@ Install [Laraval](https://laravel.com/docs) and create a new Laravel project.
 composer create-project laravel/laravel yourapp
 ```
 
-Add a `Procfile` to run your Laravel app.
-
-```yaml {{ title: 'Procfile' }}
-web: heroku-php-apache2 public/
-```
-
 Edit `resources/views/welcome.blade.php`.
 
 ```php {{ title: 'resources/views/welcome.blade.php' }}
 Hello {{ env('HELLO') }}.
 ```
 
-Create your project on Heroku.
+Commit that to code and push it up to [GitHub](https://github.com).
 
-```shell
-heroku create
+```
+git commit -am "Initial setup"
+git push
 ```
 
-Generate a Laravel `APP_KEY` and set it on Heroku.
+Next, create your project on [Laravel Forge](https://forge.laravel.com/).
 
-```bash
-php artisan key:generate --show
-heroku config:set APP_KEY='base64:1234...'
-```
+## Laravel Forge Setup
 
-Commit everything to code and push it to Heroku.
+Connect your provider (if you haven't already done so). Here, I am connecting [Digital Ocean](https://digitalocean.com).
 
-```shell
-git push heroku
-```
+![](/assets/img/docs/laravel-forge-connect-provider.png)
 
-<ScreenshotBrowser url="/assets/img/docs/hello-blank.png" www="yourapp.herokuapp.com" />
+Next, go to the [servers page](https://forge.laravel.com/servers) and click `Create Server`.
 
-Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
+![](/assets/img/docs/laravel-forge-create-server.png)
+
+Laravel Forge will bootstrap that server with everything it needs. Give it a few minutes to complete.
+
+![](/assets/img/docs/laravel-forge-server-installing.png)
+
+Lastly, connect that server to your Laravel application on [GitHub](https://github.com).
+
+![](/assets/img/docs/laravel-forge-connect-github.png)
+
+Click `Install Repository`. Laravel Forge will install your application to your server. This takes a few minutes, and you might have to refresh the page.
+
+Next, go to your application's dashboard and click `Deploy Now`.
+
+![](/assets/img/docs/laravel-forge-deploy-now.png)
+
+Once the deploy is finished, you can visit the ip address of your server. (I couldn't find this in Laravel Forge's dashboard. I had to go to Digital Ocean and view the droplet.)
+
+![](/assets/img/docs/laravel-forge-ip-address.png)
+
+Your browser might warn you that the ip address is dangerous, but you can skip that and go straight to it.
+
+![](/assets/img/docs/laravel-forge-hello.png)
+
+Your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
 ## Install phpdotenv-vault
 
@@ -88,12 +102,17 @@ Modify Laravel's bootstrap script to use `phpdotenv-vault`. This is necessary to
 <?php
 // At the top of bootstrap/app.php
 
-// Load phpdotenv if it hasn't been loaded yet
+// Load phpdotenv-vault
 if (!class_exists(DotenvVault\Environment\DotenvVault::class)) {
+    (DotenvVault\DotenvVault::createImmutable(__DIR__.'/../'))->safeLoad();
     (DotenvVault\DotenvVault::createImmutable(__DIR__.'/../'))->safeLoad();
 }
 ...
 ```
+<Note>
+  I experienced strange behavior with Laravel Forge where I needed to call safeLoad twice to make sure the load happened. I was unable to solve why. If you know why or don't experience this issue, please let me know [@motdotla](https://twitter.com/@motdotla).
+</Note>
+
 
 Add `HELLO=World` to the bottom of your `.env` file.
 
@@ -125,11 +144,15 @@ npx dotenv-vault@latest push
 npx dotenv-vault@latest open production
 ```
 
-Use the [compare environments feature](/docs/features/compare-environments) to copy Laravel's development values to production. (Additionally, modify any production values as needed.)
+Set all those secrets to match the secrets you have in Laravel Forge.
 
-<ScreenshotBrowser url="/assets/img/docs/compare-environments-laravel.gif" www="www.dotenv.org" />
+![](/assets/img/docs/laravel-forge-site-environment.png)
 
-Next, modify `HELLO` to `production`.
+Use the full edit mode feature to paste in all the contents at once.
+
+<ScreenshotBrowser url="/assets/img/docs/laravel-forge-edit-production.gif" www="www.dotenv.org" />
+
+Lastly, add the secret `HELLO`. Set the value to `production`.
 
 <ScreenshotBrowser url="/assets/img/docs/edit-production-laravel-hello.gif" www="www.dotenv.org" />
 
@@ -165,15 +188,11 @@ npx dotenv-vault@latest keys production
 # outputs: dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production
 ```
 
-Set `DOTENV_KEY` on Heroku using the CLI.
+Set `DOTENV_KEY` on [Laravel Forge](https://laravel.forge.com) using the UI.
 
-```shell
-heroku config:set DOTENV_KEY='dotenv://:key_1234…@dotenv.org/vault/.env.vault?environment=production'
-```
+![](/assets/img/docs/laravel-forge-set-dotenv-key.png)
 
-Or use Heroku's UI.
-
-<ScreenshotBrowser url="/assets/img/docs/heroku-config-vars.png" www="www.heroku.com" />
+You can remove all the other environment variables as those are now living in an encrypted fashion in your `.env.vault` file.
 
 ## Deploy
 
@@ -181,10 +200,10 @@ Commit those changes safely to code and deploy.
 
 That's it! On deploy, your `.env.vault` file will be decrypted and its production secrets injected as environment variables‚ just in time.
 
-<ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.herokuapp.com' />
+![](/assets/img/docs/laravel-forge-hello-production.png)
 
-You'll know things worked correctly when you see `Loading env from encrypted .env.vault` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/bkeepers/dotenv) functionality.
+You'll know things worked correctly when you see `Loading env from encrypted .env.vault` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [phpdotenv](https://github.com/vlucas/phpdotenv) functionality.
 
-<ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault-php.png" www="heroku logs --tail" />
+![](/assets/img/docs/laravel-forge-logs-vault.png)
 
 <WellDone/>
