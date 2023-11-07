@@ -252,6 +252,7 @@ export const navigation = [
       { title: 'Gatsby Edge', href: '/docs/frameworks/gatsby/gatsby-edge' },
       { title: 'Heroku', href: '/docs/platforms/heroku' },
       { title: 'Kamal', href: '/docs/platforms/kamal' },
+      { title: 'Laravel Forge', href: '/docs/frameworks/laravel/laravel-forge' },
       { title: 'Netlify', href: '/docs/platforms/netlify' },
       { title: 'Northflank', href: '/docs/languages/nodejs/northflank' },
       { title: 'Railway', href: '/docs/languages/nodejs/railway' },

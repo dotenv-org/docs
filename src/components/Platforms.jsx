@@ -9,6 +9,7 @@ import { EdgioIcon } from '@/components/icons/EdgioIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GatsbyIcon } from '@/components/icons/GatsbyIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { LaravelForgeIcon } from '@/components/icons/LaravelForgeIcon'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 import { NorthflankIcon } from '@/components/icons/NorthflankIcon'
 import { RailwayIcon } from '@/components/icons/RailwayIcon'
@@ -102,6 +103,17 @@ export function Platforms() {
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
         </div>
+        <div key="laravel-forge" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Laravel Forge
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Laravel Forge</p>
+            <p className="mt-4"><Button href="/docs/frameworks/laravel/laravel-forge" variant="text" arrow="right">Laravel Forge Guides</Button></p>
+          </div>
+          <LaravelForgeIcon className="h-9 w-9 text-[#212936]"/>
+        </div>
+
         <div key="netlify" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
