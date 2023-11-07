@@ -35,7 +35,7 @@ Your `index.php` file should look something like this.
 ```php {{ title: 'index.php'}}
 <?php
   // index.php
-  echo "Hello {$_ENV['HELLO']}";
+  echo "Hello {$_SERVER['HELLO']}";
 ```
 
 Commit that to code and push it to Heroku.
@@ -72,7 +72,7 @@ As early as possible in your application, load dotenv.
   $dotenv = DotenvVault\DotenvVault::createImmutable(__DIR__);
   $dotenv->safeLoad();
 
-  echo "Hello {$_ENV['HELLO']}";
+  echo "Hello {$_SERVER['HELLO']}";
 ```
 
 Try running it locally.
@@ -82,7 +82,7 @@ $ php index.php
 Hello World
 ```
 
-Perfect. `$_ENV` now has the keys and values you defined in your `.env` file.
+Perfect. `$_SERVER` now has the keys and values you defined in your `.env` file.
 
 That covers local development. Let's solve for production next.
 

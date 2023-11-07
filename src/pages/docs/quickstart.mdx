@@ -139,7 +139,7 @@ func main() {
   $dotenv = DotenvVault\DotenvVault::createImmutable(__DIR__);
   $dotenv->safeLoad();
 
-  echo "Hello {$_ENV['HELLO']}";
+  echo "Hello {$_SERVER['HELLO']}";
 ```
 
 
