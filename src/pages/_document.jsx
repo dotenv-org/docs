@@ -10,12 +10,16 @@ const modeScript = `
 
   function updateMode() {
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = window.localStorage.isDarkMode === 'true' || !('isDarkMode' in window.localStorage)
+    let isDarkMode = window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
 
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
+    }
+
+    if (isDarkMode === isSystemDarkMode) {
+      delete window.localStorage.isDarkMode
     }
   }
 
@@ -29,6 +33,20 @@ const modeScript = `
   function updateModeWithoutTransitions() {
     disableTransitionsTemporarily()
     updateMode()
+  }
+
+  function toggleMode() {
+    disableTransitionsTemporarily()
+
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    let isSystemDarkMode = darkModeMediaQuery.matches
+    let isDarkMode = document.documentElement.classList.toggle('dark')
+
+    if (isDarkMode === isSystemDarkMode) {
+      delete window.localStorage.isDarkMode
+    } else {
+      window.localStorage.isDarkMode = isDarkMode
+    }
   }
 `
 
