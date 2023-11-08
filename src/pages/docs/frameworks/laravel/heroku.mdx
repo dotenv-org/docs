@@ -25,7 +25,7 @@ export const description =
 
 ## Initial setup
 
-Install [Laraval](https://laravel.com/docs) and create a new Laravel project.
+Install [Laravel](https://laravel.com/docs) and create a new Laravel project.
 
 ```
 composer create-project laravel/laravel yourapp
@@ -66,31 +66,18 @@ git push heroku
 
 Once deployed, your app will say `'Hello .'` as it doesn't have a way to access the environment variable yet. Let's do that next.
 
-## Install phpdotenv-vault
+## Install dotenv-vault-laravel
 
-Require [`phpdotenv-vault`](https://github.com/dotenv-org/phpdotenv-vault) in your `composer.json` file.
+Require [`dotenv-vault-laravel`](https://github.com/davidcochrum/dotenv-vault-laravel) in your `composer.json` file.
 
 ```shell
-composer require dotenv-org/phpdotenv-vault
+composer require davidcochrum/dotenv-vault-laravel
 ```
 ```php {{ title: 'composer.json' }}
 ...
 "require": {
-  "dotenv-org/phpdotenv-vault": "^0.2.4",
+  "davidcochrum/dotenv-vault-laravel": "^1.1",
   ...
-}
-...
-```
-
-Modify Laravel's bootstrap script to use `phpdotenv-vault`. This is necessary to later decrypt the `.env.vault` file and inject environment variables just in time.
-
-```php {{ title: 'bootstrap/app.php' }}
-<?php
-// At the top of bootstrap/app.php
-
-// Load phpdotenv if it hasn't been loaded yet
-if (!class_exists(DotenvVault\Environment\DotenvVault::class)) {
-    (DotenvVault\DotenvVault::createImmutable(__DIR__.'/../'))->safeLoad();
 }
 ...
 ```
@@ -183,7 +170,7 @@ That's it! On deploy, your `.env.vault` file will be decrypted and its productio
 
 <ScreenshotBrowser url='/assets/img/docs/hello-production.png' www='yourapp.herokuapp.com' />
 
-You'll know things worked correctly when you see `Loading env from encrypted .env.vault` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/bkeepers/dotenv) functionality.
+You'll know things worked correctly when you see `Loading env from encrypted .env.vault` in your logs. If a `DOTENV_KEY` is not set (for example when developing on your local machine) it will fall back to standard [dotenv](https://github.com/vlucas/phpdotenv) functionality.
 
 <ScreenshotBrowser url="/assets/img/docs/heroku-logs-vault-php.png" www="heroku logs --tail" />
 
