@@ -235,6 +235,7 @@ export const navigation = [
       { title: 'SvelteKit', href: '/docs/frameworks/svelte-kit/vercel' },
       { title: 'Turborepo', href: '/docs/frameworks/turborepo/vercel' },
       { title: 'Vite', href: '/docs/frameworks/vite/vercel' },
+      { title: 'FastAPI', href: '/docs/frameworks/fastapi/heroku' },
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Rails', href: '/docs/frameworks/rails' },
       { title: 'Sinatra', href: '/docs/frameworks/sinatra/heroku' },
