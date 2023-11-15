@@ -6,6 +6,7 @@ import { NodeIcon } from '@/components/icons/NodeIcon'
 import { PhpIcon } from '@/components/icons/PhpIcon'
 import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
+import { RustIcon } from '@/components/icons/RustIcon'
 
 export const description =
   'Manage your secrets with dotenv-vault. Learn and understand how to use dotenv-vault with your application – in about 5 minutes.'
@@ -21,6 +22,7 @@ Sync, manage, and deploy your secrets the dotenv-vault way using this quickstart
   <a href="/docs/languages/ruby"><RubyIcon className="h-9 w-9 text-[#CC342D]"/></a>
   <a href="/docs/languages/go"><GoIcon className="h-10 w-10 text-[#00ADD8]"/></a>
   <a href="/docs/languages/php"><PhpIcon className="h-10 w-10 text-[#777BB4]"/></a>
+  <a href="/docs/languages/rust"><RustIcon className="h-10 w-10 text-[#000000] dark:invert"/></a>
 </div>
 
 ## Initial setup
@@ -50,6 +52,10 @@ go get github.com/dotenv-org/godotenvvault
 
 ```bash {{ title: "PHP" }}
 composer require dotenv-org/phpdotenv-vault
+```
+
+```bash {{ title: "Rust" }}
+cargo add dotenv-vault
 ```
 
 </CodeGroup>
@@ -142,6 +148,15 @@ func main() {
   echo "Hello {$_SERVER['HELLO']}";
 ```
 
+```rust {{ title: "Rust" }}
+fn main() {
+    let _ = dotenv_vault::dotenv();
+
+    let hello = std::env::var("HELLO").unwrap_or("".to_string());
+
+    println!("Hello {hello}");
+}
+```
 
 </CodeGroup>
 
@@ -178,6 +193,10 @@ go run index.go
 
 ```bash {{ title: 'PHP' }}
 php index.php
+```
+
+```bash {{ title: 'Rust' }}
+cargo run
 ```
 
 </CodeGroup>
@@ -274,6 +293,10 @@ DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=productio
 # Hello production
 ```
 
+```bash {{ title: "Rust" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' cargo run
+# Hello production
+```
 
 </CodeGroup>
 
@@ -313,6 +336,11 @@ $ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environmen
 Hello production
 ```
 
+```bash {{ title: "Rust" }}
+$ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environment=production' cargo run
+[dotenv-vault][INFO] Loading env from encrypted .env.vault
+Hello production
+```
 
 </CodeGroup>
 

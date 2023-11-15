@@ -218,6 +218,7 @@ export const navigation = [
       { title: 'Ruby', href: '/docs/languages/ruby' },
       { title: 'Go', href: '/docs/languages/go' },
       { title: 'PHP', href: '/docs/languages/php' },
+      { title: 'Rust', href: '/docs/languages/rust' },
     ],
   },
   {

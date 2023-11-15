@@ -6,6 +6,7 @@ import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
 import { GoIcon } from '@/components/icons/GoIcon'
 import { PhpIcon } from '@/components/icons/PhpIcon'
+import { RustIcon } from '@/components/icons/RustIcon'
 
 import { DockerIcon } from '@/components/icons/DockerIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
@@ -28,6 +29,7 @@ Deploy your encrypted `.env.vault` files to production (or staging or ci) using 
   <a href="/docs/languages/ruby"><RubyIcon className="h-9 w-9 text-[#CC342D]"/></a>
   <a href="/docs/languages/go"><GoIcon className="h-10 w-10 text-[#00ADD8]"/></a>
   <a href="/docs/languages/php"><PhpIcon className="h-10 w-10 text-[#777BB4]"/></a>
+  <a href="/docs/languages/rust"><RustIcon className="h-10 w-10 text-[#000000] dark:invert"/></a>
 </div>
 
 ## Build .env.vault
@@ -100,6 +102,11 @@ DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=productio
 # Hello production
 ```
 
+```bash {{ title: "Rust" }}
+DOTENV_KEY='dotenv://:key_1234@dotenv.org/vault/.env.vault?environment=production' cargo run
+# Hello production
+```
+
 </CodeGroup>
 
 <ScreenshotBrowser url='/assets/img/docs/hello-production.png'/>
@@ -138,6 +145,12 @@ $ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environmen
 Hello production
 ```
 
+```bash {{ title: "Rust" }}
+$ hello-world: DOTENV_KEY='dotenv://:1234@dotenv.org/vault/.env.vault?environment=production' cargo run
+[dotenv-vault][INFO] Loading env from encrypted .env.vault
+Hello production
+```
+
 </CodeGroup>
 
 The `DOTENV_KEY` decrypts the production contents of `.env.vault` and injects its secrets just-in-time to your running process. All that's left to do is set your `DOTENV_KEY` on your production server and deploy your code.
@@ -172,6 +185,7 @@ The best part is the technology is platform and framework agnostic. We've compil
   <a href="/docs/languages/ruby"><RubyIcon className="h-9 w-9 text-[#CC342D]"/></a>
   <a href="/docs/languages/go"><GoIcon className="h-10 w-10 text-[#00ADD8]"/></a>
   <a href="/docs/languages/php"><PhpIcon className="h-10 w-10 text-[#777BB4]"/></a>
+  <a href="/docs/languages/rust"><RustIcon className="h-10 w-10 text-[#000000] dark:invert"/></a>
   <a href="/docs/frameworks/express"><ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/></a>
   <a href="/docs/frameworks/nextjs"><NextIcon className="h-9 w-9 text-[#000000] dark:invert"/></a>
   <a href="/docs/languages/nodejs/github-actions"><GitHubIcon className="h-9 w-9 text-[#181717] dark:invert"/></a>
