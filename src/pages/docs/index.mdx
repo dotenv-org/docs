@@ -7,6 +7,7 @@ import { PythonIcon } from '@/components/icons/PythonIcon'
 import { RubyIcon } from '@/components/icons/RubyIcon'
 import { GoIcon } from '@/components/icons/GoIcon'
 import { PhpIcon } from '@/components/icons/PhpIcon'
+import { RustIcon } from '@/components/icons/RustIcon'
 
 import { Frameworks } from '@/components/Frameworks'
 import { Platforms } from '@/components/Platforms'
@@ -120,7 +121,16 @@ docker run -w $(pwd) -v $(pwd):$(pwd) -it dotenv/dotenv-vault push
       </div>
       <PhpIcon className="h-10 w-10 text-[#777BB4]"/>
     </div>
-
+    <div key="rust" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Rust
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Rust</p>
+        <p className="mt-1"><Button href="/docs/languages/rust" variant="text" arrow="right">Rust Guides</Button></p>
+      </div>
+      <RustIcon className="h-10 w-10 text-[#000000] dark:invert"/>
+    </div>
   </div>
 </div>
 
