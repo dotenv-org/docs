@@ -231,6 +231,7 @@ export const navigation = [
       { title: 'Gatsby', href: '/docs/frameworks/gatsby' },
       { title: 'Next.js', href: '/docs/frameworks/nextjs' },
       { title: 'Nuxt', href: '/docs/frameworks/nuxtjs' },
+      { title: 'PM2', href: '/docs/frameworks/pm2/heroku' },
       { title: 'Remix', href: '/docs/frameworks/remix' },
       { title: 'Serverless', href: '/docs/frameworks/serverless/aws-lambda' },
       { title: 'SvelteKit', href: '/docs/frameworks/svelte-kit/vercel' },
