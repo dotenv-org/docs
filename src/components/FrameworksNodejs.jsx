@@ -86,7 +86,7 @@ export function FrameworksNodejs() {
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with PM2</p>
           <p className="mt-4"><Button href="/docs/frameworks/pm2/heroku" variant="text" arrow="right">Read guide</Button></p>
         </div>
-        <Pm2Icon className="h-9 w-9 text-[#2B037A]"/>
+        <Pm2Icon className="h-9 w-9 text-[#2B037A] dark:text-[#AC2E95]"/>
       </div>
       <div key="remix" className="flex flex-row-reverse gap-6">
         <div className="flex-auto">
