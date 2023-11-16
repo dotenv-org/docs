@@ -9,6 +9,7 @@ import { EdgioIcon } from '@/components/icons/EdgioIcon'
 import { FlyIcon } from '@/components/icons/FlyIcon'
 import { GatsbyIcon } from '@/components/icons/GatsbyIcon'
 import { HerokuIcon } from '@/components/icons/HerokuIcon'
+import { KamalIcon } from '@/components/icons/KamalIcon'
 import { LaravelForgeIcon } from '@/components/icons/LaravelForgeIcon'
 import { NetlifyIcon } from '@/components/icons/NetlifyIcon'
 import { NorthflankIcon } from '@/components/icons/NorthflankIcon'
@@ -102,6 +103,16 @@ export function Platforms() {
             <p className="mt-4"><Button href="/docs/platforms/heroku" variant="text" arrow="right">Heroku Guides</Button></p>
           </div>
           <HerokuIcon className="h-9 w-9 text-[#430098]"/>
+        </div>
+        <div key="kamal" className="flex flex-row-reverse gap-6">
+          <div className="flex-auto">
+            <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+              Kamal
+            </h3>
+            <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Kamal</p>
+            <p className="mt-4"><Button href="/docs/platforms/kamal" variant="text" arrow="right">Kamal Guides</Button></p>
+          </div>
+          <KamalIcon className="h-9 w-9 text-[#3A80ED]"/>
         </div>
         <div key="laravel-forge" className="flex flex-row-reverse gap-6">
           <div className="flex-auto">

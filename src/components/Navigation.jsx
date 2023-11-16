@@ -240,6 +240,7 @@ export const navigation = [
       { title: 'Flask', href: '/docs/frameworks/flask/heroku' },
       { title: 'Rails', href: '/docs/frameworks/rails' },
       { title: 'Sinatra', href: '/docs/frameworks/sinatra/heroku' },
+      { title: 'Rocket-rs', href: '/docs/frameworks/rocket-rs/heroku' },
     ],
   },
   {

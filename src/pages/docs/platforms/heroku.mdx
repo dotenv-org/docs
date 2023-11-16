@@ -10,6 +10,7 @@ import { FastApiIcon } from '@/components/icons/FastApiIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
 import { SinatraIcon } from '@/components/icons/SinatraIcon'
 import { LaravelIcon } from '@/components/icons/LaravelIcon'
+import { RocketRsIcon } from '@/components/icons/RocketRsIcon'
 
 export const description = 
   'Use .env.vault with Heroku'
@@ -106,6 +107,16 @@ export const sections = [
         <p className="mt-4"><Button href="/docs/frameworks/laravel/heroku" variant="text" arrow="right">Read guide</Button></p>
       </div>
       <LaravelIcon className="h-9 w-9 text-[#FF2D20]"/>
+    </div>
+    <div key="rocket" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Rocket
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Rocket App to Heroku</p>
+        <p className="mt-4"><Button href="/docs/frameworks/rocket-rs/heroku" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <RocketRsIcon className="h-9 w-9 text-[#C3454C]"/>
     </div>
   </div>
 </div>

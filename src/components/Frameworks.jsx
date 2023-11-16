@@ -5,6 +5,7 @@ import { FrameworksNodejs } from '@/components/FrameworksNodejs'
 import { FrameworksPython } from '@/components/FrameworksPython'
 import { FrameworksRuby } from '@/components/FrameworksRuby'
 import { FrameworksPhp } from '@/components/FrameworksPhp'
+import { FrameworksRust } from '@/components/FrameworksRust'
 
 export function Frameworks() {
   return (
@@ -17,6 +18,7 @@ export function Frameworks() {
         <FrameworksPython />
         <FrameworksRuby />
         <FrameworksPhp />
+        <FrameworksRust />
       </div>
     </div>
   )
