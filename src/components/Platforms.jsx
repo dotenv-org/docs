@@ -111,7 +111,7 @@ export function Platforms() {
             <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Laravel Forge</p>
             <p className="mt-4"><Button href="/docs/frameworks/laravel/laravel-forge" variant="text" arrow="right">Laravel Forge Guides</Button></p>
           </div>
-          <LaravelForgeIcon className="h-9 w-9 text-[#212936]"/>
+          <LaravelForgeIcon className="h-9 w-9 text-[#212936] dark:invert"/>
         </div>
 
         <div key="netlify" className="flex flex-row-reverse gap-6">
