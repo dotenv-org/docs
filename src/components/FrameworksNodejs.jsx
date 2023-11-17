@@ -4,6 +4,7 @@ import { AngularIcon } from '@/components/icons/AngularIcon'
 import { AstroIcon } from '@/components/icons/AstroIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
 import { GatsbyIcon } from '@/components/icons/GatsbyIcon'
+import { NestIcon } from '@/components/icons/NestIcon'
 import { NextIcon } from '@/components/icons/NextIcon'
 import { NuxtIcon } from '@/components/icons/NuxtIcon'
 import { Pm2Icon } from '@/components/icons/Pm2Icon'
@@ -55,6 +56,18 @@ export function FrameworksNodejs() {
           <p className="mt-4"><Button href="/docs/frameworks/gatsby" variant="text" arrow="right">Gatsby Guides</Button></p>
         </div>
         <GatsbyIcon className="h-9 w-9 text-[#663399]"/>
+      </div>
+      <div key="nestjs" className="flex flex-row-reverse gap-6">
+        <div className="flex-auto">
+          <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+            Nest.js
+          </h3>
+          <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Use .env.vault with Nest.js</p>
+          <p className="mt-4 flex gap-x-2">
+            <Button href="/docs/frameworks/nestjs/heroku" variant="text" arrow="right">Read guide</Button>
+          </p>
+        </div>
+        <NestIcon className="h-9 w-9 text-[#E0234E]"/>
       </div>
       <div key="nextjs" className="flex flex-row-reverse gap-6">
         <div className="flex-auto">

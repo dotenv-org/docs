@@ -6,6 +6,7 @@ import { HerokuIcon } from '@/components/icons/HerokuIcon'
 import { PhpIcon } from '@/components/icons/PhpIcon'
 import { NodeIcon } from '@/components/icons/NodeIcon'
 import { ExpressIcon } from '@/components/icons/ExpressIcon'
+import { NestIcon } from '@/components/icons/NestIcon'
 import { Pm2Icon } from '@/components/icons/Pm2Icon'
 import { FastApiIcon } from '@/components/icons/FastApiIcon'
 import { FlaskIcon } from '@/components/icons/FlaskIcon'
@@ -69,6 +70,16 @@ export const sections = [
       </div>
       <ExpressIcon className="h-9 w-9 text-[#000000] dark:invert"/>
     </div>
+    <div key="nestjs" className="flex flex-row-reverse gap-6">
+      <div className="flex-auto">
+        <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
+          Nest.js
+        </h3>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">Deploy a Nest.js App to Heroku</p>
+        <p className="mt-4"><Button href="/docs/frameworks/nextjs/heroku" variant="text" arrow="right">Read guide</Button></p>
+      </div>
+      <NestIcon className="h-9 w-9 text-[#E0234E]"/>
+    </div>
     <div key="pm2" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
@@ -79,7 +90,6 @@ export const sections = [
       </div>
       <Pm2Icon className="h-9 w-9 text-[#2B037A] dark:text-[#AC2E95]"/>
     </div>
-
     <div key="fastapi" className="flex flex-row-reverse gap-6">
       <div className="flex-auto">
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
