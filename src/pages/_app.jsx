@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:description" content={pageProps.description} />
         <meta property="og:url" content={url} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@dotenvorg" />
+        <meta name="twitter:site" content="@dotenvx" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={pageProps.description} />
         {process.env.NODE_ENV === 'production' ? (

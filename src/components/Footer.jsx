@@ -219,7 +219,7 @@ function SmallPrint() {
         <SocialLink href="https://github.com/dotenv-org" icon={GitHubIcon}>
           Follow us on GitHub
         </SocialLink>
-        <SocialLink href="https://youtube.com/@dotenvorg" icon={YoutubeIcon}>
+        <SocialLink href="https://youtube.com/@dotenvx" icon={YoutubeIcon}>
           Follow us on YouTube
         </SocialLink>
         <SocialLink href="https://marketplace.visualstudio.com/items?itemName=dotenv.dotenv-vscode" icon={VSCodeIcon}>
