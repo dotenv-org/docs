@@ -43,7 +43,7 @@ src/
 tsconfig.json
 ```
 
-Edit `src/main.ts` to include to a simple `Hello ${process.env.HELLO}.`.
+Edit `src/main.ts` to include to a simple `Hello ${import.meta.env.VITE_HELLO}.`.
 
 ```js {{ title: 'src/main.ts' }}
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `

@@ -45,7 +45,7 @@ svelte.config.js
 vite.config.js
 ```
 
-Edit `src/routes/+page.svelte` to include `process.env.PUBLIC_HELLO`.
+Edit `src/routes/+page.svelte` to include `import.meta.env.VITE_HELLO`.
 
 ```js {{ title: 'src/routes/+page.svelte' }}
 <h1>Hello {import.meta.env.VITE_HELLO}.</h1>
