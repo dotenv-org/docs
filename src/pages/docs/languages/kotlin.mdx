@@ -73,7 +73,7 @@ See install instructions at https://www.dotenv.org/install
 Then encrypt your environment variables by doing:
 
 ```shell
-$ dotenv-vault local build
+$ dotenv-vault build
 ```
 
 This will create an encrypted `.env.vault` file along with a `.env.keys` file containing the encryption keys.
@@ -87,32 +87,6 @@ $ heroku config:set DOTENV_KEY=<key string from .env.keys>
 Commit your .env.vault file safely to code and deploy. Your .env.vault fill be decrypted on boot, its environment variables injected, and your app work as expected.
 
 ## 🌴 Manage Multiple Environments
-
-You have two options for managing multiple environments - locally managed or vault managed - both use <a href="https://github.com/dotenv-org/dotenv-vault">dotenv-vault</a>.
-
-Locally managed never makes a remote API call. It is completely managed on your machine. Vault managed adds conveniences like backing up your .env file, secure sharing across your team, access permissions, and version history. Choose what works best for you.
-
-#### 💻 Locally Managed
-
-Create a `.env.production` file in the root of your project and put your production values there.
-
-```
-# .env.production
-S3_BUCKET="PRODUCTION_S3BUCKET"
-SECRET_KEY="PRODUCTION_SECRETKEYGOESHERE"
-```
-
-Rebuild your `.env.vault` file.
-
-```
-$ dotenv-vault local build
-```
-
-Check your `.env.keys` file. There is a production `DOTENV_KEY` that coincides with the additional `DOTENV_VAULT_PRODUCTION` cipher in your `.env.vault` file.
-
-Set the production `DOTENV_KEY` on your server, recommit your `.env.vault` file to code, and deploy. That's it!
-
-#### 🔐 Vault Managed
 
 Sync your .env file. Run the push command and follow the instructions. [learn more](/docs/sync/quickstart)
 
