@@ -40,10 +40,6 @@ Begin by building your project's encrypted `.env.vault` file. It securely encryp
 ```bash {{title: "npx"}}
 npx dotenv-vault build
 ```
-
-```bash {{title: "Homebrew"}}
-dotenv-vault build
-```
 </CodeGroup>
 
 Commit that safely to code.
@@ -66,9 +62,6 @@ Fetch your production decryption key - the `DOTENV_KEY` - to decrypt your `.env.
 npx dotenv-vault keys production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault keys production
-```
 </CodeGroup>
 
 This will output your production `DOTENV_KEY`.

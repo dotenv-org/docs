@@ -46,9 +46,6 @@ Run the **push** command with the *environment* argument.
 npx dotenv-vault push production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault push production
-```
 </CodeGroup>
 
 <ScreenshotBrowser url='/assets/img/docs/dotenv-push-production.gif' www='npx dotenv-vault push production' />
@@ -66,9 +63,6 @@ Run the **open** command to view your production environment variables in the UI
 npx dotenv-vault open production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault open production
-```
 </CodeGroup>
 
 <ScreenshotBrowser url='/assets/img/docs/dotenv-open-production.gif' www='npx dotenv-vault open production' />
@@ -84,9 +78,6 @@ Make a change in the UI and then pull the latest `.env.production` file.
 npx dotenv-vault pull production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault pull production
-```
 </CodeGroup>
 
 <ScreenshotBrowser url='/assets/img/docs/dotenv-pull-production.gif' www='npx dotenv-vault pull production' />
@@ -110,10 +101,6 @@ npx dotenv-vault help push
 npx dotenv-vault help pull
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault help push
-dotenv-vault help pull
-```
 </CodeGroup>
 
 For example, a common need is to pull production secrets to a normal .env file. You can do so with this command.
@@ -123,9 +110,6 @@ For example, a common need is to pull production secrets to a normal .env file. 
 npx dotenv-vault pull production .env
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault pull production .env
-```
 </CodeGroup>
 
 ### Default environments
@@ -149,12 +133,6 @@ npx dotenv-vault push staging
 npx dotenv-vault push production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault push development
-dotenv-vault push ci
-dotenv-vault push staging
-dotenv-vault push production
-```
 </CodeGroup>
 
 The same for pulling. Append the environment name after **pull**.
@@ -167,12 +145,6 @@ npx dotenv-vault pull staging
 npx dotenv-vault pull production
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault pull development
-dotenv-vault pull ci
-dotenv-vault pull staging
-dotenv-vault pull production
-```
 </CodeGroup>
 
 <Note>Appending your main environment (*development*) is redundant. The cli assumes the main environment when the environment argument is ommitted.</Note>
@@ -189,12 +161,6 @@ npx dotenv-vault push staging any-filename
 npx dotenv-vault pull production .env
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault push development .env.local
-dotenv-vault pull ci secrets.txt
-dotenv-vault push staging any-filename
-dotenv-vault pull production .env
-```
 </CodeGroup>
 
 ### DOTENV_ME flag
@@ -206,9 +172,6 @@ In some automation scenarios, you might not have a `.env.me` file present. In th
 npx dotenv-vault pull --dotenvMe=me_1z1z1z
 ```
 
-```bash {{title: "Homebrew"}}
-dotenv-vault pull --dotenvMe=me_1z1z1z
-```
 </CodeGroup>
 
 Big congrats! You have advanced knowledge now – when it comes to managing multiple environments and using the **push** and **pull** commands.
